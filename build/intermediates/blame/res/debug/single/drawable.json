@@ -96,16 +96,16 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\btn_focus.png"
     },
     {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_bg_container_cell_top_pressed.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_container_cell_top_pressed.png"
+    },
+    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_ic_checkconnect.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\menu_ic_checkconnect.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\arrow_down.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\arrow_down.png"
-    },
-    {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_bg_container_cell_top_pressed.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_container_cell_top_pressed.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_main2.jpg",
@@ -116,12 +116,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\boder.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_ic_exit.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\menu_ic_exit.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_bg_setup3.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_setup3.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_ic_exit.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\menu_ic_exit.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btnbg1.png",
@@ -168,12 +168,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\tab_background_selector.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_selector_gray.xml",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_selector_gray.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\background_displayinfo.xml",
         "source": "F:\\codework\\MUIS\\res\\drawable\\background_displayinfo.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_selector_gray.xml",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_selector_gray.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_nomal.png",

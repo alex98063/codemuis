@@ -4,26 +4,26 @@
     api-level="21"
     density="mdpi"
     format="7"
-    timestamp="460367117834924" >
+    timestamp="462813522463594" >
 
     <task
         name="javac"
-        duration="411" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="87" />
+        duration="0" />
     <task
         name="verifier"
-        duration="12" />
+        duration="0" />
 
     <artifact
         location="F:\codework\MUIS\build\outputs\apk\MUIS-debug.apk"
         type="MAIN" />
 
-    <build timestamp="460367117834924" >
+    <build timestamp="462813522463594" >
         <artifact
             location="F:\codework\MUIS\build\outputs\apk\MUIS-debug.apk"
             type="MAIN" />

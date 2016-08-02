@@ -1,3 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="F:\codework\MUIS\libs\ja.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="aef4dbdf4ced8d42b5652e8c79a66f6cda6529a6">
+        <dex dex="F:\codework\MUIS\build\intermediates\transforms\dex\debug\folders\1000\2\ja_7df0e226e2afa56f872953b11b9dc06fa47e1c3e\classes.dex" />
+    </item>
+    <item
+        jar="F:\codework\MUIS\libs\androidannotations-3.2.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="54b4f752254b4e7248e82cd15649528c7dc8fa67">
+        <dex dex="F:\codework\MUIS\build\intermediates\transforms\dex\debug\folders\1000\2\androidannotations-3.2_e14fbcec154608edf8a408b4d034008b3eafe835\classes.dex" />
+    </item>
+    <item
+        jar="F:\codework\MUIS\libs\android-support-v4.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3e1409c5f5c4cdf9fd41db4b22a3eec5b3b10d96">
+        <dex dex="F:\codework\MUIS\build\intermediates\transforms\dex\debug\folders\1000\2\android-support-v4_615041dbd2bababa101287d2e288fffd58a2b1e6\classes.dex" />
+    </item>
+    <item
+        jar="F:\codework\MUIS\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="d2410d6d3613c6ec3b9b34a3395a56b0032bbee3">
+        <dex dex="F:\codework\MUIS\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5106fdfb9bfe5aba5a71b70d392498079b2b1a9e\classes.dex" />
+    </item>
+    <item
+        jar="F:\codework\MUIS\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f0f87c13e65b5bbd7cc139010ba8184078d060fb">
+        <dex dex="F:\codework\MUIS\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0533af7a44c7aee092d593ad08c43803be8fddf6\classes.dex" />
+    </item>
+
+</items>
