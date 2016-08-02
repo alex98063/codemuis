@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">MUIS系统</string>
+    <string name="action_settings">设置</string>
+    <string name="oilPump">主机油泵</string>
+    <string name="connect_btn">连接</string>
+    
+    <string name="metal_btn">钢轨母材探伤</string>
+    <string name="weld_btn">钢轨焊缝探伤</string>
+    
+    <string name="metal_base_btn">基本</string>
+    <string name="metal_measurement_btn">测量</string>
+    <string name="metal_dac_btn">DAC</string>
+    <string name="metal_auto_btn">自动校准</string>
+    <string name="metal_manager_btn">管理</string>
+    <string name="metal_setup_btn">设置</string>
+     <string name="metal_gain_spn">增益(dB) 50</string>
+
+</resources>

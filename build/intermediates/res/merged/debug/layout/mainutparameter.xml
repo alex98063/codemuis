@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:text="发射" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_below="@+id/textView1"
+            android:text="———————————————" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView02"
+            android:layout_below="@+id/TextView02"
+            android:layout_marginTop="20dp"
+            android:text="触发模式" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/spinner1"
+            android:text="发射延迟us" />
+
+        <EditText
+            android:id="@+id/EditText12"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView3"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/EditText12"
+            android:text="发射脉宽us" />
+
+        <EditText
+            android:id="@+id/EditText13"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/TextView01"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="20dp"
+            android:text="接收" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView03"
+            android:layout_below="@+id/TextView03"
+
+            android:text="———————————————" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView04"
+            android:layout_below="@+id/TextView04"
+            android:layout_marginTop="20dp"
+            android:text="探头类型" />
+
+        <Spinner
+            android:id="@+id/Spinner02"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView05"
+            android:layout_alignLeft="@+id/spinner1"
+            android:layout_toRightOf="@+id/TextView05" />
+
+        <TextView
+            android:id="@+id/TextView06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView05"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/Spinner02"
+            android:text="增益步进dB" />
+
+        <Spinner
+            android:id="@+id/Spinner03"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView05"
+            android:layout_alignLeft="@+id/EditText12"
+            android:layout_toRightOf="@+id/TextView06" />
+
+        <TextView
+            android:id="@+id/TextView07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView05"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/Spinner03"
+            android:text="增益dB" />
+
+        <Spinner
+            android:id="@+id/Spinner04"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView05"
+            android:layout_alignLeft="@+id/EditText13"
+            android:layout_toRightOf="@+id/TextView07" />
+
+
+        <TextView
+            android:id="@+id/TextView08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView04"
+            android:layout_below="@+id/TextView05"
+            android:layout_marginTop="20dp"
+            android:text="探头频率MHZ" />
+
+
+        <Spinner
+            android:id="@+id/Spinner05"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView08"
+            android:layout_alignLeft="@+id/spinner1"
+            android:layout_toRightOf="@+id/TextView08" />
+
+        <TextView
+            android:id="@+id/TextView09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView08"
+
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/Spinner05"
+            android:text="滤波设置MHZ" />
+
+        <Spinner
+            android:id="@+id/Spinner06"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView08"
+            android:layout_alignLeft="@+id/EditText12"
+            android:layout_toRightOf="@+id/TextView09" />
+
+        <TextView
+            android:id="@+id/TextView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView08"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/Spinner06"
+            android:text="探头零点us" />
+
+        <EditText
+            android:id="@+id/EditText14"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView08"
+            android:layout_alignLeft="@+id/EditText13"
+            android:layout_toRightOf="@+id/TextView10"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView08"
+            android:layout_below="@+id/TextView08"
+            android:layout_marginTop="20dp"
+            android:text="闸门" />
+
+        <TextView
+            android:id="@+id/TextView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView11"
+            android:layout_below="@+id/TextView11"
+
+            android:text="———————————————" />
+
+        <TextView
+            android:id="@+id/TextView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView12"
+            android:layout_below="@+id/TextView12"
+            android:layout_marginTop="20dp"
+            android:text="A闸门" />
+
+
+        <TextView
+            android:id="@+id/TextView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/TextView13"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView13"
+            android:text="闸门开端mm" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView17"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView17"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editText1"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/editText1"
+            android:text="闸门宽度mm" />
+
+
+        <EditText
+            android:id="@+id/EditText01"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView18"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView18"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText01"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/EditText01"
+            android:text="闸门宽度mm" />
+
+
+        <EditText
+            android:id="@+id/EditText02"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView19"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView19"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView13"
+            android:layout_below="@+id/TextView13"
+            android:layout_marginTop="20dp"
+            android:text="B闸门" />
+
+
+        <TextView
+            android:id="@+id/TextView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView14"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView14"
+            android:text="闸门开端mm" />
+
+        <EditText
+            android:id="@+id/EditText03"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView20"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView20"
+            android:ems="10" />
+
+
+        <TextView
+            android:id="@+id/TextView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText03"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/EditText03"
+            android:text="闸门宽度mm" />
+
+        <EditText
+            android:id="@+id/EditText06"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView23"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView23"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText06"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/EditText06"
+            android:text="闸门宽度mm" />
+
+        <EditText
+            android:id="@+id/EditText09"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView26"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView26"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView14"
+            android:layout_below="@+id/TextView14"
+            android:layout_marginTop="20dp"
+            android:text="C闸门" />
+
+
+        <TextView
+            android:id="@+id/TextView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView15"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView15"
+            android:text="闸门开端mm" />
+
+        <EditText
+            android:id="@+id/EditText04"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView21"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView21"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText04"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/EditText04"
+            android:text="闸门宽度mm" />
+
+        <EditText
+            android:id="@+id/EditText07"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView24"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView24"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText07"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/EditText07"
+            android:text="闸门宽度mm" />
+
+        <EditText
+            android:id="@+id/EditText10"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView27"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView27"
+            android:ems="10" />
+
+
+        <TextView
+            android:id="@+id/TextView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView15"
+            android:layout_below="@+id/TextView15"
+            android:layout_marginTop="20dp"
+            android:text="D闸门" />
+
+        <TextView
+            android:id="@+id/TextView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView16"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView16"
+            android:text="闸门开端mm" />
+
+        <EditText
+            android:id="@+id/EditText05"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView22"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView22"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText05"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/EditText05"
+            android:text="闸门宽度mm" />
+
+
+        <EditText
+            android:id="@+id/EditText08"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView25"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView25"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/TextView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText08"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/EditText08"
+            android:text="闸门宽度mm" />
+
+        <EditText
+            android:id="@+id/EditText11"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView28"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView28"
+            android:ems="10" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

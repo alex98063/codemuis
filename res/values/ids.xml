@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="lineimg" type="id">false</item>
+    <item name="reg_and_forget_password_layout" type="id">false</item>
+    <item name="forget_password_tv" type="id">false</item>
+    <item name="reg_tv" type="id">false</item>
+    <item name="loginpage" type="id">false</item>
+    <item name="login_container" type="id">false</item>
+    <item name="login_logo_layout_v" type="id">false</item>
+    <item name="login_logoimg" type="id">false</item>
+    <item name="login_logo_layout_h" type="id">false</item>
+    <item name="PLCAddress" type="id">false</item>
+    <item name="uin_close" type="id">false</item>
+    <item name="selectId" type="id">false</item>
+    <item name="PLCPort" type="id">false</item>
+    <item name="psw_close" type="id">false</item>
+    <item name="connect_btn" type="id">false</item>   
+    <item name="main1_container" type="id" />
+    <item name="emergencyStop_bt" type="id" />
+    <item name="emergency_stop_layout" type="id" />
+    <item name="bt_confirm" type="id" />
+    <item name="top_layout" type="id" />
+    <item name="layout_main_bottom" type="id" />
+    <item name="layout_main_top" type="id" />
+    <item name="main_title_include_Layout" type="id" />
+    <item name="main_bottom_include_Layout" type="id" />
+    <item name="main_auto_include_layout" type="id" />
+    <item name="main_manual_include_layout" type="id" />
+    <item name="switch_title_layout" type="id" />
+    <item name="main_auto_include_displayinfo" type="id" />
+
+    <item name="metal_btn" type="id">false</item>
+    <item name="weld_btn" type="id">false</item>
+    
+    <item name="metal_base_btn" type="id">false</item>
+    <item name="metal_measurement_btn" type="id">false</item>
+    <item name="metal_dac_btn" type="id">false</item>
+    <item name="metal_auto_btn" type="id">false</item>
+    <item name="metal_manager_btn" type="id">false</item>
+    <item name="metal_setup_btn" type="id">false</item>
+</resources>

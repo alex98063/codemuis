@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="F:\codework\MUIS\assets"><file name="fontawesome-webfont.ttf" path="F:\codework\MUIS\assets\fontawesome-webfont.ttf"/></source></dataSet><dataSet config="debug"><source path="F:\codework\MUIS\build-types\debug\assets"/></dataSet></merger>

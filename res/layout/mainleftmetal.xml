@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/main_rg_metal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/rb_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="融合显示" />
+
+        <RadioButton
+            android:id="@+id/rb_70pluswai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70°+外向" />
+
+        <RadioButton
+            android:id="@+id/rb_70pluszheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70°+正向" />
+
+        <RadioButton
+            android:id="@+id/rb_70plusnei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70°+内向" />
+
+        <RadioButton
+            android:id="@+id/rb_70minuswai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70°-外向" />
+
+        <RadioButton
+            android:id="@+id/rb_70minuszheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70°-正向" />
+
+        <RadioButton
+            android:id="@+id/rb_70minusnei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70°-内向" />
+
+        <RadioButton
+            android:id="@+id/rb_37plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="37°+" />
+
+        <RadioButton
+            android:id="@+id/rb_37minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="37°-" />
+
+        <RadioButton
+            android:id="@+id/rb_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0°" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bt_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/bt_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bt_minus"
+        android:layout_centerHorizontal="true"
+        android:text="+" />
+
+</RelativeLayout>
