@@ -1,5 +1,1 @@
-09:29:31.790 [Daemon worker Thread 10] INFO  o.a.AndroidAnnotationProcessor:84 - Initialize AndroidAnnotations 3.2 with options {}
-09:45:31.483 [Daemon worker Thread 12] INFO  o.a.AndroidAnnotationProcessor:84 - Initialize AndroidAnnotations 3.2 with options {}
-09:46:21.46 [Daemon worker Thread 12] INFO  o.a.AndroidAnnotationProcessor:84 - Initialize AndroidAnnotations 3.2 with options {}
-10:19:08.609 [Daemon worker] INFO  o.a.AndroidAnnotationProcessor:84 - Initialize AndroidAnnotations 3.2 with options {}
-10:29:17.797 [Daemon worker Thread 2] INFO  o.a.AndroidAnnotationProcessor:84 - Initialize AndroidAnnotations 3.2 with options {}
+13:55:17.957 [Daemon worker] INFO  o.a.AndroidAnnotationProcessor:84 - Initialize AndroidAnnotations 3.2 with options {}

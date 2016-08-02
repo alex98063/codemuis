@@ -99,7 +99,6 @@
         <!--android:layout_gravity="start" />-->
 
     <include
-        android:id="@+id/right_sliding"
         layout="@layout/showoptionright"
         android:layout_width="500dp"
         android:layout_height="match_parent"

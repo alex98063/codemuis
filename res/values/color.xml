@@ -3,7 +3,7 @@
 
     <color name="transparent">#00ffffff</color>
     <color name="statecolor">#00DDDDDD</color>
-    <color name="white">#ffffffff</color>
+    <color name="white">#ffffff</color>
     <color name="discuss_blue">#295782</color>
     <color name="black">#000000</color>
     <color name="discuss_writer">#778190</color>
@@ -11,4 +11,5 @@
     <color name="photo_preview_select_album_layout_bg">#ff3a3a3a</color>
 	<color name="displayinfo_textcolor">#ffffffff</color>
 	<color name="cutoffrule">#ffcfcfcf</color>
+    <color name="blue">#4c969f</color>
 </resources>

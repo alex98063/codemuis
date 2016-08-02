@@ -168,12 +168,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\tab_background_selector.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\background_displayinfo.xml",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\background_displayinfo.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_selector_gray.xml",
         "source": "F:\\codework\\MUIS\\res\\drawable\\qz_selector_gray.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\background_displayinfo.xml",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\background_displayinfo.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_nomal.png",

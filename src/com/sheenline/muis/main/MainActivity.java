@@ -36,6 +36,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -1073,6 +1074,8 @@ public class MainActivity extends FragmentActivity {
 			m.addTab(m.newTabSpec("tab1").setIndicator("波形显示").setContent(R.id.main_wave));
 			m.addTab(m.newTabSpec("tab2").setIndicator("超声参数").setContent(R.id.main_utparameter));
 			m.addTab(m.newTabSpec("tab3").setIndicator("预设参数").setContent(R.id.main_sysconfig));
+
+
 		}
 
 		if (savedInstanceState == null) {
