@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
-    api-level="21"
-    density="mdpi"
+    abi="x86"
+    api-level="19"
+    density="ldpi"
     format="7"
-    timestamp="462813522463594" >
+    timestamp="481276955614220" >
 
     <task
         name="javac"
@@ -19,14 +19,6 @@
         name="verifier"
         duration="0" />
 
-    <artifact
-        location="F:\codework\MUIS\build\outputs\apk\MUIS-debug.apk"
-        type="MAIN" />
-
-    <build timestamp="462813522463594" >
-        <artifact
-            location="F:\codework\MUIS\build\outputs\apk\MUIS-debug.apk"
-            type="MAIN" />
-    </build>
+    <build timestamp="481276955614220" />
 
 </instant-run>
