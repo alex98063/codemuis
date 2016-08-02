@@ -43,12 +43,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
 
-                    android:layout_marginLeft="10dp">
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
+
+                        <TabWidget
+                            android:id="@android:id/tabs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                           />
 
                         <FrameLayout
                             android:id="@android:id/tabcontent"
@@ -77,12 +85,6 @@
 
                     </LinearLayout>
 
-                    <TabWidget
-                        android:id="@android:id/tabs"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_gravity="bottom" />
 
                 </TabHost>
 
@@ -100,7 +102,7 @@
 
     <include
         layout="@layout/showoptionright"
-        android:layout_width="500dp"
+        android:layout_width="700dp"
         android:layout_height="match_parent"
         android:layout_gravity="end" />
 

@@ -4,6 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+
+    <TextView
+        android:id="@+id/textView0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+
+        android:gravity="center"
+        android:text="波形显示"
+
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/blue" />
+
     <LinearLayout
         android:id="@+id/main_common_right_up"
         android:layout_width="match_parent"

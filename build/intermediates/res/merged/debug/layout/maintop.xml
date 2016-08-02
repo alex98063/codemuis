@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
   android:id="@+id/metal_common_top"
-    android:stretchColumns="*" >
+    android:stretchColumns="*"
+    android:background="@color/topblue">
 
     <TableRow
         android:id="@+id/tableRow01"
@@ -17,7 +18,7 @@
            
             android:gravity="center"
             android:text=""
-             
+             android:textSize="20sp"
             
             />
         
@@ -25,7 +26,7 @@
             android:id="@+id/tv_mmct_devicenr"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            
+              android:textSize="20sp"
             android:gravity="center"
             android:text="设备号 NO.1"           
             
@@ -37,15 +38,15 @@
             android:layout_height="wrap_content"
          
             android:gravity="center"
-            android:text="用户名"           
-            
+            android:text="用户名"
+               android:textSize="20sp"
             />
           
              <TextView
             android:id="@+id/tv_mmct_tracktype"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-         
+                 android:textSize="20sp"
             android:gravity="center"
             android:text="钢轨类型"           
             
@@ -62,7 +63,7 @@
             
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-       
+                            android:textSize="20sp"
             android:gravity="center"
             android:text=" "           
             
@@ -72,7 +73,7 @@
             
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-       
+             android:textSize="20sp"
             android:gravity="center"
             android:text=" "           
             
@@ -82,7 +83,7 @@
             android:id="@+id/tv_mmct_GPS"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-          
+             android:textSize="20sp"
             android:gravity="center"
             android:text="GPS坐标 x y"            
             
@@ -91,7 +92,7 @@
             android:id="@+id/tv_mmct_kilo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-          
+              android:textSize="20sp"
             android:gravity="center"
             android:text="里程"            
             

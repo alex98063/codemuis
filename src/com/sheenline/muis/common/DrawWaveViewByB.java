@@ -43,7 +43,7 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
 										synchronized (mHolder)
 											{
 												canvas = mHolder.lockCanvas();
-
+												canvas.drawColor(Color.YELLOW);
 												if (drawkey != "999")
 													{
 														// canvas.drawColor(Color.WHITE);
@@ -83,23 +83,23 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
 											}
 									}
 
-								deltaTime = System.currentTimeMillis() - tickTime;
-
-								if (deltaTime < DRAW_INTERVAL)
-									{
-										try
-											{
-
-												Thread.sleep(DRAW_INTERVAL - deltaTime);
-											}
-										catch (InterruptedException e)
-											{
-												e.printStackTrace();
-											}
-									}
-								else
-									{
-									}
+//								deltaTime = System.currentTimeMillis() - tickTime;
+//
+//								if (deltaTime < DRAW_INTERVAL)
+//									{
+//										try
+//											{
+//
+//												Thread.sleep(DRAW_INTERVAL - deltaTime);
+//											}
+//										catch (InterruptedException e)
+//											{
+//												e.printStackTrace();
+//											}
+//									}
+//								else
+//									{
+//									}
 							}
 
 						tickTime = System.currentTimeMillis();

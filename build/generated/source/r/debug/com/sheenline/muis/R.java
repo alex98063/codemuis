@@ -116,11 +116,15 @@ containing a value of this type.
         public static final int discuss_writer=0x7f070004;
         public static final int displayinfo_textcolor=0x7f070005;
         public static final int gray=0x7f070006;
-        public static final int menu_text_color=0x7f07000b;
-        public static final int photo_preview_select_album_layout_bg=0x7f070007;
-        public static final int statecolor=0x7f070008;
-        public static final int transparent=0x7f070009;
-        public static final int white=0x7f07000a;
+        public static final int leftyellow=0x7f070007;
+        public static final int mainblue=0x7f070008;
+        public static final int mainblue2=0x7f070009;
+        public static final int menu_text_color=0x7f07000f;
+        public static final int photo_preview_select_album_layout_bg=0x7f07000a;
+        public static final int statecolor=0x7f07000b;
+        public static final int topblue=0x7f07000c;
+        public static final int transparent=0x7f07000d;
+        public static final int white=0x7f07000e;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f050000;
@@ -317,7 +321,7 @@ containing a value of this type.
         public static final int metal_auto_btn=0x7f080015;
         public static final int metal_base_btn=0x7f080016;
         public static final int metal_btn=0x7f080017;
-        public static final int metal_common_top=0x7f080040;
+        public static final int metal_common_top=0x7f080041;
         public static final int metal_dac_btn=0x7f080018;
         public static final int metal_manager_btn=0x7f080019;
         public static final int metal_measurement_btn=0x7f08001a;
@@ -343,9 +347,9 @@ containing a value of this type.
         public static final int spn_mmcb_threshold2=0x7f0800a0;
         public static final int switch_title_layout=0x7f080020;
         public static final int tabhost=0x7f08002f;
-        public static final int tableRow01=0x7f080041;
-        public static final int tableRow02=0x7f080046;
-        public static final int textView0=0x7f080049;
+        public static final int tableRow01=0x7f080042;
+        public static final int tableRow02=0x7f080047;
+        public static final int textView0=0x7f080040;
         public static final int textView1=0x7f08004a;
         public static final int textView10=0x7f0800a1;
         public static final int textView11=0x7f0800a3;
@@ -358,13 +362,13 @@ containing a value of this type.
         public static final int textView8=0x7f08009d;
         public static final int textView9=0x7f08009f;
         public static final int top_layout=0x7f080021;
-        public static final int tv_mmct_GPS=0x7f080047;
-        public static final int tv_mmct_date=0x7f080042;
-        public static final int tv_mmct_devicenr=0x7f080043;
+        public static final int tv_mmct_GPS=0x7f080048;
+        public static final int tv_mmct_date=0x7f080043;
+        public static final int tv_mmct_devicenr=0x7f080044;
         public static final int tv_mmct_gain=0x7f080096;
-        public static final int tv_mmct_kilo=0x7f080048;
-        public static final int tv_mmct_tracktype=0x7f080045;
-        public static final int tv_mmct_user=0x7f080044;
+        public static final int tv_mmct_kilo=0x7f080049;
+        public static final int tv_mmct_tracktype=0x7f080046;
+        public static final int tv_mmct_user=0x7f080045;
         public static final int uin_close=0x7f080022;
         public static final int ut_checkBox_bianma=0x7f080086;
         public static final int ut_checkBox_so_focus=0x7f08008a;

@@ -1,0 +1,8 @@
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sheenline\muis\main\MainActivity$StartWeldThread$override.class
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sheenline\muis\main\MainActivity$override.class
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sheenline\muis\main\MainActivity$StartMetalThread$override.class
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sheenline\muis\main\MainActivity$1$override.class
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sheenline\muis\main\MainActivity$19$override.class
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sheenline\muis\main\MainActivity$2$override.class
+CHANGED,F:\codework\MUIS\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sheenline\muis\main\MainActivity$18$override.class
