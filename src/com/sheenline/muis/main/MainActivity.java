@@ -270,19 +270,27 @@ public class MainActivity extends FragmentActivity {
         public void run() {
 
             while (true) {
-                if (usetype == "Metal") {
 
-                    synchronized (treeMapAWaveData) {
+                switch (usetype)
+                {
+                    case "Metal":
 
-                        onDrawAWave(treeMapAWaveData);
 
-                    }
+                        onDrawAWaveAxs();
+//                      onDrawAWave(treeMapAWaveData);
+
+
+                        break;
+                    case "Weld":
+                        onDrawBWave();
+
+                        break;
+                    default:
+                        break;
                 }
-                if (usetype == "Weld") {
-                    onDrawBWave();
-                }
-
             }
+
+
         }
     }
 
@@ -310,7 +318,7 @@ public class MainActivity extends FragmentActivity {
 
     private static String strDefineChannelKey = "512"; // 通道号
 
-    private static String usetype = "Metal"; // 通道号
+    private String usetype = "Metal"; // 通道号
 
     private static TreeMap<String, int[]> treeMapAWaveData = new TreeMap<String, int[]>(); // 数字字典
 
@@ -450,6 +458,32 @@ public class MainActivity extends FragmentActivity {
         }
     };
 
+
+    TimerTask taskDraw = new TimerTask() {
+        @Override
+        public void run() {
+
+            switch (usetype)
+            {
+                case "Metal":
+
+
+                    onDrawAWaveAxs();
+//                  onDrawAWave(treeMapAWaveData);
+
+
+                    break;
+                case "Weld":
+                    //onDrawBWave();
+
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    };
+
     TimerTask taskMetal = new TimerTask() {
         @Override
         public void run() {
@@ -526,6 +560,21 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    public final void onDrawAWaveAxs() {
+        Log.d("testsys", "mmmmm");
+        View tabAview = MainActivity.this.findViewById(R.id.main_common_right_up);
+
+        DrawWaveViewByA mATypeView = (DrawWaveViewByA) tabAview.findViewById(R.id.area_atype_view);
+
+        mATypeView.SetInfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null,
+                1, //
+                new String[]{"0", "50", "100"}, // Y轴刻度
+                null, // 数据
+                "", strDefineChannelKey, definethstart, definethlength, intDefineZero,
+                intThresoldValue);
+
+    }
+
     // 绘制A显
     public final void onDrawAWave(TreeMap<String, int[]> aTreeMap) {
 
@@ -556,6 +605,7 @@ public class MainActivity extends FragmentActivity {
                                     intThresoldValue);
                             break;
                         default:
+
                             mATypeView.SetInfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null,
                                     1, //
                                     new String[]{"0", "50", "100"}, // Y轴刻度
@@ -569,6 +619,7 @@ public class MainActivity extends FragmentActivity {
                 }
 
             } catch (Exception e) {
+
             }
 
         }
@@ -1034,15 +1085,17 @@ public class MainActivity extends FragmentActivity {
             case "Metal":
                 Toast.makeText(this, "母材模式", Toast.LENGTH_SHORT).show();
 
-                File dir = Environment.getExternalStorageDirectory();
-                String path = dir.toString() + "/31AnglesSeclaw.csv";
 
-                onReadfocuslawfile(path);
+//                File dir = Environment.getExternalStorageDirectory();
+//                String path = dir.toString() + "/31AnglesSeclaw.csv";
+//
+//                onReadfocuslawfile(path);
 
                 break;
 
             case "Weld":
                 Toast.makeText(this, "焊缝模式", Toast.LENGTH_SHORT).show();
+
                 break;
             default:
                 break;
@@ -1172,8 +1225,10 @@ public class MainActivity extends FragmentActivity {
         // break;
         // }
         //
-        // new StartDrawThread().start();
 
+
+//        new StartDrawThread().start();
+        timer.schedule(taskDraw, 1000, 1000);
     }
 
     // 退出

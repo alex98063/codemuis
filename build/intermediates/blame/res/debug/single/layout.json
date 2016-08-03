@@ -20,12 +20,12 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\login.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\select.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\select.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainutparameter.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\mainutparameter.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\select.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\select.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawbtype.xml",

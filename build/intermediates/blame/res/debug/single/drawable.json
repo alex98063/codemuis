@@ -124,12 +124,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\menu_ic_exit.png"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_select.9.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\menu_select.9.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btnbg1.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\btnbg1.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_select.9.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\menu_select.9.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_ic_clearalarm.png",
