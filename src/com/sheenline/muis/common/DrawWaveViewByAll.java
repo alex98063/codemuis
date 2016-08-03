@@ -903,7 +903,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
 
 			}
 
-		// public void SetInfo(String[] XLabels, String[] YLabels, String[]
+		// public void setinfo(String[] XLabels, String[] YLabels, String[]
 		// AllData,
 		// String strTitle,int a)
 		// {

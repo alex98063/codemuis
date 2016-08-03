@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sheenline.muis.R;
-import com.sheenline.muis.common.DrawWaveViewByA;
 import com.sheenline.muis.common.DrawWaveViewByB;
 
 public class DrawBWaveView extends Fragment {
@@ -20,12 +19,8 @@ public class DrawBWaveView extends Fragment {
 
         mBTypeView = (DrawWaveViewByB) view.findViewById(R.id.area_btype_view);
 
-        mBTypeView.SetInfo(new String[]
-                        {"0", "100", "200", "300", "400", "500", "600", "700"}, // X轴刻度
-                null, 1, new String[]
-                        {"0", "50", "100"}, // Y轴刻度
-                null, // 数据
-                "", "999", 0, 100, 0, 20);
+        mBTypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null, 1, new String[]{"0", "50", "100"}, null, "", "999", 0, 100, 0, 20);
+
 
         return view;
     }

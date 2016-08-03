@@ -20,7 +20,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -263,36 +262,6 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    // 绘制图形
-    public class StartDrawThread extends Thread {
-
-        @Override
-        public void run() {
-
-            while (true) {
-
-                switch (usetype)
-                {
-                    case "Metal":
-
-
-                        onDrawAWaveAxs();
-//                      onDrawAWave(treeMapAWaveData);
-
-
-                        break;
-                    case "Weld":
-                        onDrawBWave();
-
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-
-        }
-    }
 
     // 增益步长
     private static double definegainstep;
@@ -463,17 +432,18 @@ public class MainActivity extends FragmentActivity {
         @Override
         public void run() {
 
-            switch (usetype)
-            {
+            switch (usetype) {
                 case "Metal":
 
 
                     onDrawAWaveAxs();
 //                  onDrawAWave(treeMapAWaveData);
 
-
+                    onDrawBWaveAxs();
                     break;
                 case "Weld":
+
+
                     //onDrawBWave();
 
                     break;
@@ -561,17 +531,23 @@ public class MainActivity extends FragmentActivity {
     }
 
     public final void onDrawAWaveAxs() {
-        Log.d("testsys", "mmmmm");
+
         View tabAview = MainActivity.this.findViewById(R.id.main_common_right_up);
 
         DrawWaveViewByA mATypeView = (DrawWaveViewByA) tabAview.findViewById(R.id.area_atype_view);
 
-        mATypeView.SetInfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null,
-                1, //
-                new String[]{"0", "50", "100"}, // Y轴刻度
-                null, // 数据
-                "", strDefineChannelKey, definethstart, definethlength, intDefineZero,
-                intThresoldValue);
+        mATypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0,100, 200, 300, 400, 500, 600,700},1, new String[]{"0", "50", "100"});
+
+    }
+
+
+    public final void onDrawBWaveAxs() {
+
+        View tabBview = MainActivity.this.findViewById(R.id.main_common_right_down);
+
+        DrawWaveViewByB mBTypeView = (DrawWaveViewByB) tabBview.findViewById(R.id.area_btype_view);
+
+        mBTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0,100, 200, 300, 400, 500, 600,700},1, new String[]{"0", "50", "100"});
 
     }
 
@@ -587,7 +563,7 @@ public class MainActivity extends FragmentActivity {
                 if (aTreeMap != null) {
                     switch (strDefineChannelKey) {
                         case "512":
-                            mATypeView.SetInfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"},
+                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"},
                                     new int[]{100, 212, 200, 423, 300, 634}, 624 / 295.5,
                                     new String[]{"0", "50", "100"}, // Y轴刻度
                                     aTreeMap, // 数据
@@ -597,7 +573,7 @@ public class MainActivity extends FragmentActivity {
                             break;
                         case "0":
                         case "256":
-                            mATypeView.SetInfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"},
+                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"},
                                     new int[]{50, 195, 100, 390, 150, 584, 200, 779}, 624 / 324.5,
                                     new String[]{"0", "50", "100"}, // Y轴刻度
                                     aTreeMap, // 数据
@@ -606,7 +582,7 @@ public class MainActivity extends FragmentActivity {
                             break;
                         default:
 
-                            mATypeView.SetInfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null,
+                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null,
                                     1, //
                                     new String[]{"0", "50", "100"}, // Y轴刻度
                                     aTreeMap, // 数据

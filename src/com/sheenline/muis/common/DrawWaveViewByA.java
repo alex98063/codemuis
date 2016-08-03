@@ -95,7 +95,8 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     // 通道号
     private static String drawkey;
 
-    int belowmargin = 20;                        // 下空间
+    int bottommargin = 30;                        // 下空间
+
 
     double dissw = 10.0;                        // 压缩数据阈值
 
@@ -108,7 +109,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     int intthstart;
     int intthsteplength;
     int intzero;
-    int leftmargin = 0;                        // 左空间
+    int leftmargin = 30;                        // 左空间
     private DrawThread mDrawThread;
     private ArrayList<Integer> mGridColorLevel = new ArrayList<Integer>();
     private ArrayList<String> mGridLevelText = new ArrayList<String>();
@@ -214,7 +215,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
         boolean direction = true;
 
         XPoint = leftmargin;
-        float yYPoint = b + belowmargin;
+        float yYPoint = b + bottommargin;
 
         float XScale = (a) / (XLabel.length - 1);
 
@@ -387,7 +388,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
         // String[] datastrexe = exactpoint(datastr);
         String[] datastrexe = exactpoint2(datastr, intThreshold);
         // String[] datastrexe = datastr;
-        float yYPoint = b + belowmargin;
+        float yYPoint = b + bottommargin;
         float XScale = (a) / (XLabel.length - 1);
 
         float YScale = (yYPoint) / (YLabel.length - 1);
@@ -508,111 +509,50 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     // return newdatastr;
     // }
 
-    private final void drawAViewAxs(Canvas canvas, float a, float b, int scale, String title) {
+    private final void drawAViewAxs(Canvas canvas, float xlen, float ylen, int scale, String title) {
 
 
-        XPoint = 0;
+        XPoint = leftmargin;
 
+        float yYPoint = ylen; //下边界
 
-        float yYPoint = b;
-        // 刻度
-//        Log.d("testsys",String.valueOf(XLabel.length));
-        float XScale = (a) / (XLabel.length - 1);
+        float XScale = (xlen) / (XLabel.length - 1);//x比例
 
-        float YScale = (scale) / (YLabel.length - 1);
-        Log.d("testsys", "axs");
+        float YScale = (scale) / (YLabel.length - 1);//y比例
+
         // 画笔
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);// 去锯齿
         paint.setColor(Color.BLACK);// 颜色
 
-        // 画虚线的画笔
-        Paint paintVLine = new Paint();
-        paintVLine.setStyle(Paint.Style.STROKE);
-        paintVLine.setAntiAlias(true);// 去锯齿
-        paintVLine.setColor(Color.BLACK);// 颜色
-
-        Paint paintLine = new Paint();
-        paintLine.setStyle(Paint.Style.STROKE);
-        paintLine.setAntiAlias(true);// 去锯齿
-
-        switch (title) {
-            case "0":
-
-                paintLine.setColor(Color.CYAN);// 颜色
-                break;
-            case "256":
-
-                paintLine.setColor(Color.BLUE);// 颜色
-                break;
-            case "512":
-
-                paintLine.setColor(Color.BLACK);// 颜色
-                break;
-
-            case "4097":
-
-                paintLine.setColor(Color.RED);// 颜色
-                break;
-            case "4098":
-
-                paintLine.setColor(Color.MAGENTA);// 颜色
-                break;
-            case "4099":
-
-                paintLine.setColor(Color.LTGRAY);// 颜色
-                break;
-
-            case "4353":
-
-                paintLine.setColor(Color.GREEN);// 颜色
-                break;
-
-            case "4354":
-
-                paintLine.setColor(Color.YELLOW);// 颜色
-                break;
-            case "4355":
-
-                paintLine.setColor(Color.DKGRAY);// 颜色
-                break;
-            default:
-                paintLine.setColor(Color.BLACK);// 颜色
-                break;
-        }
-
-        // paintLine.setStrokeWidth(8);
-
-        Paint paint1 = new Paint();
-        paint1.setStyle(Paint.Style.STROKE);
-        paint1.setAntiAlias(true);// 去锯齿
-        paint1.setColor(Color.BLACK);
-        paint.setTextSize(8); // 设置轴文字大小
-
 
         // 设置Y轴
         canvas.drawLine(XPoint, yYPoint - (YLabel.length - 1) * YScale, XPoint, yYPoint, paint); // 轴线
-
+//y刻度
         for (int i = 0; i < YLabel.length; i++) {
+
+
             canvas.drawLine(XPoint, yYPoint - i * YScale, XPoint - 5, yYPoint - i * YScale, paint); // 刻度
 
-
+            canvas.drawText(YLabel[i], XPoint - 25, yYPoint - i * YScale + 20, paint); // 文字
         }
 
-        if (NewxLable != null && NewxLable.length > 0) {
+        //x刻度
 
-            for (int i = 0; i < NewxLable.length - 1; i = i + 2) {
 
-                canvas.drawLine(XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]),
-                        yYPoint, XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]),
+            for (int i = 0; i < NewxLable.length - 1; i++) {
+
+                canvas.drawLine(XPoint + NewxLable[i] * XScale / Integer.valueOf(XLabel[1]),
+                        yYPoint, XPoint + NewxLable[i] * XScale / Integer.valueOf(XLabel[1]),
                         yYPoint + 5, paint); // 刻度
+
                 canvas.drawText(Integer.toString(NewxLable[i]),
-                        XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]) - 20,
-                        yYPoint + 10, paint); // 文字
+                        XPoint + NewxLable[i] * XScale / Integer.valueOf(XLabel[1]) - 25,
+                        yYPoint + 20, paint); // 文字
 
             }
-        }
+
 
         // 设置X轴
         canvas.drawLine(XPoint, yYPoint, XPoint + (XLabel.length - 1) * XScale, yYPoint, paint); // 轴线
@@ -870,14 +810,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     protected void onDraw(Canvas canvas) {
 
         try {
-
             super.onDraw(canvas);
-
-            // drawAView(canvas, Data, XLength, YLength, YLength,
-            // drawkey);
-            //
-            // long starttime3 = System.currentTimeMillis();
-            // Log.d("timer13", String.valueOf(starttime3));
 
         } catch (Exception e) {
         }
@@ -890,23 +823,34 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
         mHight = getHeight();
     }
 
-    public void SetData(String strTitle) {
+
+    public void setinfoaxs(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels) {
+
+        XLabel = XLabels;
+        NewxLable = newxlabels;
+        NewScale = newscales;
+        YLabel = YLabels;
+
+        XLength = getWidth();
+        YLength = getHeight() - bottommargin;
+
 
     }
 
-    public void SetInfo(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels,
+
+    public void setinfo(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels,
                         TreeMap<String, int[]> AllData, String strTitle, String key, int thstart, int thlength, int zero,
                         int Threshold) {
 
-//        if (AllData == null) {
-//
-//            return;
-//        }
-//
-//        if (AllData.size() == 0) {
-//
-//            return;
-//        }
+        if (AllData == null) {
+
+            return;
+        }
+
+        if (AllData.size() == 0) {
+
+            return;
+        }
 
         XLabel = XLabels;
         NewxLable = newxlabels;
@@ -914,7 +858,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
         YLabel = YLabels;
         Title = strTitle;
         XLength = getWidth();
-        YLength = getHeight() - belowmargin;
+        YLength = getHeight() - bottommargin;
 
         drawkey = key;
         intthstart = thstart;
@@ -922,31 +866,19 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
         intzero = zero;
         intThreshold = Threshold;
 
-//        if (key == "999") {
-//            Datalist = AllData;
-//            Data = null;
-//        } else {
-//            if (AllData.containsKey(key) && AllData.get(key).length > 0) {
-//
-//                Data = Tools.intStringArrayPercent(AllData.get(key), key);
-//
-//            }
-//        }
+        if (key == "999") {
+            Datalist = AllData;
+            Data = null;
+        } else {
+            if (AllData.containsKey(key) && AllData.get(key).length > 0) {
+
+                Data = Tools.intStringArrayPercent(AllData.get(key), key);
+
+            }
+        }
 
     }
 
-    // public void SetInfo(String[] XLabels, String[] YLabels, String[]
-    // AllData,
-    // String strTitle,int a)
-    // {
-    // XLabel = XLabels;
-    // YLabel = YLabels;
-    // Data = AllData;
-    // Title = strTitle;
-    // XLength = getWidth();
-    // YLength = getHeight();
-    //
-    // }
 
     // 设置XY轴顶角的title字体大小
     public void setTitleTextSize(int size) {

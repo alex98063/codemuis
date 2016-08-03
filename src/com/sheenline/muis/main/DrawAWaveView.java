@@ -19,12 +19,7 @@ public class DrawAWaveView extends Fragment {
 
         mATypeView = (DrawWaveViewByA) view.findViewById(R.id.area_atype_view);
 
-        mATypeView.SetInfo(new String[]
-                        {"0", "100", "200", "300", "400", "500", "600", "700"}, // X轴刻度
-                null, 1, new String[]
-                        {"0", "50", "100"}, // Y轴刻度
-                null, // 数据
-                "", "999", 0, 100, 0, 20);
+        mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null, 1, new String[]{"0", "50", "100"}, null, "", "999", 0, 100, 0, 20);
 
         return view;
     }
