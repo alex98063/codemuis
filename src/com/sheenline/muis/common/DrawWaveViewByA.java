@@ -39,7 +39,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
 
                         if (drawkey != "999") {
 //                            canvas.drawColor(Color.WHITE);
-                            canvas.drawColor(Color.WHITE);
+                            canvas.drawColor(Color.rgb(255, 236, 139));
 
                             drawAViewAxs(canvas, XLength, YLength, YLength, "512");
 

@@ -438,6 +438,7 @@ public class MainActivity extends FragmentActivity {
 
                     //onDrawAWaveAxs();
 //                  onDrawAWave(treeMapAWaveData);
+
                     onDrawAllWaveAxs();
                     onDrawBWaveAxs();
                     break;
@@ -534,7 +535,7 @@ public class MainActivity extends FragmentActivity {
 
         View tabview = MainActivity.this.findViewById(R.id.main_common_right_up);
 
-        DrawWaveViewByAll mTypeView = (DrawWaveViewByAll) tabview.findViewById(R.id.area_atype_view);
+        DrawWaveViewByAll mTypeView = (DrawWaveViewByAll) tabview.findViewById(R.id.area_alltype_view);
 
         mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"});
 
@@ -1124,11 +1125,11 @@ public class MainActivity extends FragmentActivity {
 
             transaction.commit();
 
-            DrawAWaveView aFragmentRight = new DrawAWaveView();
-            FragmentManager fma = getSupportFragmentManager();
-            FragmentTransaction txa = fma.beginTransaction();
-            txa.add(R.id.main_common_right_up, aFragmentRight, "AFragmentRight");
-            txa.commit();
+//            DrawAWaveView aFragmentRight = new DrawAWaveView();
+//            FragmentManager fma = getSupportFragmentManager();
+//            FragmentTransaction txa = fma.beginTransaction();
+//            txa.add(R.id.main_common_right_up, aFragmentRight, "AFragmentRight");
+//            txa.commit();
 
             DrawBWaveView bFragmentRight = new DrawBWaveView();
             FragmentManager fmb = getSupportFragmentManager();
@@ -1136,6 +1137,12 @@ public class MainActivity extends FragmentActivity {
             txb.add(R.id.main_common_right_down, bFragmentRight, "BFragmentRight");
             txb.commit();
 
+
+            DrawAllWaveView allFragmentRight = new DrawAllWaveView();
+            FragmentManager fmall = getSupportFragmentManager();
+            FragmentTransaction txall = fmall.beginTransaction();
+            txall.add(R.id.main_common_right_up, allFragmentRight, "AllFragmentRight");
+            txall.commit();
 
             MainUTParameter utpFragment = new MainUTParameter();
 

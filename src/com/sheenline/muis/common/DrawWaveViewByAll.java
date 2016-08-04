@@ -39,9 +39,9 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
 
                         if (drawkey != "999") {
 //                            canvas.drawColor(Color.WHITE);
-                            canvas.drawColor(Color.WHITE);
+                            canvas.drawColor(Color.rgb(255, 236, 139));
 
-                            drawAllViewAxs1(canvas, XLength, YLength, YLength, "512");
+                           drawAllViewAxs1(canvas, XLength, YLength, YLength, "512");
 
                         } else {
                             canvas.drawColor(Color.WHITE);
@@ -312,9 +312,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
 
             }
 
-            drawAllViewAxs(canvas,
-                    Tools.intStringArrayPercent(datalist1.get(keystring[index]), (String) keystring[index]),
-                    a, b, position * lineinterval, direction, (String) keystring[index], scale1);
+            drawAllViewAxs(canvas, Tools.intStringArrayPercent(datalist1.get(keystring[index]), (String) keystring[index]), a, b, position * lineinterval, direction, (String) keystring[index], scale1);
 
         }
 
@@ -322,69 +320,47 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
         canvas.drawLine(XPoint, yYPoint - (YLabel.length - 1) * YScale, XPoint, yYPoint, paint); // 左轴线
 
         // 设置Y2轴
-        canvas.drawLine(XLength - rightmargin, yYPoint - (YLabel.length - 1) * YScale, XLength - rightmargin,
-                yYPoint, paint); // 右轴线
+        canvas.drawLine(XLength - rightmargin, yYPoint - (YLabel.length - 1) * YScale, XLength - rightmargin, yYPoint, paint); // 右轴线
 
         for (int i = 0; i < YLabel.length; i++) {
             canvas.drawLine(XPoint, yYPoint - i * YScale, XPoint + 5, yYPoint - i * YScale, paint); // 左刻度
 
-            canvas.drawLine(XLength - rightmargin, yYPoint - i * YScale, XLength - rightmargin - 5,
-                    yYPoint - i * YScale, paint); // 右刻度
+            canvas.drawLine(XLength - rightmargin, yYPoint - i * YScale, XLength - rightmargin - 5, yYPoint - i * YScale, paint); // 右刻度
 
         }
 
         // 设置X轴
-        canvas.drawLine(XPoint, yYPoint / 2 - lineinterval, (XLabel.length - 1) * XScale - rightmargin,
-                yYPoint / 2 - lineinterval, paint); // 轴线
-        canvas.drawLine(XPoint, yYPoint / 2 - lineinterval, XPoint + (int) (200 * a / drawallscale),
-                yYPoint / 2 - lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 - lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - lineinterval, XPoint + (int) (200 * a / drawallscale), yYPoint / 2 - lineinterval, paintoutwave); // 轴线
 
-        canvas.drawLine(XPoint, yYPoint / 2 - 3 * lineinterval, (XLabel.length - 1) * XScale - rightmargin,
-                yYPoint / 2 - 3 * lineinterval, paint); // 轴线
-        canvas.drawLine(XPoint, yYPoint / 2 - 3 * lineinterval, XPoint + (int) (200 * a / drawallscale),
-                yYPoint / 2 - 3 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - 3 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 - 3 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - 3 * lineinterval, XPoint + (int) (200 * a / drawallscale), yYPoint / 2 - 3 * lineinterval, paintoutwave); // 轴线
 
-        canvas.drawLine(XPoint, yYPoint / 2 - 5 * lineinterval, (XLabel.length - 1) * XScale - rightmargin,
-                yYPoint / 2 - 5 * lineinterval, paint); // 轴线
-        canvas.drawLine(XPoint, yYPoint / 2 - 5 * lineinterval, XPoint + (int) (200 * a / drawallscale),
-                yYPoint / 2 - 5 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - 5 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 - 5 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - 5 * lineinterval, XPoint + (int) (200 * a / drawallscale), yYPoint / 2 - 5 * lineinterval, paintoutwave); // 轴线
 
         // 512
-        canvas.drawLine(XPoint, yYPoint / 2 + 5 * lineinterval, (XLabel.length - 1) * XScale - rightmargin,
-                yYPoint / 2 + 5 * lineinterval, paint); // 轴线
-        canvas.drawLine(XPoint, yYPoint / 2 + 5 * lineinterval, XPoint + (int) (70 * a / drawallscale),
-                yYPoint / 2 + 5 * lineinterval, paintoutwave); // 轴线
-        canvas.drawLine(XPoint + (int) (70 * a / drawallscale), yYPoint / 2 + 5 * lineinterval,
-                XPoint + (int) (100 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, paintdoublewave); // 轴线
-        canvas.drawLine(XPoint + (int) (100 * a / drawallscale), yYPoint / 2 + 5 * lineinterval,
-                XPoint + (int) (160 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, paintoutwave); // 轴线
-        canvas.drawLine(XPoint + (int) (160 * a / drawallscale), yYPoint / 2 + 5 * lineinterval,
-                XPoint + (int) (176 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, paintlostwave); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + 5 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 + 5 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + 5 * lineinterval, XPoint + (int) (70 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (70 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, XPoint + (int) (100 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, paintdoublewave); // 轴线
+        canvas.drawLine(XPoint + (int) (100 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, XPoint + (int) (160 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (160 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, XPoint + (int) (176 * a / drawallscale), yYPoint / 2 + 5 * lineinterval, paintlostwave); // 轴线
 
         // 256
-        canvas.drawLine(XPoint, yYPoint / 2 + 3 * lineinterval, (XLabel.length - 1) * XScale - rightmargin,
-                yYPoint / 2 + 3 * lineinterval, paint); // 轴线
-        canvas.drawLine(XPoint, yYPoint / 2 + 3 * lineinterval, XPoint + (int) (80 * a / drawallscale),
-                yYPoint / 2 + 3 * lineinterval, paintoutwave); // 轴线
-        canvas.drawLine(XPoint + (int) (80 * a / drawallscale), yYPoint / 2 + 3 * lineinterval,
-                XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + 3 * lineinterval, paintdoublewave); // 轴线
-        canvas.drawLine(XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + 3 * lineinterval,
-                XPoint + 220 * a / drawallscale, yYPoint / 2 + 3 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + 3 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 + 3 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + 3 * lineinterval, XPoint + (int) (80 * a / drawallscale), yYPoint / 2 + 3 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (80 * a / drawallscale), yYPoint / 2 + 3 * lineinterval, XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + 3 * lineinterval, paintdoublewave); // 轴线
+        canvas.drawLine(XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + 3 * lineinterval, XPoint + 220 * a / drawallscale, yYPoint / 2 + 3 * lineinterval, paintoutwave); // 轴线
 
         // 0
-        canvas.drawLine(XPoint, yYPoint / 2 + lineinterval, (XLabel.length - 1) * XScale - rightmargin,
-                yYPoint / 2 + lineinterval, paint); // 轴线
-        canvas.drawLine(XPoint, yYPoint / 2 + lineinterval, XPoint + (int) (80 * a / drawallscale),
-                yYPoint / 2 + lineinterval, paintoutwave); // 轴线
-        canvas.drawLine(XPoint + (int) (80 * a / drawallscale), yYPoint / 2 + lineinterval,
-                XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + lineinterval, paintdoublewave); // 轴线
-        canvas.drawLine(XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + lineinterval,
-                XPoint + 220 * a / drawallscale, yYPoint / 2 + lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 + lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + lineinterval, XPoint + (int) (80 * a / drawallscale), yYPoint / 2 + lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (80 * a / drawallscale), yYPoint / 2 + lineinterval, XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + lineinterval, paintdoublewave); // 轴线
+        canvas.drawLine(XPoint + (int) (120 * a / drawallscale), yYPoint / 2 + lineinterval, XPoint + 220 * a / drawallscale, yYPoint / 2 + lineinterval, paintoutwave); // 轴线
 
     }
 
-    private final void drawAllViewAxs(Canvas canvas, String[] datastr, float a, float b, int interval,
-                                      boolean positive, String title, Float scale1) {
+    private final void drawAllViewAxs(Canvas canvas, String[] datastr, float a, float b, int interval, boolean positive, String title, Float scale1) {
         // String[] datastrexe = exactpoint(datastr);
         String[] datastrexe = exactpoint2(datastr, intThreshold);
         // String[] datastrexe = datastr;
@@ -407,47 +383,15 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
 
                 if (interval < 0) {
                     if (positive == true) {
-                        canvas.drawLine(XPoint + (int) (i * scale1 * a / drawallscale),
-                                -1 * YCoordScale(datastrexe[i], yYPoint, YScale)
-                                        + 3 * yYPoint / 2 - interval,
-                                XPoint + (int) ((i + 1) * scale1 * a / drawallscale),
-                                -1 * YCoordScale(datastrexe[i + 1], yYPoint, YScale)
-                                        + 3 * yYPoint / 2 - interval,
-                                paintLine);
+                        canvas.drawLine(XPoint + (int) (i * scale1 * a / drawallscale), -1 * YCoordScale(datastrexe[i], yYPoint, YScale) + 3 * yYPoint / 2 - interval, XPoint + (int) ((i + 1) * scale1 * a / drawallscale), -1 * YCoordScale(datastrexe[i + 1], yYPoint, YScale) + 3 * yYPoint / 2 - interval, paintLine);
 
                     }
 
                 } else {
                     if (positive == true) {
-                        canvas.drawLine(
-                                XPoint + (int) (((i + (int) Math.round(intzero * NewScale))
-                                        * XScale / Integer.valueOf(XLabel[1])) / NewScale * a
-                                        / drawallscale),
-                                YCoordScale(datastrexe[i], yYPoint, YScale) - yYPoint / 2
-                                        - interval,
-                                XPoint + (int) (((i + (int) Math.round(intzero * NewScale) + 1)
-                                        * XScale / Integer.valueOf(XLabel[1])) / NewScale * a
-                                        / drawallscale),
-                                YCoordScale(datastrexe[i + 1], yYPoint, YScale) - yYPoint / 2
-                                        - interval,
-                                paintLine);
+                        canvas.drawLine(XPoint + (int) (((i + (int) Math.round(intzero * NewScale)) * XScale / Integer.valueOf(XLabel[1])) / NewScale * a / drawallscale), YCoordScale(datastrexe[i], yYPoint, YScale) - yYPoint / 2 - interval, XPoint + (int) (((i + (int) Math.round(intzero * NewScale) + 1) * XScale / Integer.valueOf(XLabel[1])) / NewScale * a / drawallscale), YCoordScale(datastrexe[i + 1], yYPoint, YScale) - yYPoint / 2 - interval, paintLine);
                     } else {
-                        canvas.drawLine(
-                                XLength - rightmargin
-                                        - 1 * (XPoint - leftmargin
-                                        + (i + (int) Math.round(intzero * NewScale))
-                                        * XScale / Integer.valueOf(XLabel[1])),
-                                YCoordScale(datastrexe[i], yYPoint, YScale)
-                                        - yYPoint
-                                        / 2
-                                        - interval,
-                                XLength - rightmargin
-                                        - 1 * (XPoint - leftmargin
-                                        + (i + (int) Math.round(intzero * NewScale) + 1)
-                                        * XScale / Integer.valueOf(XLabel[1])),
-                                YCoordScale(datastrexe[i + 1], yYPoint, YScale) - yYPoint / 2
-                                        - interval,
-                                paintLine);
+                        canvas.drawLine(XLength - rightmargin - 1 * (XPoint - leftmargin + (i + (int) Math.round(intzero * NewScale)) * XScale / Integer.valueOf(XLabel[1])), YCoordScale(datastrexe[i], yYPoint, YScale) - yYPoint / 2 - interval, XLength - rightmargin - 1 * (XPoint - leftmargin + (i + (int) Math.round(intzero * NewScale) + 1) * XScale / Integer.valueOf(XLabel[1])), YCoordScale(datastrexe[i + 1], yYPoint, YScale) - yYPoint / 2 - interval, paintLine);
                     }
                 }
 
@@ -511,8 +455,8 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
 
     private final void drawAllViewAxs1(Canvas canvas, float xlen, float ylen, int scale, String title) {
 
-
-        XPoint = leftmargin;
+        int lineinterval = 15;// 通道线间隔
+        XPoint = 0;
 
         float yYPoint = ylen; //下边界
 
@@ -526,36 +470,63 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
         paint.setAntiAlias(true);// 去锯齿
         paint.setColor(Color.BLACK);// 颜色
 
+        Paint paintdoublewave = new Paint();
+        paintdoublewave.setStyle(Paint.Style.STROKE);
+        paintdoublewave.setAntiAlias(true);// 去锯齿
+        paintdoublewave.setColor(Color.RED);// 颜色
+        paintdoublewave.setStrokeWidth(4);
+        Paint paintoutwave = new Paint();
+        paintoutwave.setStyle(Paint.Style.STROKE);
+        paintoutwave.setAntiAlias(true);// 去锯齿
+        paintoutwave.setColor(Color.BLUE);// 颜色
+        paintoutwave.setStrokeWidth(4);
 
-        // 设置Y轴
-        canvas.drawLine(XPoint, yYPoint - (YLabel.length - 1) * YScale, XPoint, yYPoint, paint); // 轴线
-//y刻度
+        Paint paintlostwave = new Paint();
+        paintlostwave.setStyle(Paint.Style.STROKE);
+        paintlostwave.setAntiAlias(true);// 去锯齿
+        paintlostwave.setColor(Color.RED);// 颜色
+        paintlostwave.setStrokeWidth(4);
+        // 设置Y1轴
+        canvas.drawLine(XPoint, yYPoint - (YLabel.length - 1) * YScale, XPoint, yYPoint, paint); // 左轴线
+
+        // 设置Y2轴
+        canvas.drawLine(XLength - rightmargin, yYPoint - (YLabel.length - 1) * YScale, XLength - rightmargin, yYPoint, paint); // 右轴线
+
         for (int i = 0; i < YLabel.length; i++) {
+            canvas.drawLine(XPoint, yYPoint - i * YScale, XPoint + 5, yYPoint - i * YScale, paint); // 左刻度
 
+            canvas.drawLine(XLength - rightmargin, yYPoint - i * YScale, XLength - rightmargin - 5, yYPoint - i * YScale, paint); // 右刻度
 
-            canvas.drawLine(XPoint, yYPoint - i * YScale, XPoint - 5, yYPoint - i * YScale, paint); // 刻度
-
-            canvas.drawText(YLabel[i], XPoint - 25, yYPoint - i * YScale + 20, paint); // 文字
         }
 
-        //x刻度
-
-
-            for (int i = 0; i < NewxLable.length - 1; i++) {
-
-                canvas.drawLine(XPoint + NewxLable[i] * XScale / Integer.valueOf(XLabel[1]),
-                        yYPoint, XPoint + NewxLable[i] * XScale / Integer.valueOf(XLabel[1]),
-                        yYPoint + 5, paint); // 刻度
-
-                canvas.drawText(Integer.toString(NewxLable[i]),
-                        XPoint + NewxLable[i] * XScale / Integer.valueOf(XLabel[1]) - 25,
-                        yYPoint + 20, paint); // 文字
-
-            }
-
-
         // 设置X轴
-        canvas.drawLine(XPoint, yYPoint, XPoint + (XLabel.length - 1) * XScale, yYPoint, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 - lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - lineinterval, XPoint + (int) (200 *xlen / drawallscale), yYPoint / 2 - lineinterval, paintoutwave); // 轴线
+
+        canvas.drawLine(XPoint, yYPoint / 2 - 3 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 - 3 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - 3 * lineinterval, XPoint + (int) (200 * xlen / drawallscale), yYPoint / 2 - 3 * lineinterval, paintoutwave); // 轴线
+
+        canvas.drawLine(XPoint, yYPoint / 2 - 5 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 - 5 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 - 5 * lineinterval, XPoint + (int) (200 *xlen / drawallscale), yYPoint / 2 - 5 * lineinterval, paintoutwave); // 轴线
+
+        // 512
+        canvas.drawLine(XPoint, yYPoint / 2 + 5 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 + 5 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + 5 * lineinterval, XPoint + (int) (70 * xlen / drawallscale), yYPoint / 2 + 5 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (70 * xlen / drawallscale), yYPoint / 2 + 5 * lineinterval, XPoint + (int) (100 * xlen / drawallscale), yYPoint / 2 + 5 * lineinterval, paintdoublewave); // 轴线
+        canvas.drawLine(XPoint + (int) (100 * xlen / drawallscale), yYPoint / 2 + 5 * lineinterval, XPoint + (int) (160 * xlen / drawallscale), yYPoint / 2 + 5 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (160 * xlen / drawallscale), yYPoint / 2 + 5 * lineinterval, XPoint + (int) (176 * xlen / drawallscale), yYPoint / 2 + 5 * lineinterval, paintlostwave); // 轴线
+
+        // 256
+        canvas.drawLine(XPoint, yYPoint / 2 + 3 * lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 + 3 * lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + 3 * lineinterval, XPoint + (int) (80 * xlen / drawallscale), yYPoint / 2 + 3 * lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (80 * xlen / drawallscale), yYPoint / 2 + 3 * lineinterval, XPoint + (int) (120 * xlen / drawallscale), yYPoint / 2 + 3 * lineinterval, paintdoublewave); // 轴线
+        canvas.drawLine(XPoint + (int) (120 * xlen / drawallscale), yYPoint / 2 + 3 * lineinterval, XPoint + 220 * xlen / drawallscale, yYPoint / 2 + 3 * lineinterval, paintoutwave); // 轴线
+
+        // 0
+        canvas.drawLine(XPoint, yYPoint / 2 + lineinterval, (XLabel.length - 1) * XScale - rightmargin, yYPoint / 2 + lineinterval, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint / 2 + lineinterval, XPoint + (int) (80 * xlen / drawallscale), yYPoint / 2 + lineinterval, paintoutwave); // 轴线
+        canvas.drawLine(XPoint + (int) (80 * xlen / drawallscale), yYPoint / 2 + lineinterval, XPoint + (int) (120 * xlen / drawallscale), yYPoint / 2 + lineinterval, paintdoublewave); // 轴线
+        canvas.drawLine(XPoint + (int) (120 * xlen / drawallscale), yYPoint / 2 + lineinterval, XPoint + 220 * xlen / drawallscale, yYPoint / 2 + lineinterval, paintoutwave); // 轴线
 
 
     }
@@ -671,12 +642,8 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
 
             for (int i = 0; i < NewxLable.length - 1; i = i + 2) {
 
-                canvas.drawLine(XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]),
-                        yYPoint, XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]),
-                        yYPoint + 5, paint); // 刻度
-                canvas.drawText(Integer.toString(NewxLable[i]),
-                        XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]) - 20,
-                        yYPoint + 10, paint); // 文字
+                canvas.drawLine(XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]), yYPoint, XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]), yYPoint + 5, paint); // 刻度
+                canvas.drawText(Integer.toString(NewxLable[i]), XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]) - 20, yYPoint + 10, paint); // 文字
 
             }
         }
@@ -687,15 +654,8 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
         // 绘制点
         for (int i = 0; i < datastrarray.length - 1; i = i + 1) {
 
-            if (XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale
-                    / Integer.valueOf(XLabel[1]) >= 0) {
-                canvas.drawLine(
-                        XPoint + (i + (int) Math.round(intzero * NewScale)) * XScale
-                                / Integer.valueOf(XLabel[1]),
-                        YCoord(datastrarray[i], yYPoint, YScale),
-                        XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale
-                                / Integer.valueOf(XLabel[1]),
-                        YCoord(datastrarray[i + 1], yYPoint, YScale), paintLine);
+            if (XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale / Integer.valueOf(XLabel[1]) >= 0) {
+                canvas.drawLine(XPoint + (i + (int) Math.round(intzero * NewScale)) * XScale / Integer.valueOf(XLabel[1]), YCoord(datastrarray[i], yYPoint, YScale), XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale / Integer.valueOf(XLabel[1]), YCoord(datastrarray[i + 1], yYPoint, YScale), paintLine);
             }
 
         }
@@ -710,25 +670,15 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
             paintLine1.setAntiAlias(true);// 去锯齿
 
             paintLine1.setColor(Color.RED);
-            canvas.drawLine(
-                    XPoint + ((int) Math.round(intthstart * NewScale)) * XScale
-                            / Integer.valueOf(XLabel[1]),
-                    yYPoint - 40 * YScale / Integer.valueOf(YLabel[1]),
-                    XPoint + ((int) Math.round((intthstart + intthlength) * NewScale)) * XScale
-                            / Integer.valueOf(XLabel[1]),
-                    yYPoint - 40 * YScale / Integer.valueOf(YLabel[1]), paintLine1); // 刻度
+            canvas.drawLine(XPoint + ((int) Math.round(intthstart * NewScale)) * XScale / Integer.valueOf(XLabel[1]), yYPoint - 40 * YScale / Integer.valueOf(YLabel[1]), XPoint + ((int) Math.round((intthstart + intthlength) * NewScale)) * XScale / Integer.valueOf(XLabel[1]), yYPoint - 40 * YScale / Integer.valueOf(YLabel[1]), paintLine1); // 刻度
 
             String[] tempdata1 = new String[(int) Math.round(intthlength * NewScale)];
-            System.arraycopy(datastrarray, (int) Math.round((intthstart - intzero) * NewScale), tempdata1,
-                    0, tempdata1.length);
+            System.arraycopy(datastrarray, (int) Math.round((intthstart - intzero) * NewScale), tempdata1, 0, tempdata1.length);
             int[] maxvalue = Tools.getMax(tempdata1);
             Paint paint2 = new Paint();
             paint2.setTextSize(30);
             paint2.setColor(Color.RED);
-            canvas.drawText(Integer.toString(maxvalue[0]),
-                    XPoint + ((int) Math.round(intthstart * NewScale + maxvalue[1])) * XScale
-                            / Integer.valueOf(XLabel[1]),
-                    yYPoint - 50 * YScale / Integer.valueOf(YLabel[1]), paint2);
+            canvas.drawText(Integer.toString(maxvalue[0]), XPoint + ((int) Math.round(intthstart * NewScale + maxvalue[1])) * XScale / Integer.valueOf(XLabel[1]), yYPoint - 50 * YScale / Integer.valueOf(YLabel[1]), paint2);
 
             Log.d("maxvalue", Integer.toString(maxvalue[0]));
 
@@ -738,11 +688,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
             // Integer.valueOf(XLabel[1]), yYPoint - 30 * YScale /
             // Integer.valueOf(YLabel[1]), paint2);
 
-            canvas.drawText(
-                    Integer.toString(Math.round(intthstart + (int) Math.round(maxvalue[1] / NewScale))),
-                    XPoint + ((int) Math.round(intthstart * NewScale + maxvalue[1])) * XScale
-                            / Integer.valueOf(XLabel[1]),
-                    yYPoint - 30 * YScale / Integer.valueOf(YLabel[1]), paint2);
+            canvas.drawText(Integer.toString(Math.round(intthstart + (int) Math.round(maxvalue[1] / NewScale))), XPoint + ((int) Math.round(intthstart * NewScale + maxvalue[1])) * XScale / Integer.valueOf(XLabel[1]), yYPoint - 30 * YScale / Integer.valueOf(YLabel[1]), paint2);
         }
 
     }
@@ -838,9 +784,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
     }
 
 
-    public void setinfo(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels,
-                        TreeMap<String, int[]> AllData, String strTitle, String key, int thstart, int thlength, int zero,
-                        int Threshold) {
+    public void setinfo(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels, TreeMap<String, int[]> AllData, String strTitle, String key, int thstart, int thlength, int zero, int Threshold) {
 
         if (AllData == null) {
 
@@ -893,9 +837,10 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         // TODO 自动生成的方法存根
-
+        Log.d("testsys","2222");
         if (null == mDrawThread) {
             mDrawThread = new DrawThread();
+
             mDrawThread.start();
         }
 
