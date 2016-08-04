@@ -11,6 +11,7 @@ import java.util.TreeMap;
 import com.sheenline.muis.R;
 import com.sheenline.muis.common.Constant;
 import com.sheenline.muis.common.DrawWaveViewByA;
+import com.sheenline.muis.common.DrawWaveViewByAll;
 import com.sheenline.muis.common.DrawWaveViewByB;
 import com.sheenline.muis.common.TestJNI;
 import com.sheenline.muis.common.Tools;
@@ -307,8 +308,7 @@ public class MainActivity extends FragmentActivity {
 
     private ArrayAdapter<String> adpspinnerDigtalFiter = null;
 
-    private ArrayAdapter<String> adpspinnerpachannelnr = null, adpspinnerpacaonr = null, adpspinnerpapuls = null,
-            adpspinnerpagain = null, adpspinnerpaADdelay = null;
+    private ArrayAdapter<String> adpspinnerpachannelnr = null, adpspinnerpacaonr = null, adpspinnerpapuls = null, adpspinnerpagain = null, adpspinnerpaADdelay = null;
 
     private ArrayAdapter<String> adpspinnerpaDigtalFiter = null, adpspinnerpaswitcher = null;
 
@@ -436,9 +436,9 @@ public class MainActivity extends FragmentActivity {
                 case "Metal":
 
 
-                    onDrawAWaveAxs();
+                    //onDrawAWaveAxs();
 //                  onDrawAWave(treeMapAWaveData);
-
+                    onDrawAllWaveAxs();
                     onDrawBWaveAxs();
                     break;
                 case "Weld":
@@ -530,26 +530,37 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    public final void onDrawAllWaveAxs() {
+
+        View tabview = MainActivity.this.findViewById(R.id.main_common_right_up);
+
+        DrawWaveViewByAll mTypeView = (DrawWaveViewByAll) tabview.findViewById(R.id.area_atype_view);
+
+        mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"});
+
+    }
+
     public final void onDrawAWaveAxs() {
 
-        View tabAview = MainActivity.this.findViewById(R.id.main_common_right_up);
+        View tabview = MainActivity.this.findViewById(R.id.main_common_right_up);
 
-        DrawWaveViewByA mATypeView = (DrawWaveViewByA) tabAview.findViewById(R.id.area_atype_view);
+        DrawWaveViewByA mTypeView = (DrawWaveViewByA) tabview.findViewById(R.id.area_atype_view);
 
-        mATypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0,100, 200, 300, 400, 500, 600,700},1, new String[]{"0", "50", "100"});
+        mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"});
 
     }
 
 
     public final void onDrawBWaveAxs() {
 
-        View tabBview = MainActivity.this.findViewById(R.id.main_common_right_down);
+        View tabview = MainActivity.this.findViewById(R.id.main_common_right_down);
 
-        DrawWaveViewByB mBTypeView = (DrawWaveViewByB) tabBview.findViewById(R.id.area_btype_view);
+        DrawWaveViewByB mTypeView = (DrawWaveViewByB) tabview.findViewById(R.id.area_btype_view);
 
-        mBTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0,100, 200, 300, 400, 500, 600,700},1, new String[]{"0", "50", "100"});
+        mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"});
 
     }
+
 
     // 绘制A显
     public final void onDrawAWave(TreeMap<String, int[]> aTreeMap) {
@@ -563,31 +574,23 @@ public class MainActivity extends FragmentActivity {
                 if (aTreeMap != null) {
                     switch (strDefineChannelKey) {
                         case "512":
-                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"},
-                                    new int[]{100, 212, 200, 423, 300, 634}, 624 / 295.5,
-                                    new String[]{"0", "50", "100"}, // Y轴刻度
+                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{100, 212, 200, 423, 300, 634}, 624 / 295.5, new String[]{"0", "50", "100"}, // Y轴刻度
                                     aTreeMap, // 数据
-                                    "", strDefineChannelKey, definethstart, definethlength, intDefineZero,
-                                    intThresoldValue);
+                                    "", strDefineChannelKey, definethstart, definethlength, intDefineZero, intThresoldValue);
 
                             break;
                         case "0":
                         case "256":
-                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"},
-                                    new int[]{50, 195, 100, 390, 150, 584, 200, 779}, 624 / 324.5,
-                                    new String[]{"0", "50", "100"}, // Y轴刻度
+                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{50, 195, 100, 390, 150, 584, 200, 779}, 624 / 324.5, new String[]{"0", "50", "100"}, // Y轴刻度
                                     aTreeMap, // 数据
-                                    "", strDefineChannelKey, definethstart, definethlength, intDefineZero,
-                                    intThresoldValue);
+                                    "", strDefineChannelKey, definethstart, definethlength, intDefineZero, intThresoldValue);
                             break;
                         default:
 
-                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null,
-                                    1, //
+                            mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null, 1, //
                                     new String[]{"0", "50", "100"}, // Y轴刻度
                                     aTreeMap, // 数据
-                                    "", strDefineChannelKey, definethstart, definethlength, intDefineZero,
-                                    intThresoldValue);
+                                    "", strDefineChannelKey, definethstart, definethlength, intDefineZero, intThresoldValue);
 
                             break;
                     }
@@ -696,8 +699,7 @@ public class MainActivity extends FragmentActivity {
 
         spnGain = (Spinner) findViewById(R.id.spn_mmcb_gain);
 
-        adpGain = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
-                Constant.ConValue.mMetalCommonGainStep);
+        adpGain = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Constant.ConValue.mMetalCommonGainStep);
 
         adpGain.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -720,8 +722,7 @@ public class MainActivity extends FragmentActivity {
 
         spnChannel = (Spinner) findViewById(R.id.spn_mmcb_channels);
 
-        adpChannel = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
-                Constant.ConValue.mMetalCommonChannels);
+        adpChannel = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Constant.ConValue.mMetalCommonChannels);
 
         adpChannel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -744,8 +745,7 @@ public class MainActivity extends FragmentActivity {
 
         spnThreshold = (Spinner) findViewById(R.id.spn_mmcb_threshold2);
 
-        adpThreshold = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
-                Constant.ConValue.mMetalCommonThreshold);
+        adpThreshold = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Constant.ConValue.mMetalCommonThreshold);
 
         adpThreshold.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -768,8 +768,7 @@ public class MainActivity extends FragmentActivity {
 
         spnCrystalmode = (Spinner) findViewById(R.id.spn_mmcb_crystalmode);
 
-        adpCrystalmode = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
-                Constant.ConValue.mMetalCommonCrystalmode);
+        adpCrystalmode = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Constant.ConValue.mMetalCommonCrystalmode);
 
         adpCrystalmode.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnCrystalmode.setAdapter(adpCrystalmode);
@@ -1128,15 +1127,13 @@ public class MainActivity extends FragmentActivity {
             DrawAWaveView aFragmentRight = new DrawAWaveView();
             FragmentManager fma = getSupportFragmentManager();
             FragmentTransaction txa = fma.beginTransaction();
-            txa.add(R.id.main_common_right_up,
-                    aFragmentRight, "AFragmentRight");
+            txa.add(R.id.main_common_right_up, aFragmentRight, "AFragmentRight");
             txa.commit();
 
             DrawBWaveView bFragmentRight = new DrawBWaveView();
             FragmentManager fmb = getSupportFragmentManager();
             FragmentTransaction txb = fmb.beginTransaction();
-            txb.add(R.id.main_common_right_down,
-                    bFragmentRight, "BFragmentRight");
+            txb.add(R.id.main_common_right_down, bFragmentRight, "BFragmentRight");
             txb.commit();
 
 

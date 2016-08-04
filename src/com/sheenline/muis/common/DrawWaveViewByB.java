@@ -38,7 +38,7 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
                 try {
                     synchronized (mHolder) {
                         canvas = mHolder.lockCanvas();
-                        canvas.drawColor(Color.YELLOW);
+                        canvas.drawColor(Color.WHITE);
                         if (drawkey != "999") {
                             // canvas.drawColor(Color.WHITE);
 
