@@ -45,7 +45,7 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
                             //drawBView(canvas, Data, XLength, YLength, YLength, drawkey);
                             drawBViewAxs(canvas, XLength, YLength, YLength, "512");
                         } else {
-                            
+
                             canvas.drawColor(Color.WHITE);
 
                             // drawAllAView(canvas,
