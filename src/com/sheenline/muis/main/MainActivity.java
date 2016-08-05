@@ -1104,6 +1104,7 @@ public class MainActivity extends FragmentActivity {
             m.addTab(m.newTabSpec("tab1").setIndicator("波形显示").setContent(R.id.main_wave));
             m.addTab(m.newTabSpec("tab2").setIndicator("超声参数").setContent(R.id.main_utparameter));
             m.addTab(m.newTabSpec("tab3").setIndicator("预设参数").setContent(R.id.main_sysconfig));
+            m.addTab(m.newTabSpec("tab4").setIndicator("存储参数").setContent(R.id.main_savedata));
             TabWidget tabWidget = m.getTabWidget();
             for (int i = 0; i < tabWidget.getChildCount(); i++) {
 
@@ -1159,6 +1160,15 @@ public class MainActivity extends FragmentActivity {
 
             transaction = manager.beginTransaction();
             transaction.replace(R.id.main_sysconfig, scFragment, "scFragment");
+
+            transaction.commit();
+
+            MainSaveData sdFragment = new MainSaveData();
+
+            manager = getSupportFragmentManager();
+
+            transaction = manager.beginTransaction();
+            transaction.replace(R.id.main_savedata, sdFragment, "sdFragment");
 
             transaction.commit();
 

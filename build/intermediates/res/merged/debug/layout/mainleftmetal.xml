@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
    android:layout_marginRight="10dp">
 
     <RadioGroup
@@ -12,75 +12,78 @@
         android:orientation="vertical" >
 
         <RadioButton
-            android:id="@+id/rb_all"
+            android:id="@+id/main_rb_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="融合" />
+            android:text="融合dB" />
 
         <RadioButton
-            android:id="@+id/rb_70pluswai"
+            android:id="@+id/main_rb_70pluswai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="70°+外向" />
+            android:text="70°+外向dB" />
 
         <RadioButton
-            android:id="@+id/rb_70pluszheng"
+            android:id="@+id/main_rb_70pluszheng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="70°+正向" />
 
         <RadioButton
-            android:id="@+id/rb_70plusnei"
+            android:id="@+id/main_rb_70plusnei"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="70°+内向" />
 
         <RadioButton
-            android:id="@+id/rb_70minuswai"
+            android:id="@+id/main_rb_70minuswai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="70°-外向" />
 
         <RadioButton
-            android:id="@+id/rb_70minuszheng"
+            android:id="@+id/main_rb_70minuszheng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="70°-正向" />
 
         <RadioButton
-            android:id="@+id/rb_70minusnei"
+            android:id="@+id/main_rb_70minusnei"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="70°-内向" />
 
         <RadioButton
-            android:id="@+id/rb_37plus"
+            android:id="@+id/main_rb_37plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="37°+" />
 
         <RadioButton
-            android:id="@+id/rb_37minus"
+            android:id="@+id/main_rb_37minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="37°-" />
 
         <RadioButton
-            android:id="@+id/rb_0"
+            android:id="@+id/main_rb_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="0°" />
     </RadioGroup>
+
+
+
 
     <Button
         android:id="@+id/bt_minus"
