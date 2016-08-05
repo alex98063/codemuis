@@ -99,7 +99,7 @@
         android:id="@+id/metal_bt_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/bt_minus"
+        android:layout_above="@id/metal_bt_minus"
         android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true"
 
@@ -110,7 +110,7 @@
         android:id="@+id/metal_bt_turnout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/bt_plus"
+        android:layout_above="@id/metal_bt_plus"
         android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true"
 
