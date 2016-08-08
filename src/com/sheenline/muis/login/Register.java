@@ -30,7 +30,7 @@ public class Register extends SQLiteOpenHelper {
 	public String find(String aString) {
 		String bString = null;
 		SQLiteDatabase db = this.getReadableDatabase();
-		String sql = "select * from " + TABLE_NAME + " where " + "user_name = '" + aString + "'";
+		String sql = "muisselect * from " + TABLE_NAME + " where " + "user_name = '" + aString + "'";
 
 		try {
 			Cursor cursor = db.rawQuery(sql, null);
@@ -54,7 +54,7 @@ public class Register extends SQLiteOpenHelper {
 
 		try {
 			SQLiteDatabase db = this.getReadableDatabase();
-			String sql = "select * from " + TABLE_NAME + " where " + "user_name = '" + username + "'";
+			String sql = "muisselect * from " + TABLE_NAME + " where " + "user_name = '" + username + "'";
 
 			Cursor cursor = db.rawQuery(sql, null);
 

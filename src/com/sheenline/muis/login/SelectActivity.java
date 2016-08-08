@@ -65,7 +65,7 @@ public class SelectActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.select);
+        setContentView(R.layout.muisselect);
 
         setUpViews();
 
@@ -117,7 +117,7 @@ public class SelectActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.menu_login:
 
-                final View DialogView = factory.inflate(R.layout.login, null);
+                final View DialogView = factory.inflate(R.layout.muislogin, null);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -128,9 +128,9 @@ public class SelectActivity extends Activity {
                             public void onClick(DialogInterface arg0, int arg1) {
 
                                 EditText etUser1 = (EditText) (DialogView
-                                        .findViewById(R.id.AccountEditText));
+                                        .findViewById(R.id.login_account_user));
                                 EditText etPassWord1 = (EditText) (DialogView
-                                        .findViewById(R.id.PasswordEidtText));
+                                        .findViewById(R.id.login_password_user));
                                 String bString = findUser(etUser1.getText().toString());
 
                                 if (bString == null)
@@ -172,7 +172,7 @@ public class SelectActivity extends Activity {
                 break;
 
             case R.id.menu_register:
-                final View DialogView1 = factory.inflate(R.layout.register, null);
+                final View DialogView1 = factory.inflate(R.layout.muisregister, null);
 
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
                 builder1.setTitle("注册").setView(DialogView1)
@@ -181,9 +181,9 @@ public class SelectActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface arg0, int arg1) {
                                 EditText etUser = (EditText) (DialogView1
-                                        .findViewById(R.id.ReAccountEditText));
+                                        .findViewById(R.id.re_account_user));
                                 EditText etPassWord = (EditText) (DialogView1
-                                        .findViewById(R.id.RePasswordEidtText));
+                                        .findViewById(R.id.re_password_user));
                                 addUser(etUser.getText().toString(),
                                         etPassWord.getText().toString());
                             }
