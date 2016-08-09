@@ -20,10 +20,6 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\muisjob.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainutparameter.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\mainutparameter.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\muisconfig.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\muisconfig.xml"
     },
@@ -32,8 +28,16 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\muisregister.xml"
     },
     {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainutparameter.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\mainutparameter.xml"
+    },
+    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawbtype.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\drawbtype.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\muislogin.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\muislogin.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainsavedata.xml",
@@ -42,10 +46,6 @@
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\muisselect.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\muisselect.xml"
-    },
-    {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\muislogin.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\muislogin.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainsysconfig.xml",

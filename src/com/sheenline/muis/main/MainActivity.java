@@ -15,6 +15,7 @@ import com.sheenline.muis.common.DrawWaveViewByAll;
 import com.sheenline.muis.common.DrawWaveViewByB;
 import com.sheenline.muis.common.TestJNI;
 import com.sheenline.muis.common.Tools;
+import com.sheenline.muis.login.SelectActivity;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -1364,8 +1365,7 @@ public class MainActivity extends FragmentActivity {
             } catch (Exception e) {
             } finally {
                 Log.d("testsys", usetype + " Mode exit!");
-                MainActivity.this.finish();
-
+                System.exit(0);
                 return true;
             }
 

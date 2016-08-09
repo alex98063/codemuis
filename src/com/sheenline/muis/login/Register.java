@@ -10,9 +10,11 @@ public class Register extends SQLiteOpenHelper {
 	private final static String	DATABASE_NAME		= "USERS.db";
 	private final static int	DATABASE_VERSION	= 1;
 	private final static String	TABLE_NAME			= "users_table";
-	public final static String	USER_ID				= "user_id";
-	public final static String	USER_NAME			= "user_name";
-	public final static String	USER_PASSWORD		= "user_password";
+	public final static String 	USER_ID				= "user_id";
+	public final static String 	USER_NAME			= "user_name";
+	public final static String USER_PASSWORD		= "user_password";
+	public final static String	 USER_BUREAU			= "user_bureau";
+	public final static String	 USER_SMALLBUREAU	= "user_smallbureau";
 
 	public Register(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,16 +29,18 @@ public class Register extends SQLiteOpenHelper {
 		db.delete(TABLE_NAME, where, whereValue);
 	}
 
-	public String find(String aString) {
-		String bString = null;
+	public String[] find(String aString) {
+		String[] bString = new String[3];
 		SQLiteDatabase db = this.getReadableDatabase();
-		String sql = "muisselect * from " + TABLE_NAME + " where " + "user_name = '" + aString + "'";
+		String sql = "select * from " + TABLE_NAME + " where " + "user_name = '" + aString + "'";
 
 		try {
 			Cursor cursor = db.rawQuery(sql, null);
 
 			while (cursor.moveToNext()) {
-				bString = cursor.getString(cursor.getColumnIndex("user_password"));
+				bString[0] = cursor.getString(cursor.getColumnIndex("user_password"));
+				bString[1]= cursor.getString(cursor.getColumnIndex("user_bureau"));
+				bString[2]=cursor.getString(cursor.getColumnIndex("user_smallbureau"));
 			}
 			if (null != cursor) {
 				cursor.close();
@@ -50,11 +54,11 @@ public class Register extends SQLiteOpenHelper {
 	}
 
 	// 增加操作
-	public Boolean insert(String username, String password) {
+	public Boolean insert(String username, String password,String bureau,String samllbureau) {
 
 		try {
 			SQLiteDatabase db = this.getReadableDatabase();
-			String sql = "muisselect * from " + TABLE_NAME + " where " + "user_name = '" + username + "'";
+			String sql = "select * from " + TABLE_NAME + " where " + "user_name = '" + username + "'";
 
 			Cursor cursor = db.rawQuery(sql, null);
 
@@ -70,6 +74,8 @@ public class Register extends SQLiteOpenHelper {
 					ContentValues cv = new ContentValues();
 					cv.put(USER_NAME, username);
 					cv.put(USER_PASSWORD, password);
+					cv.put(USER_BUREAU,bureau);
+					cv.put(USER_SMALLBUREAU,samllbureau);
 					db1.insert(TABLE_NAME, null, cv);
 					return true;
 				}
@@ -88,7 +94,7 @@ public class Register extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 
 		String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" + USER_ID
-				+ " INTEGER primary key autoincrement, " + USER_NAME + " text, " + USER_PASSWORD + " text);";
+				+ " INTEGER primary key autoincrement, " + USER_NAME + " text, " + USER_PASSWORD + " text,"+USER_BUREAU + " text, "+USER_SMALLBUREAU + " text);";
 
 		db.execSQL(sql);
 
@@ -109,7 +115,7 @@ public class Register extends SQLiteOpenHelper {
 	}
 
 	// 修改操作
-	public void update(int id, String username, String password) {
+	public void update(int id, String username, String password,String bureau,String smallbureau) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		String where = USER_ID + " = ?";
 		String[] whereValue = { Integer.toString(id) };
@@ -117,6 +123,9 @@ public class Register extends SQLiteOpenHelper {
 		ContentValues cv = new ContentValues();
 		cv.put(USER_NAME, username);
 		cv.put(USER_PASSWORD, password);
+		cv.put(USER_BUREAU,bureau);
+		cv.put(USER_SMALLBUREAU,smallbureau);
+
 		db.update(TABLE_NAME, cv, where, whereValue);
 	}
 

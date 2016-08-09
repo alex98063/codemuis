@@ -21,18 +21,18 @@ public class SelectActivity extends Activity {
 
     // 设置服务器IP和端口
 
-    boolean iflogin = false;
+    boolean logedin = false;
 
     private Register mregisterSQL;
 
-    public void addUser(String a, String b) {
+    public void addUser(String a, String b,String c,String d) {
 
         if (a.equals("") || b.equals("")) {
             Toast.makeText(this, "注册失败！", Toast.LENGTH_LONG).show();
             return;
         }
 
-        Boolean boolean1 = mregisterSQL.insert(a, b);
+        Boolean boolean1 = mregisterSQL.insert(a, b,c,d);
 
         if (boolean1) {
 
@@ -49,11 +49,11 @@ public class SelectActivity extends Activity {
         Toast.makeText(this, "Delete Successed!", Toast.LENGTH_SHORT).show();
     }
 
-    public String findUser(String aString) {
+    public String[] findUser(String aString) {
         if (aString == null) {
             return null;
         }
-        String bString;
+        String[] bString;
 
         bString = mregisterSQL.find(aString);
 
@@ -71,7 +71,7 @@ public class SelectActivity extends Activity {
 
         Intent replyintent = getIntent(); // 获取已有的intent对象
 
-        iflogin = replyintent.getBooleanExtra("LOGIN", true);
+        logedin = replyintent.getBooleanExtra("LOGIN", true);
     }
 
     @Override
@@ -90,6 +90,7 @@ public class SelectActivity extends Activity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             Log.d("testsys", "system exit!");
+
             System.exit(0);
             return true;
         }
@@ -98,7 +99,7 @@ public class SelectActivity extends Activity {
 
     // 母材探伤模块
     public void OnMetalClick(View v) {
-        if (iflogin) {
+        if (logedin) {
 
             Intent intent = new Intent();
             intent.setClass(SelectActivity.this, MainActivity.class);
@@ -131,23 +132,23 @@ public class SelectActivity extends Activity {
                                         .findViewById(R.id.login_account_user));
                                 EditText etPassWord1 = (EditText) (DialogView
                                         .findViewById(R.id.login_password_user));
-                                String bString = findUser(etUser1.getText().toString());
+                                String[] bString = findUser(etUser1.getText().toString());
 
                                 if (bString == null)
 
                                 {
-                                    iflogin = false;
+                                    logedin = false;
                                     Toast.makeText(getApplicationContext(), "用户不存在！",
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
-                                    if (bString.equals(etPassWord1.getText().toString())) {
-                                        iflogin = true;
+                                    if (bString[0].equals(etPassWord1.getText().toString())) {
+                                        logedin = true;
 
-                                        Toast.makeText(getApplicationContext(), "登录成功！",
+                                        Toast.makeText(getApplicationContext(), etUser1.getText().toString()+"登录成功！",
                                                 Toast.LENGTH_LONG).show();
                                     } else {
-                                        iflogin = false;
+                                        logedin = false;
                                         Toast.makeText(getApplicationContext(), "密码不正确！",
                                                 Toast.LENGTH_LONG).show();
                                     }
@@ -161,7 +162,7 @@ public class SelectActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface arg0, int arg1) {
 
-                                iflogin = false;
+                                logedin = false;
 
                             }
 
@@ -184,8 +185,15 @@ public class SelectActivity extends Activity {
                                         .findViewById(R.id.re_account_user));
                                 EditText etPassWord = (EditText) (DialogView1
                                         .findViewById(R.id.re_password_user));
+                                EditText etbureau = (EditText) (DialogView1
+                                        .findViewById(R.id.re_bureau_et));
+                                EditText etsmallbureau = (EditText) (DialogView1
+                                        .findViewById(R.id.re_smallbureau_et));
                                 addUser(etUser.getText().toString(),
-                                        etPassWord.getText().toString());
+                                        etPassWord.getText().toString(),
+                                        etbureau.getText().toString(),
+                                        etsmallbureau.getText().toString()
+                                       );
                             }
 
                         })
@@ -210,7 +218,7 @@ public class SelectActivity extends Activity {
 
     // 焊缝探伤模块
     public void OnWeldClick(View v) {
-        if (iflogin) {
+        if (logedin) {
 
             Intent intent = new Intent();
             intent.setClass(SelectActivity.this, MainActivity.class);
@@ -230,7 +238,7 @@ public class SelectActivity extends Activity {
 
     public void updateUser() {
 
-        mregisterSQL.update(0, "ddd", "eee");
+        mregisterSQL.update(0, "ddd", "eee","fff","hhh");
 
         Toast.makeText(this, "Update Successed!", Toast.LENGTH_SHORT).show();
     }
