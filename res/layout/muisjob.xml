@@ -37,7 +37,7 @@
             android:text="线别"/>
 
         <Spinner
-            android:id="@+id/spinner1"
+            android:id="@+id/jobspinner_xianbie"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView1"
@@ -49,13 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_alignBottom="@+id/spinner1"
+            android:layout_alignBottom="@+id/jobspinner_xianbie"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/spinner1"
+            android:layout_toRightOf="@+id/jobspinner_xianbie"
             android:text="站名"/>
 
-        <Spinner
-            android:id="@+id/spinner2"
+        <EditText
+            android:id="@+id/jobeditText_zhanming"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView2"
@@ -74,7 +74,7 @@
             android:text="线名"/>
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/jobeditText_xianming"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView3"
@@ -92,7 +92,7 @@
             android:text="行别"/>
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/jobspinner_hangbie"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView4"
@@ -110,7 +110,7 @@
             android:text="股别"/>
 
         <Spinner
-            android:id="@+id/spinner4"
+            android:id="@+id/jobspinner_gubie"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView5"
@@ -128,7 +128,7 @@
             android:text="轨型"/>
 
         <Spinner
-            android:id="@+id/spinner5"
+            android:id="@+id/jobspinner_guixing"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView6"
@@ -148,7 +148,7 @@
             android:text="耦合补偿dB"/>
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/jobeditText_buchang"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView7"
@@ -166,7 +166,7 @@
             android:text="里程增减"/>
 
         <Spinner
-            android:id="@+id/spinner6"
+            android:id="@+id/jobspinner_zengjian"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView8"
@@ -178,7 +178,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/spinner6"
+            android:layout_below="@+id/jobspinner_zengjian"
             android:layout_marginTop="20dp"
             android:text="保存"/>
 
@@ -186,7 +186,7 @@
             android:id="@+id/jobsysbutton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spinner6"
+            android:layout_below="@+id/jobspinner_zengjian"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
             android:layout_toLeftOf="@+id/jobsysbutton1"

@@ -68,11 +68,11 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\maintop.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\showoptionleft.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\showoptionleft.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawatype.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\drawatype.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\showoptionleft.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\showoptionleft.xml"
     }
 ]

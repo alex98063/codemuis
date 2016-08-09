@@ -318,25 +318,15 @@ public class MetalActivity extends FragmentActivity {
         @Override
         public void run() {
 
-            switch (usetype) {
-                case "Metal":
-
 
                     //onDrawAWaveAxs();
 //                  onDrawAWave(treeMapAWaveData);
 
                     onDrawAllWaveAxs();
                     onDrawBWaveAxs();
-                    break;
-                case "Weld":
 
 
-                    //onDrawBWave();
 
-                    break;
-                default:
-                    break;
-            }
 
         }
     };

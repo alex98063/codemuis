@@ -121,6 +121,36 @@ public class Constant
 				public static String	mMetalCommonGainStep[]					=
 						{ "6", "1", "0.1" };
 
+				public static String	mInfoXianbie[]					=
+						{ "正线","站线" };
+
+				public static String	mConfigawangge[]					=
+						{ "显示","隐藏" };
+
+				public static String	mConfigaboxing[]					=
+						{ "空心","实心","针形" };
+
+				public static String	mConfigyanse[]					=
+						{ "黑色","白色","红色","黄色","绿色","蓝色" };
+
+				public static String	mConfigshiboyanse[]					=
+						{ "黑色","白色","灰色","红色","绿色","蓝色","黄色","橙色","紫色" };
+
+				public static String	mConfigbxiangdian[]					=
+						{ "中","小","大" };
+
+				public static String	mInfoHangbie[]					=
+						{ "上行","下行" };
+
+				public static String	mInfoGubie[]					=
+						{ "左股","右股" };
+
+				public static String	mInfoGuixing[]					=
+						{ "60轨","75轨","50轨","43轨" };
+
+				public static String	mInfoZengjian[]					=
+						{ "增加","减少" };
+
 				public static String	mMetalCommonInhibition[]				=
 						{ "1", "5", "10" };
 

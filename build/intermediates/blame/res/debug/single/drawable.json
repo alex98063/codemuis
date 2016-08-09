@@ -88,6 +88,10 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\qz_icon_close.png"
     },
     {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_icon4.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\tab_icon4.png"
+    },
+    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\train.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\train.png"
     },
