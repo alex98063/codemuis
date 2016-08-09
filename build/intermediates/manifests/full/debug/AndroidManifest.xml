@@ -50,7 +50,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.sheenline.muis.main.MainActivity"
+            android:name="com.sheenline.muis.main.InfoActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.sheenline.muis.main.WeldActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.sheenline.muis.main.MetalActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >

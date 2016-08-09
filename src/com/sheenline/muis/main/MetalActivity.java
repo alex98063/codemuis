@@ -15,7 +15,6 @@ import com.sheenline.muis.common.DrawWaveViewByAll;
 import com.sheenline.muis.common.DrawWaveViewByB;
 import com.sheenline.muis.common.TestJNI;
 import com.sheenline.muis.common.Tools;
-import com.sheenline.muis.login.SelectActivity;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -43,74 +42,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 // 主界面
-public class MainActivity extends FragmentActivity {
-    // 启动设备
-    public class StartWeldThread extends Thread {
+public class MetalActivity extends FragmentActivity {
 
-        @Override
-        public void run() {
 
-            try {
-
-                testJNI.SetMode(Device_Modle, 3);// 设置焊缝模式
-                sleep(1);
-
-                int[] channel = new int[6];
-                channel[0] = 0;
-                channel[1] = 2;
-                channel[2] = 4;
-                channel[3] = 5;
-                channel[4] = 6;
-                channel[5] = 7;
-
-                for (int i = 0; i < 6; i++) {
-
-                    testJNI.setCrystaltype(Device_Modle, channel[i], PCorTR);// 设置单晶双晶
-
-                    sleep(100);
-                    testJNI.SetPulseWidth(Device_Modle, channel[i], 80);// 设置发射脉宽
-
-                    sleep(100);
-
-                    testJNI.SetDelay(Device_Modle, channel[i], 0);// 设置延迟
-                    sleep(100);
-
-                    switch (i) {
-                        case 0:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[0]);// 设置增益
-                            break;
-                        case 1:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[2]);// 设置增益
-                            break;
-                        case 2:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[4]);// 设置增益
-                            break;
-                        case 3:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[5]);// 设置增益
-                            break;
-                        case 4:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[6]);// 设置增益
-                            break;
-                        case 5:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[7]);// 设置增益
-                            break;
-                        default:
-                            break;
-                    }
-
-                }
-
-                PA_channel = 2;
-                testJNI.StartWork(Device_Modle, 1);// 系统启动
-                isbootfirst = true;
-                Log.d("testsys", "Weld work started!");
-            } catch (InterruptedException e) {
-
-                e.printStackTrace();
-            }
-
-        }
-    }
 
     public class StartMetalThread extends Thread {
 
@@ -377,56 +311,7 @@ public class MainActivity extends FragmentActivity {
     private Spinner spnspinnerpachannelnr, spnspinnerpacaonr, spnspinnerpapuls, spnspinnerpagain, spnspinnerpaADdelay;
     private Spinner spnspinnerpaDigtalFiter, spnspinnerpaswitcher;
 
-    TimerTask taskWeld = new TimerTask() {
-        @Override
-        public void run() {
 
-            int testi = -1;
-
-            testi = testJNI.OpenDataStream(Package_Data);
-
-            if (testi <= 10) {
-
-                return;
-            } else {
-
-                int slot = 0;
-
-                switch (strDefineChannelKey) {
-                    case "0":
-                        PA_channel = 0;
-                        break;
-                    case "256":
-                        PA_channel = 1;
-                        break;
-                    case "512":
-                        PA_channel = 2;
-                        break;
-
-                    default:
-                        PA_channel = 0;
-                        break;
-                }
-
-                if (PA_channel < 16) // todo:PA通道号
-                {
-                    slot = 0;
-                } else {
-                    slot = PA_slot;
-                }
-
-                String key = "512";
-
-                channel_data = testJNI.getData(Device_Modle, Package_Data, PA_channel, slot, MAX_PKT_LEN, 0, 1);
-
-                treeMapAWaveData.put(key, channel_data);
-
-                Log.d("testsys", "Weld Mode data recieving...");
-
-            }
-
-        }
-    };
 
 
     TimerTask taskDraw = new TimerTask() {
@@ -517,7 +402,7 @@ public class MainActivity extends FragmentActivity {
 
     public final void onDrawBWave() {
         if (isbootfirst == true) {
-            View tabBview = MainActivity.this.findViewById(R.id.main_common_right_down);
+            View tabBview = MetalActivity.this.findViewById(R.id.main_common_right_down);
             DrawWaveViewByB mBTypeView = (DrawWaveViewByB) tabBview.findViewById(R.id.area_btype_view);
 
         }
@@ -525,7 +410,7 @@ public class MainActivity extends FragmentActivity {
 
     public final void onDrawAllWave() {
         if (isbootfirst == true) {
-            View tabAllview = MainActivity.this.findViewById(R.id.main_wave);
+            View tabAllview = MetalActivity.this.findViewById(R.id.main_wave);
 
             tabAllview.findViewById(R.id.area_alltype_view);
 
@@ -534,7 +419,7 @@ public class MainActivity extends FragmentActivity {
 
     public final void onDrawAllWaveAxs() {
 
-        View tabview = MainActivity.this.findViewById(R.id.main_common_right_up);
+        View tabview = MetalActivity.this.findViewById(R.id.main_common_right_up);
 
         DrawWaveViewByAll mTypeView = (DrawWaveViewByAll) tabview.findViewById(R.id.area_alltype_view);
 
@@ -544,7 +429,7 @@ public class MainActivity extends FragmentActivity {
 
     public final void onDrawAWaveAxs() {
 
-        View tabview = MainActivity.this.findViewById(R.id.main_common_right_up);
+        View tabview = MetalActivity.this.findViewById(R.id.main_common_right_up);
 
         DrawWaveViewByA mTypeView = (DrawWaveViewByA) tabview.findViewById(R.id.area_atype_view);
 
@@ -555,7 +440,7 @@ public class MainActivity extends FragmentActivity {
 
     public final void onDrawBWaveAxs() {
 
-        View tabview = MainActivity.this.findViewById(R.id.main_common_right_down);
+        View tabview = MetalActivity.this.findViewById(R.id.main_common_right_down);
 
         DrawWaveViewByB mTypeView = (DrawWaveViewByB) tabview.findViewById(R.id.area_btype_view);
 
@@ -568,7 +453,7 @@ public class MainActivity extends FragmentActivity {
     public final void onDrawAWave(TreeMap<String, int[]> aTreeMap) {
 
         if (isbootfirst == true) {
-            View tabAview = MainActivity.this.findViewById(R.id.main_common_right_up);
+            View tabAview = MetalActivity.this.findViewById(R.id.main_common_right_up);
 
             DrawWaveViewByA mATypeView = (DrawWaveViewByA) tabAview.findViewById(R.id.area_atype_view);
 
@@ -958,7 +843,7 @@ public class MainActivity extends FragmentActivity {
 
     public void onChannelsSelected(long id) {
         LinearLayout llayout = (LinearLayout) findViewById(R.id.main_common_right_down);
-        TextView tvchannels = (TextView) MainActivity.this.findViewById(R.id.tv_mmct_gain);
+        TextView tvchannels = (TextView) MetalActivity.this.findViewById(R.id.tv_mmct_gain);
         byte[] idbyte = new byte[2];
         switch ((int) id) {
 
@@ -1058,8 +943,7 @@ public class MainActivity extends FragmentActivity {
         Bundle bundle = intent.getExtras();
         usetype = bundle.getString("type");
 
-        switch (usetype) {
-            case "Metal":
+
                 Toast.makeText(this, "母材模式", Toast.LENGTH_SHORT).show();
 
 
@@ -1068,15 +952,6 @@ public class MainActivity extends FragmentActivity {
 //
 //                onReadfocuslawfile(path);
 
-                break;
-
-            case "Weld":
-                Toast.makeText(this, "焊缝模式", Toast.LENGTH_SHORT).show();
-
-                break;
-            default:
-                break;
-        }
 
         setContentView(R.layout.main);
 
@@ -1233,7 +1108,7 @@ public class MainActivity extends FragmentActivity {
     // 减少增益
 
     public void onGainMinusClick() {
-        TextView tvchannels = (TextView) MainActivity.this.findViewById(R.id.tv_mmct_gain);
+        TextView tvchannels = (TextView) MetalActivity.this.findViewById(R.id.tv_mmct_gain);
 
         int i = 0;
         switch (strDefineChannelKey) {
@@ -1283,7 +1158,7 @@ public class MainActivity extends FragmentActivity {
 
     public void onGainPlusClick() {
 
-        TextView tvchannels = (TextView) MainActivity.this.findViewById(R.id.tv_mmct_gain);
+        TextView tvchannels = (TextView) MetalActivity.this.findViewById(R.id.tv_mmct_gain);
 
         int i = 0;
         switch (strDefineChannelKey) {
@@ -1393,57 +1268,57 @@ public class MainActivity extends FragmentActivity {
     // 保存设置参数
     private void onSaveParameter() {
 
-        TextView tvgainnr = (TextView) MainActivity.this.findViewById(R.id.tv_mmct_gain);
+        TextView tvgainnr = (TextView) MetalActivity.this.findViewById(R.id.tv_mmct_gain);
         String gainnr = tvgainnr.getText().toString();
 
-        EditText edpulsnr = (EditText) MainActivity.this.findViewById(R.id.ut_ed_puls);
+        EditText edpulsnr = (EditText) MetalActivity.this.findViewById(R.id.ut_ed_puls);
         String pulsnr = edpulsnr.getText().toString();
 
-        EditText edADdelaynr = (EditText) MainActivity.this.findViewById(R.id.ut_ed_ADdelay);
+        EditText edADdelaynr = (EditText) MetalActivity.this.findViewById(R.id.ut_ed_ADdelay);
         String ADdelaynr = edADdelaynr.getText().toString();
 
-        Spinner spnDigtalFiternr = (Spinner) MainActivity.this.findViewById(R.id.ut_spinner_DigtalFiter);
+        Spinner spnDigtalFiternr = (Spinner) MetalActivity.this.findViewById(R.id.ut_spinner_DigtalFiter);
         spnDigtalFiternr.getSelectedItemPosition();
 
-        CheckBox cbbianmabl = (CheckBox) MainActivity.this.findViewById(R.id.ut_checkBox_bianma);
+        CheckBox cbbianmabl = (CheckBox) MetalActivity.this.findViewById(R.id.ut_checkBox_bianma);
         cbbianmabl.isChecked();
 
-        Spinner spnpaDigtalFiternr = (Spinner) MainActivity.this.findViewById(R.id.ut_spinner_paDigtalFiter);
+        Spinner spnpaDigtalFiternr = (Spinner) MetalActivity.this.findViewById(R.id.ut_spinner_paDigtalFiter);
         int paDigtalFiternr = spnpaDigtalFiternr.getSelectedItemPosition();
 
-        Spinner spnpaswitchernr = (Spinner) MainActivity.this.findViewById(R.id.ut_spinner_paswitcher);
+        Spinner spnpaswitchernr = (Spinner) MetalActivity.this.findViewById(R.id.ut_spinner_paswitcher);
         int paswitchernr = spnpaswitchernr.getSelectedItemPosition();
 
-        EditText edthstart = (EditText) MainActivity.this.findViewById(R.id.et_th_start);
+        EditText edthstart = (EditText) MetalActivity.this.findViewById(R.id.et_th_start);
         String thstart = edthstart.getText().toString();
         definethstart = Integer.valueOf(thstart);
 
-        EditText edthleng = (EditText) MainActivity.this.findViewById(R.id.et_th_length);
+        EditText edthleng = (EditText) MetalActivity.this.findViewById(R.id.et_th_length);
         String thleng = edthleng.getText().toString();
         definethlength = Integer.valueOf(thleng);
 
-        EditText edthstep = (EditText) MainActivity.this.findViewById(R.id.et_th_steplength);
+        EditText edthstep = (EditText) MetalActivity.this.findViewById(R.id.et_th_steplength);
         String thstep = edthstep.getText().toString();
         definethsteplength = Integer.valueOf(thstep);
 
-        EditText edzerostep = (EditText) MainActivity.this.findViewById(R.id.et_zero_steplength);
+        EditText edzerostep = (EditText) MetalActivity.this.findViewById(R.id.et_zero_steplength);
         String zerostep = edzerostep.getText().toString();
         intDefineZeroStep = Integer.valueOf(zerostep);
 
-        Spinner spnthreshold = (Spinner) MainActivity.this.findViewById(R.id.spn_mmcb_threshold2);
+        Spinner spnthreshold = (Spinner) MetalActivity.this.findViewById(R.id.spn_mmcb_threshold2);
         int thresholdnr = spnthreshold.getSelectedItemPosition();
 
-        Spinner spnCrystalmode = (Spinner) MainActivity.this.findViewById(R.id.spn_mmcb_crystalmode);
+        Spinner spnCrystalmode = (Spinner) MetalActivity.this.findViewById(R.id.spn_mmcb_crystalmode);
         int crystalnr = spnCrystalmode.getSelectedItemPosition();
 
-        Spinner spngainstep = (Spinner) MainActivity.this.findViewById(R.id.spn_mmcb_gain);
+        Spinner spngainstep = (Spinner) MetalActivity.this.findViewById(R.id.spn_mmcb_gain);
         int gainstepnr = spngainstep.getSelectedItemPosition();
 
-        Spinner spnchannels = (Spinner) MainActivity.this.findViewById(R.id.spn_mmcb_channels);
+        Spinner spnchannels = (Spinner) MetalActivity.this.findViewById(R.id.spn_mmcb_channels);
         int channelsnr = spnchannels.getSelectedItemPosition();
 
         // 数据保存
-        SharedPreferences share = MainActivity.this.getSharedPreferences("perference", 0);
+        SharedPreferences share = MetalActivity.this.getSharedPreferences("perference", 0);
         Editor editor = share.edit();
 
         editor.putInt("paDigtalFiternr", paDigtalFiternr);

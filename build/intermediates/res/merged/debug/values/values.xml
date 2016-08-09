@@ -78,6 +78,7 @@
     <string name="action_settings">设置</string>
     <string name="app_name">MUIS系统</string>
     <string name="connect_btn">连接</string>
+    <string name="info_btn">工作内容信息</string>
     <string name="metal_auto_btn">自动校准</string>
     <string name="metal_base_btn">基本</string>
     <string name="metal_btn">钢轨母材探伤</string>

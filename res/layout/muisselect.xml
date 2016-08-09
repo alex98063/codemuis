@@ -4,8 +4,7 @@
         android:id="@id/loginpage"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-       
-        tools:context=".main.MoudelSelectActivity" 
+        tools:context=".login.SelectActivity"
         >
 
 	<LinearLayout
@@ -23,7 +22,6 @@
 	        android:id="@id/login_logo_layout_v"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        
 	        android:orientation="vertical" >
 
 	        <ImageView
@@ -34,36 +32,42 @@
 	            android:gravity="center"
 	            android:src="@drawable/train" />
 
-	        <ImageView
-	            android:layout_width="125.0dip"
-	            android:layout_height="35.0dip"
-	            android:layout_marginTop="10.0dip"
-	            android:adjustViewBounds="true"
-	            android:gravity="center"
-	            android:src="@drawable/sheenline" />
+
 	    </LinearLayout>
+
+
+		<Button
+			android:id="@+id/infomation_btn"
+			android:layout_width="200dp"
+			android:layout_height="40dp"
+			android:layout_marginTop="25dp"
+			android:background="@drawable/qz_selector_login"
+			android:onClick="OnInfoClick"
+			android:text="@string/info_btn"
+			android:textColor="@color/white"
+			android:textSize="20sp" />
 
 	    <Button
 	        android:id="@id/metal_btn"
-	        android:layout_width="200.0dip"
-	        android:layout_height="40.0dip"
-	        android:layout_marginTop="25.0dip"
+	        android:layout_width="200dp"
+	        android:layout_height="40dp"
+	        android:layout_marginTop="25dp"
 	        android:background="@drawable/qz_selector_login"
 	        android:onClick="OnMetalClick"
 	        android:text="@string/metal_btn"
 	        android:textColor="@color/white"
-	        android:textSize="20.0dip" />
+	        android:textSize="20sp" />
 
 	    <Button
 	        android:id="@id/weld_btn"
-	        android:layout_width="200.0dip"
-	        android:layout_height="40.0dip"
-	        android:layout_marginTop="40.0dip"
+	        android:layout_width="200dp"
+	        android:layout_height="40dp"
+	        android:layout_marginTop="25dp"
 	        android:background="@drawable/qz_selector_login"
 	        android:onClick="OnWeldClick"
 	        android:text="@string/weld_btn"
 	        android:textColor="@color/white"
-	        android:textSize="20.0dip" />
+	        android:textSize="20sp" />
 	</LinearLayout>
 
 </RelativeLayout>

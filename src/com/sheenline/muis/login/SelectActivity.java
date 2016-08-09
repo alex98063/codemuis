@@ -1,7 +1,9 @@
 package com.sheenline.muis.login;
 
 import com.sheenline.muis.R;
-import com.sheenline.muis.main.MainActivity;
+import com.sheenline.muis.main.InfoActivity;
+import com.sheenline.muis.main.MetalActivity;
+import com.sheenline.muis.main.WeldActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -102,7 +104,7 @@ public class SelectActivity extends Activity {
         if (logedin) {
 
             Intent intent = new Intent();
-            intent.setClass(SelectActivity.this, MainActivity.class);
+            intent.setClass(SelectActivity.this, MetalActivity.class);
             intent.putExtra("type", "Metal");
             startActivity(intent);
             Log.d("testsys","Metal Mode selected.");
@@ -216,12 +218,25 @@ public class SelectActivity extends Activity {
         return true;
     }
 
+
+    public void OnInfoClick(View v) {
+        if (logedin) {
+            Intent intent = new Intent();
+            intent.setClass(SelectActivity.this, InfoActivity.class);
+            intent.putExtra("type", "Info");
+            startActivity(intent);
+            Log.d("testsys","Info Mode selected.");
+        } else {
+            Toast.makeText(this, "请先登录！", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     // 焊缝探伤模块
     public void OnWeldClick(View v) {
         if (logedin) {
 
             Intent intent = new Intent();
-            intent.setClass(SelectActivity.this, MainActivity.class);
+            intent.setClass(SelectActivity.this, WeldActivity.class);
             intent.putExtra("type", "Weld");
             startActivity(intent);
             Log.d("testsys","Weld Mode selected.");

@@ -5,7 +5,8 @@
     <string name="action_settings">设置</string>
     <string name="oilPump">主机油泵</string>
     <string name="connect_btn">连接</string>
-    
+
+    <string name="info_btn">工作内容信息</string>
     <string name="metal_btn">钢轨母材探伤</string>
     <string name="weld_btn">钢轨焊缝探伤</string>
     

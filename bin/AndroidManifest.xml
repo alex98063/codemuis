@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.sheenline.muis.main.MainActivity"
+            android:name=".main.MetalActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
