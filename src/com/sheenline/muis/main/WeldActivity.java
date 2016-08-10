@@ -927,10 +927,10 @@ public class WeldActivity extends FragmentActivity {
         }
 
         if (savedInstanceState == null) {
-            MainLeftMetal leftMetalFragment = new MainLeftMetal();
+            WeldLeft leftWeldFragment = new WeldLeft();
             manager = getSupportFragmentManager();
             transaction = manager.beginTransaction();
-            transaction.replace(R.id.main_left, leftMetalFragment, "leftMetalFragment");
+            transaction.replace(R.id.main_left, leftWeldFragment, "leftWeldFragment");
             transaction.commit();
         }
 
@@ -984,7 +984,7 @@ public class WeldActivity extends FragmentActivity {
             txall.add(R.id.main_common_right_up, allFragmentRight, "AllFragmentRight");
             txall.commit();
 
-            MainUTParameter utpFragment = new MainUTParameter();
+            WeldUTParameter utpFragment = new WeldUTParameter();
 
             manager = getSupportFragmentManager();
 
@@ -993,7 +993,7 @@ public class WeldActivity extends FragmentActivity {
 
             transaction.commit();
 
-            MainSysConfig scFragment = new MainSysConfig();
+            WeldSysConfig scFragment = new WeldSysConfig();
 
             manager = getSupportFragmentManager();
 

@@ -1,45 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
-<TextView   
-    android:id="@+id/login_account"
-    android:layout_width="wrap_content"  
-    android:layout_height="wrap_content"  
-   android:layout_marginTop="20dp"
-    android:layout_marginLeft="20dp"
-    android:text="用户名"  
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/loginpage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
 
-/>  
-<EditText   
-    android:id="@+id/login_account_user"
-    android:layout_width="380dp"
-    android:layout_height="wrap_content"
-    android:layout_alignBottom="@+id/login_account"
-    android:layout_toRightOf="@+id/login_account"
-    android:layout_marginLeft="50dp"
+        >
 
-/>  
-<TextView   
-    android:id="@+id/login_password"
-    android:layout_width="wrap_content"  
-    android:layout_height="wrap_content"  
-   android:layout_alignRight="@+id/login_account"
-    android:layout_below="@+id/login_account"
-    android:layout_marginTop="20dp"
-    android:text="密码"  
 
-/>  
 
-<EditText   
-    android:id="@+id/login_password_user"
-    android:layout_width="380dp"
-    android:layout_height="wrap_content"
-    android:layout_alignBottom="@+id/login_password"
-    android:layout_marginLeft="50dp"
-    android:layout_toRightOf="@+id/login_password"
 
-/>  
+	        <ImageView
+	            android:id="@id/login_logoimg"
+	            android:layout_width="125dp"
+	            android:layout_height="125dp"
+
+				android:layout_marginTop="50dp"
+
+				android:layout_centerHorizontal="true"
+
+	              android:src="@drawable/train" />
+
+	<TextView
+		android:id="@+id/sysname"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/login_logoimg"
+		android:layout_centerHorizontal="true"
+		android:textSize="30sp"
+		android:textColor="@color/blue"
+		android:text="Multi-function Ultrasonic Inspection System"/>
+
+<TextView
+	android:id="@+id/login_tv_username"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_below="@id/sysname"
+  android:layout_marginTop="20dp"
+	android:layout_marginLeft="380dp"
+	android:text="用户名:"
+
+	android:textSize="30sp"/>
+
+	<EditText
+		android:id="@+id/login_et_username"
+		android:layout_width="180dp"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/login_tv_username"
+		android:layout_alignBottom="@+id/login_tv_username"
+		android:layout_marginLeft="20dp"
+		/>
+
+	<TextView
+		android:id="@+id/login_tv_userpassword"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/login_tv_username"
+		android:layout_marginTop="20dp"
+	android:layout_alignRight="@+id/login_tv_username"
+		android:text="密码:"
+
+		android:textSize="30sp"/>
+
+	<EditText
+
+		android:layout_width="180dp"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/login_tv_userpassword"
+		android:layout_alignBottom="@+id/login_tv_userpassword"
+		android:layout_marginLeft="20dp"
+		android:id="@+id/login_et_userpassword"
+		android:password="true"/>
+
+	<CheckBox
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="记住用户名"
+		android:textSize="20sp"
+		android:layout_marginTop="20dp"
+		android:id="@+id/checkBox_username"
+		android:layout_below="@+id/login_tv_userpassword"
+		android:layout_alignLeft="@+id/login_tv_username"/>
+
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="用户注册"
+		android:textSize="20sp"
+        android:layout_marginTop="10dp"
+	    android:id="@+id/login_bt_register"
+		android:layout_below="@+id/login_tv_userpassword"
+		android:layout_marginLeft="80dp"
+		android:layout_alignRight="@+id/login_et_userpassword"
+		android:layout_toRightOf="@+id/login_tv_userpassword"
+		android:layout_alignBottom="@+id/checkBox_username"/>
+
+	<Button
+		android:layout_width="200dp"
+		android:layout_height="40dp"
+		android:text="登录"
+		android:textSize="30sp"
+		android:layout_marginTop="20dp"
+		android:id="@+id/login_bt_login"
+		android:layout_below="@+id/login_bt_register"
+		android:layout_centerHorizontal="true"
+		android:background="@drawable/qz_selector_login"
+		android:textColor="@color/white"
+		/>
+
+
 </RelativeLayout>

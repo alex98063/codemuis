@@ -954,7 +954,7 @@ public class MetalActivity extends FragmentActivity {
         }
 
         if (savedInstanceState == null) {
-            MainLeftMetal leftMetalFragment = new MainLeftMetal();
+            MetalLeft leftMetalFragment = new MetalLeft();
             manager = getSupportFragmentManager();
             transaction = manager.beginTransaction();
             transaction.replace(R.id.main_left, leftMetalFragment, "leftMetalFragment");
@@ -971,6 +971,7 @@ public class MetalActivity extends FragmentActivity {
             m.addTab(m.newTabSpec("tab2").setIndicator("超声参数").setContent(R.id.main_utparameter));
             m.addTab(m.newTabSpec("tab3").setIndicator("预设参数").setContent(R.id.main_sysconfig));
             m.addTab(m.newTabSpec("tab4").setIndicator("存储参数").setContent(R.id.main_savedata));
+
             TabWidget tabWidget = m.getTabWidget();
             for (int i = 0; i < tabWidget.getChildCount(); i++) {
 
@@ -979,6 +980,8 @@ public class MetalActivity extends FragmentActivity {
                 tv.setTextSize(20);
 
             }
+
+
 
         }
 
@@ -1011,7 +1014,7 @@ public class MetalActivity extends FragmentActivity {
             txall.add(R.id.main_common_right_up, allFragmentRight, "AllFragmentRight");
             txall.commit();
 
-            MainUTParameter utpFragment = new MainUTParameter();
+            MetalUTParameter utpFragment = new MetalUTParameter();
 
             manager = getSupportFragmentManager();
 
@@ -1020,7 +1023,7 @@ public class MetalActivity extends FragmentActivity {
 
             transaction.commit();
 
-            MainSysConfig scFragment = new MainSysConfig();
+            MetalSysConfig scFragment = new MetalSysConfig();
 
             manager = getSupportFragmentManager();
 
@@ -1039,6 +1042,8 @@ public class MetalActivity extends FragmentActivity {
             transaction.commit();
 
         }
+
+
 
         // String ip = "192.168.1.10";
         // int port = 6869;
@@ -1231,6 +1236,7 @@ public class MetalActivity extends FragmentActivity {
             } finally {
                 Log.d("testsys", usetype + " Mode exit!");
                 System.exit(0);
+
                 return true;
             }
 

@@ -84,12 +84,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\menu_ic_resetconnect.png"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_icon_close.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_icon_close.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_icon4.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\tab_icon4.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_icon_close.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_icon_close.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\train.png",

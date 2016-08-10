@@ -127,6 +127,26 @@ public class Constant
 				public static String	mConfigawangge[]					=
 						{ "显示","隐藏" };
 
+				public static String	mUtchufa[]					=
+						{ "外触发","内触发" };
+
+				public static String	mUtyasuo[]					=
+						{ "1","2","4","8","16","32","64","128","256","512" };
+
+
+
+				public static String	mUttantouleixing[]					=
+						{ "单晶","双晶"};
+
+				public static String	mUttantoupinglv[]					=
+						{ "2MHZ","4MHZ","2.5MHZ","3MHZ","3.5MHZ","5MHZ"};
+
+				public static String	mUtlvbo[]					=
+						{ "2MHZ","4MHZ","5MHZ"};
+
+				public static String	mPre[]					=
+						{ "100HZ"};
+
 				public static String	mConfigaboxing[]					=
 						{ "空心","实心","针形" };
 
@@ -135,6 +155,18 @@ public class Constant
 
 				public static String	mConfigshiboyanse[]					=
 						{ "黑色","白色","灰色","红色","绿色","蓝色","黄色","橙色","紫色" };
+
+				public static String	mConfigchaosubaojing[]					=
+						{ "开","关" };
+
+				public static String	mConfigchaosuyuzhi[]					=
+						{ "2km/h","3km/h","1km/h","1.5km/h","2.5km/h","3.5km/h" };
+
+				public static String	mConfigdianliangbaojing[]					=
+						{ "开","关" };
+
+				public static String	mConfigdianliangyuzhi[]					=
+						{ "10%","5%","15%","20%","30%"};
 
 				public static String	mConfigbxiangdian[]					=
 						{ "中","小","大" };
@@ -150,6 +182,9 @@ public class Constant
 
 				public static String	mInfoZengjian[]					=
 						{ "增加","减少" };
+
+				public static String	mConfigZuoyouche[]					=
+						{ "左手","右手" };
 
 				public static String	mMetalCommonInhibition[]				=
 						{ "1", "5", "10" };

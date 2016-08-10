@@ -36,6 +36,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:text="显示设置"
+            android:background="@color/blue"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -181,6 +183,8 @@
             android:layout_marginTop="20dp"
             android:layout_below="@+id/textView9"
             android:text="超速电量设置"
+            android:background="@color/blue"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -258,6 +262,8 @@
             android:layout_marginTop="20dp"
             android:layout_below="@+id/textView14"
             android:text="拍摄设置"
+            android:background="@color/blue"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -270,6 +276,8 @@
             android:layout_marginTop="20dp"
             android:layout_below="@+id/textView15"
             android:text="无线设置"
+            android:background="@color/blue"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
 

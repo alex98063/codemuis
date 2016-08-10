@@ -4,20 +4,24 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\mainwave.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainleftmetal.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\mainleftmetal.xml"
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\metalutparameter.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\metalutparameter.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\metalsysconfig.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\metalsysconfig.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawalltype.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\drawalltype.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainleftweld.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\mainleftweld.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\muisjob.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\muisjob.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\weldutparameter.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\weldutparameter.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\muisconfig.xml",
@@ -28,12 +32,16 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\muisregister.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainutparameter.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\mainutparameter.xml"
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\weldsysconfig.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\weldsysconfig.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawbtype.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\drawbtype.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\weldleft.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\weldleft.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\muislogin.xml",
@@ -48,8 +56,8 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\muisselect.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainsysconfig.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\mainsysconfig.xml"
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\metalleft.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\metalleft.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
@@ -68,11 +76,11 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\maintop.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawatype.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\drawatype.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\showoptionleft.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\showoptionleft.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawatype.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\drawatype.xml"
     }
 ]

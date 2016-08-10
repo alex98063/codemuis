@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/white"
+
+       >
+
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+
+            android:gravity="center"
+            android:text="超声参数"
+
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@color/blue" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView0"
+            android:layout_marginLeft="20dp"
+            android:text="主机"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="20dp"
+            android:text="触发模式" />
+
+        <Spinner
+            android:id="@+id/ut_sp_chufa"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ut_sp_chufa"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ut_sp_chufa"
+            android:text="发射延迟us" />
+
+        <EditText
+            android:id="@+id/EditText1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView3"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/EditText1"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/EditText1"
+            android:text="发射脉宽us" />
+
+        <EditText
+            android:id="@+id/EditText2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView4"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="20dp"
+            android:text="压缩倍数" />
+
+        <Spinner
+            android:id="@+id/ut_sp_yasuo"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ut_sp_yasuo"
+           android:layout_alignRight="@+id/textView3"
+            android:text="抑噪阈值%" />
+
+        <EditText
+            android:id="@+id/EditText3"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView6"
+            android:ems="10" />
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/EditText3"
+            android:layout_marginTop="20dp"
+            android:text="探头"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <RadioGroup
+            android:id="@+id/ut_rg_metal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView7"
+            android:layout_below="@+id/textView7"
+            android:layout_marginTop="20dp"
+           >
+
+
+
+            <RadioButton
+                android:id="@+id/ut_rb_70pluswai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="70°+外向dB" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_70pluszheng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="70°+正向" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_70plusnei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="70°+内向" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_70minuswai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="70°-外向" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_70minuszheng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="70°-正向" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_70minusnei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="70°-内向" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_37plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="37°+" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_37minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="37°-" />
+
+            <RadioButton
+                android:id="@+id/ut_rb_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="0°" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ut_rg_metal"
+            android:layout_below="@+id/textView7"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:text="探头类型" />
+
+        <Spinner
+            android:id="@+id/ut_sp_tantouleixing"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView8"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ut_sp_tantouleixing"
+            android:layout_alignRight="@+id/textView11"
+            android:text="探头频率" />
+
+        <Spinner
+            android:id="@+id/ut_sp_tantoupinglv"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView9"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/textView8"
+            android:layout_below="@+id/textView8"
+            android:layout_marginTop="20dp"
+
+            android:text="滤波设置" />
+
+        <Spinner
+            android:id="@+id/ut_sp_lvbo"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView10"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ut_sp_lvbo"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ut_sp_lvbo"
+            android:text="探头零点us" />
+
+        <EditText
+            android:id="@+id/EditText4"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView11"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView11"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/textView10"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="20dp"
+
+            android:text="增益dB" />
+
+        <EditText
+            android:id="@+id/EditText5"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView12"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView12"
+            android:ems="10" />
+
+        <Button
+            android:id="@+id/ut_savebutton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/EditText5"
+            android:layout_marginTop="20dp"
+            android:text="保存"/>
+
+        <Button
+            android:id="@+id/ut_savebutton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/ut_savebutton1"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/EditText5"
+            android:layout_marginTop="20dp"
+            android:text="取消"/>
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

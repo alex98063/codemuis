@@ -5,7 +5,7 @@
     <item name="reg_and_forget_password_layout" type="id">false</item>
     <item name="forget_password_tv" type="id">false</item>
     <item name="reg_tv" type="id">false</item>
-    <item name="loginpage" type="id">false</item>
+    <item name="selectpage" type="id">false</item>
     <item name="login_container" type="id">false</item>
     <item name="login_logo_layout_v" type="id">false</item>
     <item name="login_logoimg" type="id">false</item>

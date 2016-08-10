@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+   android:layout_marginRight="10dp">
+
+    <RadioGroup
+        android:id="@+id/weld_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+
+
+        <RadioButton
+            android:id="@+id/weld_rb_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="0" />
+
+        <RadioButton
+            android:id="@+id/weld_rb_guitouk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="轨头k扫" />
+
+        <RadioButton
+            android:id="@+id/weld_rb_guiyaochuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="轨腰串列" />
+        <RadioButton
+            android:id="@+id/weld_rb_guidik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="轨底k扫" />
+        <RadioButton
+            android:id="@+id/weld_rb_zuojiao70"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="左角70°" />
+
+        <RadioButton
+            android:id="@+id/weld_rb_youjiao70"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="右角70°" />
+
+    </RadioGroup>
+
+
+
+
+    <Button
+        android:id="@+id/weld_bt_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+
+        android:layout_centerHorizontal="true"
+
+        android:text="-" />
+
+    <Button
+        android:id="@+id/weld_bt_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/weld_bt_minus"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="+" />
+
+    <Button
+        android:id="@+id/weld_bt_bclear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/weld_bt_plus"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="清除" />
+    <Button
+        android:id="@+id/weld_bt_weld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/weld_bt_bclear"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="焊缝" />
+
+    <Button
+        android:id="@+id/weld_bt_frozen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/weld_bt_weld"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="冻结" />
+
+</RelativeLayout>
