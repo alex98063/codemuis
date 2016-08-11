@@ -155,6 +155,7 @@
                 android:id="@+id/ut_rb_70pluswai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:textSize="20sp"
                 android:text="0°" />
 
@@ -162,6 +163,8 @@
                 android:id="@+id/ut_rb_70pluszheng"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="-32dp"
                 android:textSize="20sp"
                 android:text="轨头k扫" />
 
@@ -176,6 +179,8 @@
                 android:id="@+id/ut_rb_70minuswai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="-32dp"
                 android:textSize="20sp"
                 android:text="轨底k扫" />
 
@@ -190,6 +195,8 @@
                 android:id="@+id/ut_rb_70minusnei"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="-32dp"
                 android:textSize="20sp"
                 android:text="右角70°" />
 

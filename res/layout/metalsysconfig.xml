@@ -47,7 +47,7 @@
             android:text="70°+正向" />
 
         <Spinner
-            android:id="@+id/pre_sp_zero"
+            android:id="@+id/pre_sp_70pluszheng"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView2"
@@ -58,11 +58,11 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/pre_sp_zero"
+            android:layout_alignBottom="@+id/pre_sp_70pluszheng"
            android:layout_alignRight="@+id/textView6"
             android:text="70°+外向"/>
         <Spinner
-            android:id="@+id/pre_sp_guitoukscan"
+            android:id="@+id/pre_sp_70pluswai"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView3"
@@ -73,11 +73,11 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/pre_sp_guitoukscan"
+            android:layout_alignBottom="@+id/pre_sp_70pluswai"
            android:layout_alignRight="@+id/textView7"
             android:text="70°+内向"/>
         <Spinner
-            android:id="@+id/pre_sp_guitouchuanlie"
+            android:id="@+id/pre_sp_70plusnei"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView4"
@@ -94,7 +94,7 @@
             android:text="70°-正向" />
 
         <Spinner
-            android:id="@+id/pre_sp_guidikscan"
+            android:id="@+id/pre_sp_70minuszheng"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView5"
@@ -105,12 +105,12 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/pre_sp_guidikscan"
+            android:layout_alignBottom="@+id/pre_sp_70minuszheng"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/pre_sp_guidikscan"
+            android:layout_toRightOf="@+id/pre_sp_70minuszheng"
             android:text="70°-外向"/>
         <Spinner
-            android:id="@+id/pre_sp_zuojiao70"
+            android:id="@+id/pre_sp_70minuswai"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView6"
@@ -121,13 +121,13 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/pre_sp_zuojiao70"
+            android:layout_alignBottom="@+id/pre_sp_70minuswai"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/pre_sp_zuojiao70"
+            android:layout_toRightOf="@+id/pre_sp_70minuswai"
             android:text="70°-内向"/>
 
         <Spinner
-            android:id="@+id/pre_sp_youjiao70"
+            android:id="@+id/pre_sp_70minusnei"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView7"
@@ -145,7 +145,7 @@
             android:text="0°出波" />
 
         <Spinner
-            android:id="@+id/spinner1"
+            android:id="@+id/pre_sp_zerochubo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView8"
@@ -156,13 +156,13 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner1"
+            android:layout_alignBottom="@+id/pre_sp_zerochubo"
            android:layout_alignRight="@+id/textView6"
 
             android:text="0°失波" />
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/pre_sp_zeroshibo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView9"
@@ -174,13 +174,13 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner2"
+            android:layout_alignBottom="@+id/pre_sp_zeroshibo"
             android:layout_alignRight="@+id/textView7"
 
             android:text="0°双波" />
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/pre_sp_zeroshuangbo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView10"
@@ -197,7 +197,7 @@
             android:text="37°+出波" />
 
         <Spinner
-            android:id="@+id/spinner4"
+            android:id="@+id/pre_sp_37pluschubo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView11"
@@ -208,13 +208,13 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner4"
+            android:layout_alignBottom="@+id/pre_sp_37pluschubo"
             android:layout_alignRight="@+id/textView9"
 
             android:text="37°+双波" />
 
         <Spinner
-            android:id="@+id/spinner5"
+            android:id="@+id/pre_sp_37plusshuangbo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView12"
@@ -232,7 +232,7 @@
             android:text="37°-出波" />
 
         <Spinner
-            android:id="@+id/spinner6"
+            android:id="@+id/pre_sp_37minuschubo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView13"
@@ -244,12 +244,12 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner6"
+            android:layout_alignBottom="@+id/pre_sp_37minuschubo"
             android:layout_alignRight="@+id/textView12"
             android:text="37°-双波" />
 
         <Spinner
-            android:id="@+id/spinner7"
+            android:id="@+id/pre_sp_37minusshuangbo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView14"
@@ -279,7 +279,7 @@
             android:text="70°+正向" />
 
         <Spinner
-            android:id="@+id/spinner8"
+            android:id="@+id/pre_sp_70pluszhengyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView16"
@@ -290,12 +290,12 @@
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner8"
+            android:layout_alignBottom="@+id/pre_sp_70pluszhengyanse"
             android:layout_alignRight="@+id/textView14"
             android:text="70°+外向" />
 
         <Spinner
-            android:id="@+id/spinner9"
+            android:id="@+id/pre_sp_70pluswaiyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView17"
@@ -306,12 +306,12 @@
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner9"
+            android:layout_alignBottom="@+id/pre_sp_70pluswaiyanse"
             android:layout_alignRight="@+id/textView10"
             android:text="70°+内向" />
 
         <Spinner
-            android:id="@+id/spinner10"
+            android:id="@+id/pre_sp_70plusneiyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView18"
@@ -328,7 +328,7 @@
             android:text="70°-正向" />
 
         <Spinner
-            android:id="@+id/spinner11"
+            android:id="@+id/pre_sp_70minuszhengyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView19"
@@ -339,12 +339,12 @@
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner11"
+            android:layout_alignBottom="@+id/pre_sp_70minuszhengyanse"
             android:layout_alignRight="@+id/textView12"
             android:text="70°-外向" />
 
         <Spinner
-            android:id="@+id/spinner12"
+            android:id="@+id/pre_sp_70minuswaiyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView20"
@@ -355,12 +355,12 @@
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner12"
+            android:layout_alignBottom="@+id/pre_sp_70minuswaiyanse"
             android:layout_alignRight="@+id/textView18"
             android:text="70°-内向" />
 
         <Spinner
-            android:id="@+id/spinner13"
+            android:id="@+id/pre_sp_70minusneiyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView21"
@@ -377,7 +377,7 @@
             android:text="37°+" />
 
         <Spinner
-            android:id="@+id/spinner14"
+            android:id="@+id/pre_sp_37plusyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView22"
@@ -388,12 +388,12 @@
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner14"
+            android:layout_alignBottom="@+id/pre_sp_37plusyanse"
             android:layout_alignRight="@+id/textView20"
             android:text="37°-" />
 
         <Spinner
-            android:id="@+id/spinner15"
+            android:id="@+id/pre_sp_37minusyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView23"
@@ -404,12 +404,12 @@
             android:id="@+id/textView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/spinner15"
+            android:layout_alignBottom="@+id/pre_sp_37minusyanse"
             android:layout_alignRight="@+id/textView21"
             android:text="0°双波" />
 
         <Spinner
-            android:id="@+id/spinner16"
+            android:id="@+id/pre_sp_zeroshuangboyanse"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView24"

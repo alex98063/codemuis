@@ -16,14 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="融合dB" />
+            android:text="融合" />
 
         <RadioButton
             android:id="@+id/metal_rb_70pluswai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="70°+外向dB" />
+            android:text="70°+外向" />
 
         <RadioButton
             android:id="@+id/metal_rb_70pluszheng"
