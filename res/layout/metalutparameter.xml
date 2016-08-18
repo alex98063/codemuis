@@ -51,7 +51,7 @@
             android:text="触发模式" />
 
         <Spinner
-            android:id="@+id/ut_sp_chufa"
+            android:id="@+id/metal_ut_sp_chufa"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView2"
@@ -62,13 +62,13 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/ut_sp_chufa"
+            android:layout_alignBottom="@+id/metal_ut_sp_chufa"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ut_sp_chufa"
+            android:layout_toRightOf="@+id/metal_ut_sp_chufa"
             android:text="发射延迟us" />
 
         <EditText
-            android:id="@+id/EditText1"
+            android:id="@+id/metal_ut_et_yanchi"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView3"
@@ -80,13 +80,13 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/EditText1"
+            android:layout_alignBottom="@+id/metal_ut_et_yanchi"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/EditText1"
+            android:layout_toRightOf="@+id/metal_ut_et_yanchi"
             android:text="发射脉宽us" />
 
         <EditText
-            android:id="@+id/EditText2"
+            android:id="@+id/metal_ut_et_maikuan"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView4"
@@ -104,7 +104,7 @@
             android:text="压缩倍数" />
 
         <Spinner
-            android:id="@+id/ut_sp_yasuo"
+            android:id="@+id/metal_ut_sp_yasuo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView5"
@@ -115,12 +115,12 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/ut_sp_yasuo"
+            android:layout_alignBottom="@+id/metal_ut_sp_yasuo"
            android:layout_alignRight="@+id/textView3"
             android:text="抑噪阈值%" />
 
         <EditText
-            android:id="@+id/EditText3"
+            android:id="@+id/metal_ut_et_yuzhi"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView6"
@@ -134,14 +134,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView2"
-            android:layout_below="@+id/EditText3"
+            android:layout_below="@+id/metal_ut_et_yuzhi"
             android:layout_marginTop="20dp"
             android:text="探头"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
         <RadioGroup
-            android:id="@+id/ut_rg_metal"
+            android:id="@+id/metal_ut_rg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView7"
@@ -229,14 +229,14 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/ut_rg_metal"
+            android:layout_toRightOf="@+id/metal_ut_rg"
             android:layout_below="@+id/textView7"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="50dp"
             android:text="探头类型" />
 
         <Spinner
-            android:id="@+id/ut_sp_tantouleixing"
+            android:id="@+id/metal_ut_sp_tantouleixing"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView8"
@@ -247,12 +247,12 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/ut_sp_tantouleixing"
+            android:layout_alignBottom="@+id/metal_ut_sp_tantouleixing"
             android:layout_alignRight="@+id/textView11"
             android:text="探头频率" />
 
         <Spinner
-            android:id="@+id/ut_sp_tantoupinglv"
+            android:id="@+id/metal_ut_sp_tantoupinglv"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView9"
@@ -270,7 +270,7 @@
             android:text="滤波设置" />
 
         <Spinner
-            android:id="@+id/ut_sp_lvbo"
+            android:id="@+id/metal_ut_sp_lvbo"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView10"
@@ -281,13 +281,13 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/ut_sp_lvbo"
+            android:layout_alignBottom="@+id/metal_ut_sp_lvbo"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ut_sp_lvbo"
+            android:layout_toRightOf="@+id/metal_ut_sp_lvbo"
             android:text="探头零点us" />
 
         <EditText
-            android:id="@+id/EditText4"
+            android:id="@+id/metal_ut_et_zero"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView11"
@@ -306,7 +306,7 @@
             android:text="增益dB" />
 
         <EditText
-            android:id="@+id/EditText5"
+            android:id="@+id/metal_ut_et_zengyi"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView12"
@@ -315,23 +315,16 @@
             android:ems="10" />
 
         <Button
-            android:id="@+id/ut_savebutton1"
+            android:id="@+id/metal_ut_savebutton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/EditText5"
+            android:layout_below="@+id/metal_ut_et_zengyi"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
             android:text="保存"/>
 
-        <Button
-            android:id="@+id/ut_savebutton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/ut_savebutton1"
-            android:layout_marginRight="20dp"
-            android:layout_below="@+id/EditText5"
-            android:layout_marginTop="20dp"
-            android:text="取消"/>
+
 
 
 

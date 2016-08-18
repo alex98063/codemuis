@@ -489,10 +489,7 @@ public class MetalActivity extends FragmentActivity {
 
         SharedPreferences share = this.getSharedPreferences("perference", 0);
 
-        share.getInt("DigtalFiternr", 0);
 
-        share.getInt("paDigtalFiternr", 0);
-        share.getInt("paswitchernr", 0);
 
         String thstart = share.getString("thstart", "200");
         String thleng = share.getString("thleng", "50");
@@ -562,17 +559,7 @@ public class MetalActivity extends FragmentActivity {
         edzerostep.setText(zerostep);
         intDefineZeroStep = Integer.valueOf(zerostep);
 
-        btnSaveParameterLeft = (Button) findViewById(R.id.bt_so_save);
-        btnSaveParameterLeft.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-
-                onSlideMenubtnSaveClick();
-
-            }
-
-        });
 
         spnGain = (Spinner) findViewById(R.id.spn_mmcb_gain);
 
@@ -1273,18 +1260,6 @@ public class MetalActivity extends FragmentActivity {
         EditText edADdelaynr = (EditText) MetalActivity.this.findViewById(R.id.ut_ed_ADdelay);
         String ADdelaynr = edADdelaynr.getText().toString();
 
-        Spinner spnDigtalFiternr = (Spinner) MetalActivity.this.findViewById(R.id.ut_spinner_DigtalFiter);
-        spnDigtalFiternr.getSelectedItemPosition();
-
-        CheckBox cbbianmabl = (CheckBox) MetalActivity.this.findViewById(R.id.ut_checkBox_bianma);
-        cbbianmabl.isChecked();
-
-        Spinner spnpaDigtalFiternr = (Spinner) MetalActivity.this.findViewById(R.id.ut_spinner_paDigtalFiter);
-        int paDigtalFiternr = spnpaDigtalFiternr.getSelectedItemPosition();
-
-        Spinner spnpaswitchernr = (Spinner) MetalActivity.this.findViewById(R.id.ut_spinner_paswitcher);
-        int paswitchernr = spnpaswitchernr.getSelectedItemPosition();
-
         EditText edthstart = (EditText) MetalActivity.this.findViewById(R.id.et_th_start);
         String thstart = edthstart.getText().toString();
         definethstart = Integer.valueOf(thstart);
@@ -1317,8 +1292,7 @@ public class MetalActivity extends FragmentActivity {
         SharedPreferences share = MetalActivity.this.getSharedPreferences("perference", 0);
         Editor editor = share.edit();
 
-        editor.putInt("paDigtalFiternr", paDigtalFiternr);
-        editor.putInt("paswitchernr", paswitchernr);
+
 
         editor.putString("thstart", thstart);
         definethstart = Integer.valueOf(thstart);

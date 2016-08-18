@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabWidget;
@@ -289,6 +290,9 @@ public class WeldActivity extends FragmentActivity {
     private Spinner spnspinnerpachannelnr, spnspinnerpacaonr, spnspinnerpapuls, spnspinnerpagain, spnspinnerpaADdelay;
     private Spinner spnspinnerpaDigtalFiter, spnspinnerpaswitcher;
 
+
+
+
     TimerTask taskWeld = new TimerTask() {
         @Override
         public void run() {
@@ -537,17 +541,7 @@ public class WeldActivity extends FragmentActivity {
         edzerostep.setText(zerostep);
         intDefineZeroStep = Integer.valueOf(zerostep);
 
-        btnSaveParameterLeft = (Button) findViewById(R.id.bt_so_save);
-        btnSaveParameterLeft.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-
-                onSlideMenubtnSaveClick();
-
-            }
-
-        });
 
         spnGain = (Spinner) findViewById(R.id.spn_mmcb_gain);
 
@@ -993,6 +987,19 @@ public class WeldActivity extends FragmentActivity {
 
             transaction.commit();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
             WeldSysConfig scFragment = new WeldSysConfig();
 
             manager = getSupportFragmentManager();
@@ -1012,6 +1019,8 @@ public class WeldActivity extends FragmentActivity {
             transaction.commit();
 
         }
+
+
 
         // String ip = "192.168.1.10";
         // int port = 6869;
@@ -1057,8 +1066,13 @@ public class WeldActivity extends FragmentActivity {
 
 
 //        new StartDrawThread().start();
-        timer.schedule(taskDraw, 1000, 1000);
+//        timer.schedule(taskDraw, 1000, 1000);
     }
+
+
+
+
+
 
     // 退出
     @Override
@@ -1231,6 +1245,9 @@ public class WeldActivity extends FragmentActivity {
     // 保存设置参数
     private void onSaveParameter() {
 
+
+
+
         TextView tvgainnr = (TextView) WeldActivity.this.findViewById(R.id.tv_mmct_gain);
         String gainnr = tvgainnr.getText().toString();
 
@@ -1239,18 +1256,6 @@ public class WeldActivity extends FragmentActivity {
 
         EditText edADdelaynr = (EditText) WeldActivity.this.findViewById(R.id.ut_ed_ADdelay);
         String ADdelaynr = edADdelaynr.getText().toString();
-
-        Spinner spnDigtalFiternr = (Spinner) WeldActivity.this.findViewById(R.id.ut_spinner_DigtalFiter);
-        spnDigtalFiternr.getSelectedItemPosition();
-
-        CheckBox cbbianmabl = (CheckBox) WeldActivity.this.findViewById(R.id.ut_checkBox_bianma);
-        cbbianmabl.isChecked();
-
-        Spinner spnpaDigtalFiternr = (Spinner) WeldActivity.this.findViewById(R.id.ut_spinner_paDigtalFiter);
-        int paDigtalFiternr = spnpaDigtalFiternr.getSelectedItemPosition();
-
-        Spinner spnpaswitchernr = (Spinner) WeldActivity.this.findViewById(R.id.ut_spinner_paswitcher);
-        int paswitchernr = spnpaswitchernr.getSelectedItemPosition();
 
         EditText edthstart = (EditText) WeldActivity.this.findViewById(R.id.et_th_start);
         String thstart = edthstart.getText().toString();
@@ -1284,8 +1289,6 @@ public class WeldActivity extends FragmentActivity {
         SharedPreferences share = WeldActivity.this.getSharedPreferences("perference", 0);
         Editor editor = share.edit();
 
-        editor.putInt("paDigtalFiternr", paDigtalFiternr);
-        editor.putInt("paswitchernr", paswitchernr);
 
         editor.putString("thstart", thstart);
         definethstart = Integer.valueOf(thstart);

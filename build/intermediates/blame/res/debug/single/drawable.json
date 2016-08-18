@@ -68,12 +68,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\menu_selectitem.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_bg_container_cell_bottom_normal.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_container_cell_bottom_normal.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_main.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\btn_main.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_bg_container_cell_bottom_normal.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_container_cell_bottom_normal.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\boder2.xml",
@@ -100,12 +100,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\btn_focus.png"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_bg_container_cell_top_pressed.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_container_cell_top_pressed.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_ic_checkconnect.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\menu_ic_checkconnect.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_bg_container_cell_top_pressed.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_container_cell_top_pressed.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\arrow_down.png",
@@ -128,12 +128,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\menu_ic_exit.png"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btnbg1.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\btnbg1.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_select.9.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\menu_select.9.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\btnbg1.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\btnbg1.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_ic_clearalarm.png",

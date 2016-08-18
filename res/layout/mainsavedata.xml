@@ -80,17 +80,10 @@
     android:layout_alignParentRight="true"
     android:layout_below="@+id/textView4"
     android:layout_marginTop="20dp"
+    android:layout_marginRight="50dp"
     android:text="保存"/>
 
-        <Button
-            android:id="@+id/savebutton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:layout_toLeftOf="@+id/savebutton1"
-            android:layout_marginRight="20dp"
-            android:layout_below="@+id/textView4"
-            android:layout_marginTop="20dp"
-            android:text="取消"/>
+
 
     </RelativeLayout>
 

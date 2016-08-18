@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+     android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+    android:orientation="vertical"
+    >
+    
+<TextView   
+    android:id="@+id/re_account"
+    android:layout_width="wrap_content"  
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dip"  
+    android:text="注册用户名"  
+
+/>
+
+<EditText   
+    android:id="@+id/re_account_user"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"  
+    android:layout_alignBottom="@+id/re_account"
+    android:layout_toRightOf="@+id/re_account"
+    android:layout_marginLeft="50dp"
+
+/>  
+
+<TextView   
+    android:id="@+id/re_password"
+    android:layout_width="wrap_content"  
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/re_account"
+    android:layout_marginTop="20dp"
+    android:layout_alignRight="@+id/re_account"
+    android:text="注册密码"  
+
+/>
+
+    <EditText
+        android:id="@+id/re_password_user"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_password"
+        android:layout_toRightOf="@+id/re_password"
+        android:layout_marginLeft="50dp"
+        android:password="true"
+
+        />
+
+    <TextView
+        android:id="@+id/re_bureau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/re_password_user"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/re_account"
+        android:text="铁路局"
+
+        />
+
+    <EditText
+        android:id="@+id/re_bureau_et"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_bureau"
+        android:layout_toRightOf="@+id/re_bureau"
+        android:layout_marginLeft="50dp"
+        />
+
+
+    <TextView
+        android:id="@+id/re_smallbureau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/re_bureau_et"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/re_account"
+        android:text="工务段"
+
+        />
+
+      <EditText
+        android:id="@+id/re_smallbureau_et"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_smallbureau"
+        android:layout_toRightOf="@+id/re_smallbureau"
+        android:layout_marginLeft="50dp"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:layout_below="@+id/re_smallbureau_et"
+        android:layout_marginTop="50dp"
+        android:layout_alignRight="@+id/re_smallbureau_et"
+        android:id="@+id/re_register_yes"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:layout_below="@+id/re_smallbureau_et"
+        android:layout_marginTop="50dp"
+
+        android:layout_alignBottom="@+id/re_register_yes"
+        android:layout_toLeftOf="@+id/re_register_yes"
+        android:layout_marginRight="50dp"
+        android:id="@+id/re_register_no"/>
+
+</RelativeLayout>

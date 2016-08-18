@@ -106,7 +106,7 @@
         <!--android:layout_gravity="start" />-->
 
     <include
-        layout="@layout/showoptionright"
+        layout="@layout/mainslideright"
         android:layout_width="700dp"
         android:layout_height="match_parent"
         android:layout_gravity="end" />

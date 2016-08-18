@@ -7,6 +7,7 @@ import com.sheenline.muis.main.WeldActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -76,7 +77,7 @@ public class SelectActivity extends Activity {
 
     private void onUpdateview() {
 
-        setContentView(R.layout.muislogin);
+        setContentView(R.layout.mainlogin);
         setUpViews();
 
 
@@ -104,7 +105,7 @@ public class SelectActivity extends Activity {
                     } else if (bString[0].equals(etPassWord.getText().toString())) {
                         logedin = true;
 
-                        setContentView(R.layout.muisselect);
+                        setContentView(R.layout.mainselect);
 
                         showEditMenu();
 
@@ -137,7 +138,7 @@ public class SelectActivity extends Activity {
             public void onClick(View v) {
 
 
-                setContentView(R.layout.muisregister);
+                setContentView(R.layout.mainregister);
 
 
                 Button btnreyes = (Button) findViewById(R.id.re_register_yes);
@@ -243,6 +244,12 @@ public class SelectActivity extends Activity {
         }
     }
 
+
+    int configspinner_awangge,configspinner_aboxing,configspinner_yanse,configspinner_bxiangdian;
+    int configspinner_shiboyanse,configspinner_zuoyouche,configspinner_chuboyanse,configspinner_shuangboyanse;
+    int configspinner_chaosubaojing,configspinner_chaosuyuzhi,configspinner_dianliangbaojing,configspinner_dianliangyuzhi;
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         LayoutInflater factory = LayoutInflater.from(this);
@@ -252,20 +259,25 @@ public class SelectActivity extends Activity {
             case R.id.menu_option:
 
 
-                setContentView(R.layout.muisconfig);
+                setContentView(R.layout.mainconfig);
 
 
-                Button btncancel = (Button) findViewById(R.id.sysbutton2);
-                btncancel.setOnClickListener(new View.OnClickListener() {
+                SharedPreferences share = this.getSharedPreferences("sysperference", 0);
+                configspinner_awangge = share.getInt("configspinner_awangge",0);
+                configspinner_aboxing = share.getInt("configspinner_aboxing",0);
+                configspinner_yanse= share.getInt("configspinner_yanse",0);
+                configspinner_bxiangdian = share.getInt("configspinner_bxiangdian",0);
+                configspinner_shiboyanse = share.getInt("configspinner_shiboyanse",0);
+                configspinner_zuoyouche =share.getInt("configspinner_zuoyouche",0);
+                configspinner_chuboyanse = share.getInt("configspinner_chuboyanse",0);
+                configspinner_shuangboyanse = share.getInt("configspinner_shuangboyanse",0);
+                configspinner_chaosubaojing = share.getInt("configspinner_chaosubaojing",0);
+                configspinner_chaosuyuzhi =share.getInt("configspinner_chaosuyuzhi",0);
+                configspinner_dianliangbaojing = share.getInt("configspinner_dianliangbaojing",0);
+                configspinner_dianliangyuzhi = share.getInt("configspinner_dianliangyuzhi",0);
 
-                    @Override
-                    public void onClick(View v) {
 
-                        setContentView(R.layout.muisselect);
 
-                    }
-
-                });
 
 
                 Spinner spnawangge = (Spinner) findViewById(R.id.configspinner_awangge);
@@ -274,7 +286,7 @@ public class SelectActivity extends Activity {
                 adpawangge.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnawangge.setAdapter(adpawangge);
-                spnawangge.setSelection(0);
+                spnawangge.setSelection(configspinner_awangge);
 
                 spnawangge.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -296,7 +308,7 @@ public class SelectActivity extends Activity {
                 adpaboxing.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnaboxing.setAdapter(adpaboxing);
-                spnaboxing.setSelection(0);
+                spnaboxing.setSelection(configspinner_aboxing);
 
                 spnaboxing.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -318,7 +330,7 @@ public class SelectActivity extends Activity {
                 adpyanse.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnyanse.setAdapter(adpyanse);
-                spnyanse.setSelection(0);
+                spnyanse.setSelection(configspinner_yanse);
 
                 spnyanse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -340,7 +352,7 @@ public class SelectActivity extends Activity {
                 adpbxiangdian.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnbxiangdian.setAdapter(adpbxiangdian);
-                spnbxiangdian.setSelection(0);
+                spnbxiangdian.setSelection(configspinner_bxiangdian);
 
                 spnbxiangdian.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -362,7 +374,7 @@ public class SelectActivity extends Activity {
                 adpshiboyanse.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnshiboyanse.setAdapter(adpshiboyanse);
-                spnshiboyanse.setSelection(0);
+                spnshiboyanse.setSelection(configspinner_shiboyanse);
 
                 spnshiboyanse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -384,7 +396,7 @@ public class SelectActivity extends Activity {
                 adpzuoyouche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnzuoyouche.setAdapter(adpzuoyouche);
-                spnzuoyouche.setSelection(0);
+                spnzuoyouche.setSelection(configspinner_zuoyouche);
 
                 spnzuoyouche.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -405,7 +417,7 @@ public class SelectActivity extends Activity {
                 adpchuboyanse.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnchuboyanse.setAdapter(adpchuboyanse);
-                spnchuboyanse.setSelection(0);
+                spnchuboyanse.setSelection(configspinner_chuboyanse);
 
                 spnchuboyanse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -427,7 +439,7 @@ public class SelectActivity extends Activity {
                 adpshuangboyanse.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnshuangboyanse.setAdapter(adpshuangboyanse);
-                spnshuangboyanse.setSelection(0);
+                spnshuangboyanse.setSelection(configspinner_shuangboyanse);
 
                 spnshuangboyanse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -448,7 +460,7 @@ public class SelectActivity extends Activity {
                 adpchaosubaojing.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnchaosubaojing.setAdapter(adpchaosubaojing);
-                spnchaosubaojing.setSelection(0);
+                spnchaosubaojing.setSelection(configspinner_chaosubaojing);
 
                 spnchaosubaojing.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -469,7 +481,7 @@ public class SelectActivity extends Activity {
                 adpchaosuyuzhi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spnchaosuyuzhi.setAdapter(adpchaosuyuzhi);
-                spnchaosuyuzhi.setSelection(0);
+                spnchaosuyuzhi.setSelection(configspinner_chaosuyuzhi);
 
                 spnchaosuyuzhi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -490,7 +502,7 @@ public class SelectActivity extends Activity {
                 adpdianliangbaojing.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spndianliangbaojing.setAdapter(adpdianliangbaojing);
-                spndianliangbaojing.setSelection(0);
+                spndianliangbaojing.setSelection(configspinner_dianliangbaojing);
 
                 spndianliangbaojing.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -511,7 +523,7 @@ public class SelectActivity extends Activity {
                 adpdianliangyuzhi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 spndianliangyuzhi.setAdapter(adpdianliangyuzhi);
-                spndianliangyuzhi.setSelection(0);
+                spndianliangyuzhi.setSelection(configspinner_dianliangyuzhi);
 
                 spndianliangyuzhi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -526,6 +538,91 @@ public class SelectActivity extends Activity {
                     }
                 });
 
+                Button btnsyscancel = (Button) findViewById(R.id.sysbutton2);
+                btnsyscancel.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+
+                        setContentView(R.layout.mainselect);
+
+                    }
+
+                });
+
+
+                Button btnsysyes= (Button) findViewById(R.id.sysbutton1);
+                btnsysyes.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+
+                        Spinner spnsysconfigspinner_awangge = (Spinner) findViewById(R.id.configspinner_awangge)  ;
+                        configspinner_awangge = spnsysconfigspinner_awangge.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_aboxing = (Spinner) findViewById(R.id.configspinner_aboxing);
+                        configspinner_aboxing = spnconfigspinner_aboxing.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_yanse= (Spinner) findViewById(R.id.configspinner_yanse);
+                        configspinner_yanse = spnconfigspinner_yanse.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_bxiangdian= (Spinner) findViewById(R.id.configspinner_bxiangdian);
+                        configspinner_bxiangdian = spnconfigspinner_bxiangdian.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_shiboyanse= (Spinner) findViewById(R.id.configspinner_shiboyanse);
+                        configspinner_shiboyanse = spnconfigspinner_shiboyanse.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_zuoyouche= (Spinner) findViewById(R.id.configspinner_zuoyouche);
+                        configspinner_zuoyouche = spnconfigspinner_zuoyouche.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_chuboyanse= (Spinner) findViewById(R.id.configspinner_chuboyanse);
+                        configspinner_chuboyanse = spnconfigspinner_chuboyanse.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_shuangboyanse= (Spinner) findViewById(R.id.configspinner_shuangboyanse);
+                        configspinner_shuangboyanse = spnconfigspinner_shuangboyanse.getSelectedItemPosition();
+
+
+                        Spinner spnconfigspinner_chaosubaojing= (Spinner) findViewById(R.id.configspinner_chaosubaojing);
+                        configspinner_chaosubaojing = spnconfigspinner_chaosubaojing.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_chaosuyuzhi= (Spinner) findViewById(R.id.configspinner_chaosuyuzhi);
+                        configspinner_chaosuyuzhi = spnconfigspinner_chaosuyuzhi.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_dianliangbaojing= (Spinner) findViewById(R.id.configspinner_dianliangbaojing);
+                        configspinner_dianliangbaojing = spnconfigspinner_dianliangbaojing.getSelectedItemPosition();
+
+                        Spinner spnconfigspinner_dianliangyuzhi= (Spinner) findViewById(R.id.configspinner_dianliangyuzhi);
+                        configspinner_dianliangyuzhi = spnconfigspinner_dianliangyuzhi.getSelectedItemPosition();
+
+
+                        SharedPreferences share = SelectActivity.this.getSharedPreferences("sysperference", 0);
+                        SharedPreferences.Editor editor = share.edit();
+                        editor.putInt("configspinner_awangge",configspinner_awangge);
+                        editor.putInt("configspinner_aboxing",configspinner_aboxing);
+                        editor.putInt("configspinner_yanse",configspinner_yanse);
+                        editor.putInt("configspinner_bxiangdian",configspinner_bxiangdian);
+                        editor.putInt("configspinner_shiboyanse",configspinner_shiboyanse);
+                        editor.putInt("configspinner_zuoyouche",configspinner_zuoyouche);
+                        editor.putInt("configspinner_chuboyanse",configspinner_chuboyanse);
+                        editor.putInt("configspinner_shuangboyanse",configspinner_shuangboyanse);
+                        editor.putInt("configspinner_chaosubaojing",configspinner_chaosubaojing);
+                        editor.putInt("configspinner_chaosuyuzhi",configspinner_chaosuyuzhi);
+                        editor.putInt("configspinner_dianliangbaojing",configspinner_dianliangbaojing);
+                        editor.putInt("configspinner_dianliangyuzhi",configspinner_dianliangyuzhi);
+
+                        editor.commit();
+
+
+                        Log.d("testsys","sysconfig saved");
+
+                        setContentView(R.layout.mainselect);
+
+
+
+                    }
+
+                });
+
                 break;
 
         }
@@ -533,21 +630,39 @@ public class SelectActivity extends Activity {
         return true;
     }
 
+    int jobxianbie,jobhangbie,jobgubie,jobguixing,jobzengjian;
+    String jobbuchang,jobzhanming,jobxianming;
+
+
 
     public void OnInfoClick(View v) {
-        setContentView(R.layout.muisjob);
+        setContentView(R.layout.mainjob);
 
-        Button btncancel = (Button) findViewById(R.id.jobsysbutton2);
-        btncancel.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
 
-                setContentView(R.layout.muisselect);
 
-            }
 
-        });
+
+        SharedPreferences share = this.getSharedPreferences("jobperference", 0);
+        jobxianbie = share.getInt("jobxianbie",0);
+
+        jobzhanming = share.getString("jobzhanming","");
+        jobxianming = share.getString("jobxianming","");
+        jobhangbie = share.getInt("jobhangbie",0);
+        jobgubie = share.getInt("jobgubie",0);
+        jobguixing = share.getInt("jobguixing",0);
+        jobbuchang = share.getString("jobbuchang","");
+        jobzengjian = share.getInt("jobzengjian",0);
+
+
+        EditText etjobzhanming = (EditText) findViewById(R.id.jobeditText_zhanming);
+        etjobzhanming.setText(jobzhanming);
+
+        EditText etjobxianming = (EditText) findViewById(R.id.jobeditText_xianming);
+        etjobxianming.setText(jobxianming);
+
+        EditText etjobbuchang = (EditText) findViewById(R.id.jobeditText_buchang);
+        etjobbuchang.setText(jobbuchang);
 
 
         Spinner spnxianbie = (Spinner) findViewById(R.id.jobspinner_xianbie);
@@ -556,7 +671,7 @@ public class SelectActivity extends Activity {
         adpxianbie.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spnxianbie.setAdapter(adpxianbie);
-        spnxianbie.setSelection(0);
+        spnxianbie.setSelection(jobxianbie);
 
         spnxianbie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -572,13 +687,15 @@ public class SelectActivity extends Activity {
         });
 
 
+
+
         Spinner spnhangbie = (Spinner) findViewById(R.id.jobspinner_hangbie);
         ArrayAdapter adphangbie = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Constant.ConValue.mInfoHangbie);
 
         adphangbie.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spnhangbie.setAdapter(adphangbie);
-        spnhangbie.setSelection(0);
+        spnhangbie.setSelection(jobhangbie);
 
         spnhangbie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -599,7 +716,7 @@ public class SelectActivity extends Activity {
         adpgubie.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spngubie.setAdapter(adpgubie);
-        spngubie.setSelection(0);
+        spngubie.setSelection(jobgubie);
 
         spngubie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -621,7 +738,7 @@ public class SelectActivity extends Activity {
         adpguixing.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spnguixing.setAdapter(adpguixing);
-        spnguixing.setSelection(0);
+        spnguixing.setSelection(jobguixing);
 
         spnguixing.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -642,7 +759,7 @@ public class SelectActivity extends Activity {
         adpzengjian.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spnzengjian.setAdapter(adpzengjian);
-        spnzengjian.setSelection(0);
+        spnzengjian.setSelection(jobzengjian);
 
         spnzengjian.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -655,6 +772,70 @@ public class SelectActivity extends Activity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
+        });
+
+        Button btnjobcancel = (Button) findViewById(R.id.jobsysbutton2);
+        btnjobcancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.mainselect);
+
+            }
+
+        });
+
+        Button btnjobyes = (Button) findViewById(R.id.jobsysbutton1);
+        btnjobyes.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Spinner spnxianbie = (Spinner) findViewById(R.id.jobspinner_xianbie);
+                jobxianbie = spnxianbie.getSelectedItemPosition();
+
+                EditText etjobzhanming = (EditText) findViewById(R.id.jobeditText_zhanming);
+                jobzhanming = etjobzhanming.getText().toString();
+
+                EditText etjobxianming = (EditText) findViewById(R.id.jobeditText_xianming);
+                jobxianming = etjobxianming.getText().toString();
+
+                Spinner spnhangbie = (Spinner) findViewById(R.id.jobspinner_hangbie);
+                jobhangbie = spnhangbie.getSelectedItemPosition();
+
+                Spinner spngubie = (Spinner) findViewById(R.id.jobspinner_gubie);
+                jobgubie = spngubie.getSelectedItemPosition();
+
+                Spinner spnguixing = (Spinner) findViewById(R.id.jobspinner_guixing);
+                jobguixing = spnguixing.getSelectedItemPosition();
+
+                EditText edjobbuchang = (EditText) findViewById(R.id.jobeditText_buchang);
+                jobbuchang = edjobbuchang.getText().toString();
+
+                Spinner spnzengjian = (Spinner) findViewById(R.id.jobspinner_zengjian);
+                jobzengjian = spnzengjian.getSelectedItemPosition();
+
+
+                SharedPreferences share = SelectActivity.this.getSharedPreferences("jobperference", 0);
+                SharedPreferences.Editor editor = share.edit();
+
+                editor.putInt("jobxianbie", jobxianbie);
+                editor.putString("jobzhanming", jobzhanming);
+                editor.putString("jobxianming", jobxianming);
+                editor.putInt("jobhangbie", jobhangbie);
+                editor.putInt("jobgubie", jobgubie);
+                editor.putInt("jobguixing", jobguixing);
+                editor.putString("jobbuchang", jobbuchang);
+                editor.putInt("jobzengjian", jobzengjian);
+
+                editor.commit();
+
+                Log.d("testsys", "jobinfo saved");
+                setContentView(R.layout.mainselect);
+
+            }
+
         });
 
 
