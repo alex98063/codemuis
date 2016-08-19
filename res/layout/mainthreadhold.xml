@@ -50,7 +50,7 @@
             android:text="起点mm" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/et_th_aqidian"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView2"
@@ -62,14 +62,14 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText1"
+            android:layout_alignBottom="@+id/et_th_aqidian"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText1"
+            android:layout_toRightOf="@+id/et_th_aqidian"
             android:text="宽度mm" />
 
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/et_th_akuandu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView3"
@@ -81,13 +81,13 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText2"
+            android:layout_alignBottom="@+id/et_th_akuandu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText2"
+            android:layout_toRightOf="@+id/et_th_akuandu"
             android:text="高度%" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/et_th_agaodu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView4"
@@ -99,13 +99,13 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText3"
+            android:layout_alignBottom="@+id/et_th_agaodu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText3"
+            android:layout_toRightOf="@+id/et_th_agaodu"
             android:text="报警方式" />
 
         <Spinner
-            android:id="@+id/spinner1"
+            android:id="@+id/sp_th_abaojing"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView5"
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_below="@+id/spinner1"
+            android:layout_below="@+id/sp_th_abaojing"
             android:layout_marginTop="20dp"
             android:text="B闸门" />
 
@@ -136,7 +136,7 @@
             android:text="起点mm" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/et_th_bqidian"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView7"
@@ -148,14 +148,14 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText4"
+            android:layout_alignBottom="@+id/et_th_bqidian"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText4"
+            android:layout_toRightOf="@+id/et_th_bqidian"
             android:text="宽度mm" />
 
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/et_th_bkuandu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView8"
@@ -167,13 +167,13 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText5"
+            android:layout_alignBottom="@+id/et_th_bkuandu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText5"
+            android:layout_toRightOf="@+id/et_th_bkuandu"
             android:text="高度%" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/et_th_bgaodu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView9"
@@ -185,13 +185,13 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText6"
+            android:layout_alignBottom="@+id/et_th_bgaodu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText6"
+            android:layout_toRightOf="@+id/et_th_bgaodu"
             android:text="报警方式" />
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/sp_th_bbaojing"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView10"
@@ -205,7 +205,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_below="@+id/spinner2"
+            android:layout_below="@+id/sp_th_bbaojing"
             android:layout_marginTop="20dp"
             android:text="C闸门" />
 
@@ -221,7 +221,7 @@
             android:text="起点mm" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/et_th_cqidian"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView12"
@@ -233,14 +233,14 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText7"
+            android:layout_alignBottom="@+id/et_th_cqidian"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText7"
+            android:layout_toRightOf="@+id/et_th_cqidian"
             android:text="宽度mm" />
 
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/et_th_ckuandu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView13"
@@ -252,13 +252,13 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText8"
+            android:layout_alignBottom="@+id/et_th_ckuandu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText8"
+            android:layout_toRightOf="@+id/et_th_ckuandu"
             android:text="高度%" />
 
         <EditText
-            android:id="@+id/editText9"
+            android:id="@+id/et_th_cgaodu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView14"
@@ -270,13 +270,13 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText9"
+            android:layout_alignBottom="@+id/et_th_cgaodu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText9"
+            android:layout_toRightOf="@+id/et_th_cgaodu"
             android:text="报警方式" />
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/sp_th_cbaojing"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView15"
@@ -290,7 +290,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_below="@+id/spinner3"
+            android:layout_below="@+id/sp_th_cbaojing"
             android:layout_marginTop="20dp"
             android:text="D闸门" />
 
@@ -306,7 +306,7 @@
             android:text="起点mm" />
 
         <EditText
-            android:id="@+id/editText10"
+            android:id="@+id/et_th_dqidian"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView17"
@@ -318,14 +318,14 @@
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText10"
+            android:layout_alignBottom="@+id/et_th_dqidian"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText10"
+            android:layout_toRightOf="@+id/et_th_dqidian"
             android:text="宽度mm" />
 
 
         <EditText
-            android:id="@+id/editText11"
+            android:id="@+id/et_th_dkuandu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView18"
@@ -337,13 +337,13 @@
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText11"
+            android:layout_alignBottom="@+id/et_th_dkuandu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText11"
+            android:layout_toRightOf="@+id/et_th_dkuandu"
             android:text="高度%" />
 
         <EditText
-            android:id="@+id/editText12"
+            android:id="@+id/et_th_dgaodu"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView19"
@@ -355,13 +355,13 @@
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText12"
+            android:layout_alignBottom="@+id/et_th_dgaodu"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/editText12"
+            android:layout_toRightOf="@+id/et_th_dgaodu"
             android:text="报警方式" />
 
         <Spinner
-            android:id="@+id/spinner4"
+            android:id="@+id/sp_th_dbaojing"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView20"

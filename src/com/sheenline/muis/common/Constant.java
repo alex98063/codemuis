@@ -145,7 +145,10 @@ public class Constant
 						{ "2MHZ","4MHZ","5MHZ"};
 
 				public static String	mPre[]					=
-						{ "100HZ"};
+					{ "100HZ"};
+
+				public static String	mBaojing[]					=
+						{ "出波","失波","双波"};
 
 				public static String	mConfigaboxing[]					=
 						{ "空心","实心","针形" };
