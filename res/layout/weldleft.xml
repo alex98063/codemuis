@@ -88,6 +88,7 @@
         android:layout_centerHorizontal="true"
 
         android:text="清除" />
+
     <Button
         android:id="@+id/weld_bt_weld"
         android:layout_width="wrap_content"
@@ -107,5 +108,15 @@
         android:layout_centerHorizontal="true"
 
         android:text="冻结" />
+
+    <Button
+        android:id="@+id/weld_bt_threshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/weld_bt_frozen"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="闸门" />
 
 </RelativeLayout>

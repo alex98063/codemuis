@@ -106,15 +106,7 @@
 
         android:text="+" />
 
-    <Button
-        android:id="@+id/metal_bt_threshold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/metal_bt_plus"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true"
 
-        android:text="闸门" />
 
     <Button
         android:id="@+id/metal_bt_turnout"
@@ -135,5 +127,14 @@
         android:layout_centerHorizontal="true"
 
         android:text="冻结" />
+
+    <Button
+        android:id="@+id/metal_bt_threshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/metal_bt_frozen"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="闸门" />
 
 </RelativeLayout>

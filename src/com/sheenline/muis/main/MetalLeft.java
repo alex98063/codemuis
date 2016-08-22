@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class MetalLeft extends Fragment {
 	String et_th_bqidian,et_th_bkuandu,et_th_bgaodu;
 	String et_th_cqidian,et_th_ckuandu,et_th_cgaodu;
 	String et_th_dqidian,et_th_dkuandu,et_th_dgaodu;
+	String etmetalturnout;
 
 	int sp_th_abaojing,sp_th_bbaojing,sp_th_cbaojing,sp_th_dbaojing;
 
@@ -35,14 +37,73 @@ public class MetalLeft extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.metalleft, container, false);
 
+		Button btnmetal_bt_turnout= (Button) view.findViewById(R.id.metal_bt_turnout);
+		btnmetal_bt_turnout.setOnClickListener(new View.OnClickListener() {
+												   @Override
+												   public void onClick(View v) {
 
-		  Button btnmetal_bt_turnout = (Button) view.findViewById(R.id.metal_bt_turnout);
+													   LayoutInflater factory = LayoutInflater.from(getActivity());
+													   final View TurnoutView = factory.inflate(R.layout.mainturnout, null);
 
-			btnmetal_bt_turnout.setOnClickListener(new View.OnClickListener() {
+													   AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+													   builder.setTitle("道岔号").setView(TurnoutView);
+													   SharedPreferences share = getActivity().getSharedPreferences("metalperference", 0);
+													   etmetalturnout = share.getString("etmetalturnout","");
+
+													     EditText etetmetalturnout = (EditText) TurnoutView.findViewById(R.id.etmetalturnout) ;
+													     etetmetalturnout.setText(etmetalturnout);
+
+													    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+															@Override
+															public void onClick(DialogInterface arg0, int arg1) {
+
+																EditText etetmetalturnout = (EditText) TurnoutView.findViewById(R.id.etmetalturnout) ;
+																etmetalturnout = etetmetalturnout.getText().toString();
+
+																SharedPreferences share = getActivity().getSharedPreferences("metalperference", 0);
+																SharedPreferences.Editor editor = share.edit();
+
+																editor.putString("etmetalturnout",etmetalturnout);
+
+																editor.commit();
+
+																Toast.makeText(getActivity(),"道岔号保存成功",Toast.LENGTH_SHORT).show();
+
+
+															}
+														}).setNegativeButton("取消", new DialogInterface.OnClickListener()
+													   {
+
+														   @Override
+														   public void onClick(DialogInterface arg0, int arg1)
+														   {
+
+
+
+														   }
+
+													   });
+
+													   builder.create();
+													   builder.show();
+
+												   }
+											   });
+
+		Button btnmetal_bt_threshold = (Button) view.findViewById(R.id.metal_bt_threshold);
+
+		btnmetal_bt_threshold.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 
-				View DialogView = view.inflate(getActivity(),R.layout.mainthreadhold, null);
+
+				LayoutInflater factory = LayoutInflater.from(getActivity());
+				final View DialogView = factory.inflate(R.layout.mainthreadhold, null);
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+				builder.setTitle("闸门设置").setView(DialogView);
+
 
 				SharedPreferences share = getActivity().getSharedPreferences("metalperference", 0);
 				et_th_aqidian = share.getString("et_th_aqidian","");
@@ -191,66 +252,63 @@ public class MetalLeft extends Fragment {
 				});
 
 
-				AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-				builder.setTitle("登陆框").setView(DialogView)
-						.setPositiveButton("确定", new DialogInterface.OnClickListener()
+				builder.setPositiveButton("确定", new DialogInterface.OnClickListener()
 						{
 
 							@Override
 							public void onClick(DialogInterface arg0, int arg1)
 							{
 
-
-								EditText etet_th_aqidian = (EditText) view.findViewById(R.id.et_th_aqidian) ;
+								EditText etet_th_aqidian = (EditText) DialogView.findViewById(R.id.et_th_aqidian) ;
 								et_th_aqidian = etet_th_aqidian.getText().toString();
 
 
-								EditText etet_th_akuandu = (EditText) view.findViewById(R.id.et_th_akuandu) ;
+								EditText etet_th_akuandu = (EditText) DialogView.findViewById(R.id.et_th_akuandu) ;
 								et_th_akuandu= etet_th_akuandu.getText().toString();
 
-								EditText etet_th_agaodu = (EditText) view.findViewById(R.id.et_th_agaodu) ;
+								EditText etet_th_agaodu = (EditText) DialogView.findViewById(R.id.et_th_agaodu) ;
 								et_th_agaodu = etet_th_agaodu.getText().toString();
 
-								Spinner spnsp_th_abaojing = (Spinner) view.findViewById(R.id.sp_th_abaojing) ;
+								Spinner spnsp_th_abaojing = (Spinner) DialogView.findViewById(R.id.sp_th_abaojing) ;
 								sp_th_abaojing = spnsp_th_abaojing.getSelectedItemPosition();
 
-								EditText etet_th_bqidian = (EditText) view.findViewById(R.id.et_th_bqidian) ;
+								EditText etet_th_bqidian = (EditText) DialogView.findViewById(R.id.et_th_bqidian) ;
 								et_th_bqidian = etet_th_bqidian.getText().toString();
 
 
-								EditText etet_th_bkuandu = (EditText) view.findViewById(R.id.et_th_bkuandu) ;
+								EditText etet_th_bkuandu = (EditText) DialogView.findViewById(R.id.et_th_bkuandu) ;
 								et_th_bkuandu= etet_th_bkuandu.getText().toString();
 
-								EditText etet_th_bgaodu = (EditText) view.findViewById(R.id.et_th_bgaodu) ;
+								EditText etet_th_bgaodu = (EditText) DialogView.findViewById(R.id.et_th_bgaodu) ;
 								et_th_bgaodu = etet_th_bgaodu.getText().toString();
 
-								Spinner spnsp_th_bbaojing = (Spinner) view.findViewById(R.id.sp_th_bbaojing) ;
+								Spinner spnsp_th_bbaojing = (Spinner) DialogView.findViewById(R.id.sp_th_bbaojing) ;
 								sp_th_bbaojing = spnsp_th_bbaojing.getSelectedItemPosition();
 
-								EditText etet_th_cqidian = (EditText) view.findViewById(R.id.et_th_cqidian) ;
+								EditText etet_th_cqidian = (EditText) DialogView.findViewById(R.id.et_th_cqidian) ;
 								et_th_cqidian = etet_th_cqidian.getText().toString();
 
 
-								EditText etet_th_ckuandu = (EditText) view.findViewById(R.id.et_th_ckuandu) ;
+								EditText etet_th_ckuandu = (EditText) DialogView.findViewById(R.id.et_th_ckuandu) ;
 								et_th_ckuandu= etet_th_ckuandu.getText().toString();
 
-								EditText etet_th_cgaodu = (EditText) view.findViewById(R.id.et_th_cgaodu) ;
+								EditText etet_th_cgaodu = (EditText) DialogView.findViewById(R.id.et_th_cgaodu) ;
 								et_th_cgaodu = etet_th_cgaodu.getText().toString();
 
-								Spinner spnsp_th_cbaojing = (Spinner) view.findViewById(R.id.sp_th_cbaojing) ;
+								Spinner spnsp_th_cbaojing = (Spinner) DialogView.findViewById(R.id.sp_th_cbaojing) ;
 								sp_th_cbaojing = spnsp_th_cbaojing.getSelectedItemPosition();
 
-								EditText etet_th_dqidian = (EditText) view.findViewById(R.id.et_th_dqidian) ;
+								EditText etet_th_dqidian = (EditText) DialogView.findViewById(R.id.et_th_dqidian) ;
 								et_th_dqidian = etet_th_dqidian.getText().toString();
 
 
-								EditText etet_th_dkuandu = (EditText) view.findViewById(R.id.et_th_dkuandu) ;
+								EditText etet_th_dkuandu = (EditText) DialogView.findViewById(R.id.et_th_dkuandu) ;
 								et_th_dkuandu= etet_th_dkuandu.getText().toString();
 
-								EditText etet_th_dgaodu = (EditText) view.findViewById(R.id.et_th_dgaodu) ;
+								EditText etet_th_dgaodu = (EditText) DialogView.findViewById(R.id.et_th_dgaodu) ;
 								et_th_dgaodu = etet_th_dgaodu.getText().toString();
 
-								Spinner spnsp_th_dbaojing = (Spinner) view.findViewById(R.id.sp_th_dbaojing) ;
+								Spinner spnsp_th_dbaojing = (Spinner) DialogView.findViewById(R.id.sp_th_dbaojing) ;
 								sp_th_dbaojing = spnsp_th_dbaojing.getSelectedItemPosition();
 
 
@@ -299,8 +357,10 @@ public class MetalLeft extends Fragment {
 
 							}
 
-						})
-						.create();
+						});
+
+
+				builder.create();
 
 				builder.show();
 
