@@ -300,7 +300,7 @@ containing a value of this type.
         public static final int main_top=0x7f080028;
         public static final int main_utparameter=0x7f08002d;
         public static final int main_wave=0x7f08002c;
-        public static final int menu_option=0x7f08010b;
+        public static final int menu_option=0x7f08010a;
         public static final int metal_auto_btn=0x7f080014;
         public static final int metal_base_btn=0x7f080015;
         public static final int metal_bt_frozen=0x7f0800b2;
@@ -451,7 +451,6 @@ containing a value of this type.
         public static final int ut_rb_70plusnei=0x7f0800d7;
         public static final int ut_rb_70pluswai=0x7f0800d5;
         public static final int ut_rb_70pluszheng=0x7f0800d6;
-        public static final int ut_rg_weld=0x7f080104;
         public static final int weld_bt_bclear=0x7f0800ed;
         public static final int weld_bt_frozen=0x7f0800ef;
         public static final int weld_bt_minus=0x7f0800eb;
@@ -467,16 +466,16 @@ containing a value of this type.
         public static final int weld_rb_zuojiao70=0x7f0800e9;
         public static final int weld_rg=0x7f0800e4;
         public static final int weld_ut_et_maikuan=0x7f080100;
-        public static final int weld_ut_et_tantouzero=0x7f080108;
+        public static final int weld_ut_et_tantouzero=0x7f080107;
         public static final int weld_ut_et_yanchi=0x7f0800ff;
         public static final int weld_ut_et_yuzhi=0x7f080102;
-        public static final int weld_ut_et_zengyidb=0x7f080109;
+        public static final int weld_ut_et_zengyidb=0x7f080108;
         public static final int weld_ut_rg=0x7f080103;
-        public static final int weld_ut_savebutton1=0x7f08010a;
+        public static final int weld_ut_savebutton1=0x7f080109;
         public static final int weld_ut_sp_chufa=0x7f0800fe;
-        public static final int weld_ut_sp_lvbo=0x7f080107;
-        public static final int weld_ut_sp_tantouleixing=0x7f080105;
-        public static final int weld_ut_sp_tantoupinglv=0x7f080106;
+        public static final int weld_ut_sp_lvbo=0x7f080106;
+        public static final int weld_ut_sp_tantouleixing=0x7f080104;
+        public static final int weld_ut_sp_tantoupinglv=0x7f080105;
         public static final int weld_ut_sp_yasuo=0x7f080101;
         public static final int weldsysbutton1=0x7f0800fd;
     }

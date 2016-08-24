@@ -74,7 +74,9 @@
             android:layout_alignBottom="@+id/textView3"
             android:layout_marginLeft="50dp"
             android:layout_toRightOf="@+id/textView3"
-            android:ems="10" />
+            android:ems="10"
+            android:singleLine="true"
+            android:inputType="number"/>
 
         <TextView
             android:id="@+id/textView4"
@@ -92,7 +94,9 @@
             android:layout_alignBottom="@+id/textView4"
             android:layout_marginLeft="50dp"
             android:layout_toRightOf="@+id/textView4"
-            android:ems="10" />
+            android:ems="10"
+            android:inputType="number"
+            android:singleLine="true"/>
 
         <TextView
             android:id="@+id/textView5"
@@ -126,7 +130,9 @@
             android:layout_alignBottom="@+id/textView6"
             android:layout_marginLeft="50dp"
             android:layout_toRightOf="@+id/textView6"
-            android:ems="10" />
+            android:ems="10"
+            android:singleLine="true"
+            android:inputType="number"/>
 
 
         <TextView
@@ -293,7 +299,10 @@
             android:layout_alignBottom="@+id/textView11"
             android:layout_marginLeft="50dp"
             android:layout_toRightOf="@+id/textView11"
-            android:ems="10" />
+            android:ems="10"
+            android:singleLine="true"
+            android:inputType="number"
+            />
 
         <TextView
             android:id="@+id/textView12"
@@ -312,7 +321,9 @@
             android:layout_alignBottom="@+id/textView12"
             android:layout_marginLeft="50dp"
             android:layout_toRightOf="@+id/textView12"
-            android:ems="10" />
+            android:ems="10"
+            android:singleLine="true"
+            android:inputType="number"/>
 
         <Button
             android:id="@+id/metal_ut_savebutton1"

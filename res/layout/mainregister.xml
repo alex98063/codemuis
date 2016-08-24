@@ -20,11 +20,12 @@
 
 <EditText   
     android:id="@+id/re_account_user"
-    android:layout_width="380dp"
+    android:layout_width="80dp"
     android:layout_height="wrap_content"  
     android:layout_alignBottom="@+id/re_account"
     android:layout_toRightOf="@+id/re_account"
     android:layout_marginLeft="50dp"
+    android:singleLine="true"
 
 />  
 
@@ -41,12 +42,13 @@
 
     <EditText
         android:id="@+id/re_password_user"
-        android:layout_width="380dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_password"
         android:layout_toRightOf="@+id/re_password"
         android:layout_marginLeft="50dp"
-        android:password="true"
+        android:inputType="numberPassword"
+        android:singleLine="true"
 
         />
 
@@ -63,11 +65,12 @@
 
     <EditText
         android:id="@+id/re_bureau_et"
-        android:layout_width="380dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_bureau"
         android:layout_toRightOf="@+id/re_bureau"
         android:layout_marginLeft="50dp"
+        android:singleLine="true"
         />
 
 
@@ -84,11 +87,12 @@
 
       <EditText
         android:id="@+id/re_smallbureau_et"
-        android:layout_width="380dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_smallbureau"
         android:layout_toRightOf="@+id/re_smallbureau"
         android:layout_marginLeft="50dp"
+        android:singleLine="true"
 
         />
 

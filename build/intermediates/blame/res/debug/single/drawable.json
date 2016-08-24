@@ -148,12 +148,12 @@
         "source": "F:\\codework\\MUIS\\res\\drawable\\qz_bg_setup1.png"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\sheenline.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable\\sheenline.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\qz_icon_navbar_drop_up.png",
         "source": "F:\\codework\\MUIS\\res\\drawable\\qz_icon_navbar_drop_up.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\sheenline.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable\\sheenline.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_ic_lockscreen.png",

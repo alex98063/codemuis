@@ -52,6 +52,7 @@
         android:layout_alignBottom="@+id/login_tv_username"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/login_tv_username"
+        android:singleLine="true"
         />
 
     </RelativeLayout>
@@ -82,7 +83,8 @@
         android:layout_alignBottom="@+id/login_tv_userpassword"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/login_tv_userpassword"
-        android:password="true"/>
+        android:inputType="numberPassword"
+        android:singleLine="true"/>
     </RelativeLayout>
 
     <RelativeLayout

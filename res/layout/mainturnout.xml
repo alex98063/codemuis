@@ -26,6 +26,7 @@
             android:layout_toRightOf="@+id/textView1"
             android:layout_marginLeft="20dp"
             android:ems="10"
+            android:singleLine="true"
             />
 
 

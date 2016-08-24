@@ -61,7 +61,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView2"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/textView2"/>
+            android:layout_toRightOf="@+id/textView2"
+            android:singleLine="true"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -80,7 +81,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView3"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/textView3"/>
+            android:layout_toRightOf="@+id/textView3"
+            android:singleLine="true"/>
 
         <TextView
             android:id="@+id/textView4"
@@ -154,7 +156,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView7"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/textView7"/>
+            android:layout_toRightOf="@+id/textView7"
+            android:singleLine="true"/>
 
         <TextView
             android:id="@+id/textView8"
