@@ -11,13 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <RadioButton
-            android:id="@+id/metal_rb_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="0°" 
-            android:checked="true"/>
+
 
         <RadioButton
             android:id="@+id/metal_rb_70pluswai"
@@ -74,6 +68,14 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="37°-" />
+
+        <RadioButton
+            android:id="@+id/metal_rb_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="0°"
+            android:checked="true"/>
 
         <RadioButton
             android:id="@+id/metal_rb_all"

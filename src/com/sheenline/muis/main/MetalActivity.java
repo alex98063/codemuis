@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -54,7 +55,7 @@ public class MetalActivity extends FragmentActivity {
             try {
 
                 testJNI.SetMode(Device_Modle, 2);// 设置母材模式,第二个参数无效
-                sleep(1);
+                sleep(100);
 
                 int[] channel = new int[3];
                 channel[0] = 0;
@@ -921,9 +922,9 @@ public class MetalActivity extends FragmentActivity {
         usetype = bundle.getString("type");
 
 
-                Toast.makeText(this, "母材模式", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "母材模式", Toast.LENGTH_SHORT).show();
 
-
+//
 //                File dir = Environment.getExternalStorageDirectory();
 //                String path = dir.toString() + "/31AnglesSeclaw.csv";
 //
@@ -1032,51 +1033,36 @@ public class MetalActivity extends FragmentActivity {
 
 
 
-        // String ip = "192.168.1.10";
-        // int port = 6869;
-        //
-        // testJNI.InitXLTLib();
-        //
-        // Log.d("testsys", "TCP/IP connect...!");
-        //
-        // if (testJNI.OpenDevice(ip, port) != 1)
-        // {
-        // Log.d("testsys", "connect failed!");
-        // return;
-        // }
-        // else
-        // {
-        // Log.d("testsys", "connect successful!");
-        // }
-        //
-        // PCorTR = 1;
-        //
-        // onIniSlideMenu();
-        //
-        // switch (usetype)
-        // {
-        // case "Metal":
-        // Device_Modle = 1;
-        // slot_number = 3;
-        // new StartMetalThread().start();
-        // timer.schedule(taskMetal, 1000, 1000); //
-        // 延时1000ms后执行，1000ms执行一次
-        // break;
-        //
-        // case "Weld":
-        // Device_Modle = 2;
-        // new StartWeldThread().start();
-        // timer.schedule(taskWeld, 1000, 1000); //
-        // 延时1000ms后执行，1000ms执行一次
-        // break;
-        // default:
-        // break;
-        // }
-        //
+//         String ip = "192.168.1.10";
+//         int port = 6869;
+//
+//         testJNI.InitXLTLib();
+//
+//         Log.d("testsys", "TCP/IP connect...!");
+//
+//         if (testJNI.OpenDevice(ip, port) != 1)
+//         {
+//         Log.d("testsys", "connect failed!");
+//         return;
+//         }
+//         else
+//         {
+//         Log.d("testsys", "connect successful!");
+//         }
+//
+//
+//        //
+//        // onIniSlideMenu();
+//        //
+//
+//         PCorTR = 1;
+//         Device_Modle = 1;
+//         slot_number = 3;
+//       //  new StartMetalThread().start();
+////         timer.schedule(taskMetal, 1000, 1000);
+       timer.schedule(taskDraw, 1000, 1000);
 
-
-//        new StartDrawThread().start();
-        timer.schedule(taskDraw, 1000, 1000);
+        Log.d("testsys", "system start successful!");
     }
 
     // 退出
