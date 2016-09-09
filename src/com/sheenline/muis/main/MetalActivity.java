@@ -67,7 +67,7 @@ public class MetalActivity extends FragmentActivity {
                     testJNI.setCrystaltype(Device_Modle, channel[i], PCorTR);// 设置单晶双晶
 
                     sleep(100);
-                    testJNI.SetPulseWidth(Device_Modle, channel[i], 80);// 设置发射脉宽
+                    testJNI.SetPulseWidth(Device_Modle, channel[i], 200);// 设置发射脉宽
 
                     sleep(100);
 
@@ -320,11 +320,12 @@ public class MetalActivity extends FragmentActivity {
         public void run() {
 
 
-                    //onDrawAWaveAxs();
-//                  onDrawAWave(treeMapAWaveData);
+                  //  onDrawAWaveAxs();
+          //  onDrawAWave(treeMapAWaveData);
 
-                    onDrawAllWaveAxs();
-                    onDrawBWaveAxs();
+
+                  onDrawAllWaveAxs();
+                  onDrawBWaveAxs();
 
 
 
@@ -376,7 +377,7 @@ public class MetalActivity extends FragmentActivity {
 
                 treeMapAWaveData.put(key, channel_data);
 
-                Log.d("testsys", "Melta Mode data recieving...");
+            //    Log.d("testsys", "Melta Mode data recieving...");
 
             }
 
@@ -414,7 +415,7 @@ public class MetalActivity extends FragmentActivity {
 
         DrawWaveViewByAll mTypeView = (DrawWaveViewByAll) tabview.findViewById(R.id.area_alltype_view);
 
-        mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"});
+        mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"},treeMapAWaveData);
 
     }
 
@@ -909,6 +910,15 @@ public class MetalActivity extends FragmentActivity {
 
     }
 
+    MainTop topFragment;
+    MetalLeft leftMetalFragment;
+    MainWave waveFragment;
+    DrawBWaveView bFragmentRight;
+    DrawAllWaveView allFragmentRight;
+    DrawAWaveView aFragmentRight;
+
+
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -924,17 +934,17 @@ public class MetalActivity extends FragmentActivity {
 
         Toast.makeText(this, "母材模式", Toast.LENGTH_SHORT).show();
 
-//
-//                File dir = Environment.getExternalStorageDirectory();
-//                String path = dir.toString() + "/31AnglesSeclaw.csv";
-//
-//                onReadfocuslawfile(path);
+
+                File dir = Environment.getExternalStorageDirectory();
+                String path = dir.toString() + "/31AnglesSeclaw.csv";
+
+                onReadfocuslawfile(path);
 
 
         setContentView(R.layout.main);
 
         if (savedInstanceState == null) {
-            MainTop topFragment = new MainTop();
+            topFragment = new MainTop();
             manager = getSupportFragmentManager();
             transaction = manager.beginTransaction();
             transaction.replace(R.id.main_top, topFragment, "topFragment");
@@ -942,7 +952,7 @@ public class MetalActivity extends FragmentActivity {
         }
 
         if (savedInstanceState == null) {
-            MetalLeft leftMetalFragment = new MetalLeft();
+            leftMetalFragment = new MetalLeft();
             manager = getSupportFragmentManager();
             transaction = manager.beginTransaction();
             transaction.replace(R.id.main_left, leftMetalFragment, "leftMetalFragment");
@@ -974,7 +984,7 @@ public class MetalActivity extends FragmentActivity {
         }
 
         if (savedInstanceState == null) {
-            MainWave waveFragment = new MainWave();
+            waveFragment  = new MainWave();
 
             manager = getSupportFragmentManager();
 
@@ -983,20 +993,20 @@ public class MetalActivity extends FragmentActivity {
 
             transaction.commit();
 
-//            DrawAWaveView aFragmentRight = new DrawAWaveView();
+//            aFragmentRight = new DrawAWaveView();
 //            FragmentManager fma = getSupportFragmentManager();
 //            FragmentTransaction txa = fma.beginTransaction();
 //            txa.add(R.id.main_common_right_up, aFragmentRight, "AFragmentRight");
 //            txa.commit();
 
-            DrawBWaveView bFragmentRight = new DrawBWaveView();
+            bFragmentRight  = new DrawBWaveView();
             FragmentManager fmb = getSupportFragmentManager();
             FragmentTransaction txb = fmb.beginTransaction();
             txb.add(R.id.main_common_right_down, bFragmentRight, "BFragmentRight");
             txb.commit();
 
 
-            DrawAllWaveView allFragmentRight = new DrawAllWaveView();
+            allFragmentRight = new DrawAllWaveView();
             FragmentManager fmall = getSupportFragmentManager();
             FragmentTransaction txall = fmall.beginTransaction();
             txall.add(R.id.main_common_right_up, allFragmentRight, "AllFragmentRight");
@@ -1008,8 +1018,8 @@ public class MetalActivity extends FragmentActivity {
 
             transaction = manager.beginTransaction();
             transaction.replace(R.id.main_utparameter, utpFragment, "utpFragment");
-
             transaction.commit();
+
 
             MetalSysConfig scFragment = new MetalSysConfig();
 
@@ -1033,34 +1043,41 @@ public class MetalActivity extends FragmentActivity {
 
 
 
-//         String ip = "192.168.1.10";
-//         int port = 6869;
-//
-//         testJNI.InitXLTLib();
-//
-//         Log.d("testsys", "TCP/IP connect...!");
-//
-//         if (testJNI.OpenDevice(ip, port) != 1)
-//         {
-//         Log.d("testsys", "connect failed!");
-//         return;
-//         }
-//         else
-//         {
-//         Log.d("testsys", "connect successful!");
-//         }
-//
+
+
+
+
+
+
+
+         String ip = "192.168.1.10";
+         int port = 6869;
+
+         testJNI.InitXLTLib();
+
+         Log.d("testsys", "TCP/IP connect...!");
+
+         if (testJNI.OpenDevice(ip, port) != 1)
+         {
+         Log.d("testsys", "connect failed!");
+         return;
+         }
+         else
+         {
+         Log.d("testsys", "connect successful!");
+         }
+
 //
 //        //
 //        // onIniSlideMenu();
 //        //
 //
-//         PCorTR = 1;
-//         Device_Modle = 1;
-//         slot_number = 3;
-//       //  new StartMetalThread().start();
-////         timer.schedule(taskMetal, 1000, 1000);
-       timer.schedule(taskDraw, 1000, 1000);
+         PCorTR = 1;
+         Device_Modle = 1;
+         slot_number = 3;
+         new StartMetalThread().start();
+         timer.schedule(taskMetal,500, 1000);
+         timer.schedule(taskDraw, 1700, 1000);
 
         Log.d("testsys", "system start successful!");
     }

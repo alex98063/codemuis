@@ -41,7 +41,8 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
 //                            canvas.drawColor(Color.WHITE);
                             canvas.drawColor(Color.rgb(255, 236, 139));
 
-                            drawAViewAxs(canvas, XLength, YLength, YLength, "512");
+                          // drawAViewAxs(canvas, XLength, YLength, YLength, "512");
+
 
                         } else {
                             canvas.drawColor(Color.WHITE);

@@ -1,11 +1,11 @@
 [
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\container_btn_bg_highlight_click.9.png",
-        "source": "F:\\codework\\MUIS\\res\\drawable-xhdpi\\container_btn_bg_highlight_click.9.png"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\tabs_pattern.png",
         "source": "F:\\codework\\MUIS\\res\\drawable-xhdpi\\tabs_pattern.png"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\container_btn_bg_highlight_click.9.png",
+        "source": "F:\\codework\\MUIS\\res\\drawable-xhdpi\\container_btn_bg_highlight_click.9.png"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\container_btn_bg_highlight_none.9.png",

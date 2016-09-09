@@ -367,6 +367,47 @@ public class MetalLeft extends Fragment {
 			}
 		});
 
+		Button btnmetal_bt_plus= (Button) view.findViewById(R.id.metal_bt_plus);
+
+
+		btnmetal_bt_plus.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View v) {
+				Log.d("testsys","longclick");
+				return true;
+			}
+		});
+
+
+		btnmetal_bt_plus.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Log.d("testsys","click");
+
+			}
+		});
+
+		Button btnmetal_bt_minus= (Button) view.findViewById(R.id.metal_bt_minus);
+
+
+		btnmetal_bt_minus.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View v) {
+				Log.d("testsys","---longclick");
+				return true;
+			}
+		});
+
+
+
+		btnmetal_bt_minus.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Log.d("testsys","---click");
+
+			}
+		});
+
 
 		return view;
 	}

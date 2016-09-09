@@ -90,7 +90,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
     private static TreeMap<String, int[]> Datalist;
 
     // 最大帧数 (1000 / 30)
-    private static final int DRAW_INTERVAL = 1000;
+    private static final int DRAW_INTERVAL = 130;
 
     // 通道号
     private static String drawkey;
@@ -529,6 +529,20 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
         canvas.drawLine(XPoint + (int) (120 * xlen / drawallscale), yYPoint / 2 + lineinterval, XPoint + 220 * xlen / drawallscale, yYPoint / 2 + lineinterval, paintoutwave); // 轴线
 
 
+        Paint paintLine = new Paint();
+        paintLine.setStyle(Paint.Style.STROKE);
+        paintLine.setAntiAlias(true);// 去锯齿
+
+        Log.d("testsys",String.valueOf(Data.length));
+        for (int i = 0; i < Data.length - 1; i = i + 1) {
+
+
+            if (XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale / Integer.valueOf(XLabel[1]) >= 0) {
+                canvas.drawLine(XPoint + (i + (int) Math.round(intzero * NewScale)) * XScale / Integer.valueOf(XLabel[1]), YCoord(Data[i], yYPoint, YScale), XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale / Integer.valueOf(XLabel[1]), YCoord(Data[i + 1], yYPoint, YScale), paintLine);
+            }
+
+        }
+
     }
 
     private final void drawAView(Canvas canvas, String[] datastr, float a, float b, int scale, String title) {
@@ -770,7 +784,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
     }
 
 
-    public void setinfoaxs(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels) {
+    public void setinfoaxs(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels, TreeMap<String, int[]> AllData) {
 
         XLabel = XLabels;
         NewxLable = newxlabels;
@@ -780,6 +794,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
         XLength = getWidth();
         YLength = getHeight() - bottommargin;
 
+        Data = Tools.intStringArrayPercent(AllData.get("512"), "512");
 
     }
 

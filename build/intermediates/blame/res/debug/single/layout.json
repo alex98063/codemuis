@@ -12,12 +12,12 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\metalsysconfig.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawalltype.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\drawalltype.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainregister.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\mainregister.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawalltype.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\drawalltype.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\weldutparameter.xml",
