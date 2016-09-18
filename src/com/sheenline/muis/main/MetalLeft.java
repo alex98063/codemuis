@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,11 +32,29 @@ public class MetalLeft extends Fragment {
 	String etmetalturnout;
 
 	int sp_th_abaojing,sp_th_bbaojing,sp_th_cbaojing,sp_th_dbaojing;
-
+//    int metal_rg_nr;
+//	int metalrgnr;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.metalleft, container, false);
+
+
+//		SharedPreferences share = getActivity().getSharedPreferences("metalperference", 0);
+//		metal_rg_nr = share.getInt("metal_rg_nr",metalrgnr);
+//		RadioGroup rgmetal_rg = (RadioGroup) view.findViewById(R.id.metal_rg);
+//		rgmetal_rg.check(metal_rg_nr);
+//
+//		rgmetal_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//												  @Override
+//												  public void onCheckedChanged(RadioGroup group, int checkedId) {
+//
+//
+//
+//
+//												  }
+//
+//											  });
 
 		Button btnmetal_bt_turnout= (Button) view.findViewById(R.id.metal_bt_turnout);
 		btnmetal_bt_turnout.setOnClickListener(new View.OnClickListener() {

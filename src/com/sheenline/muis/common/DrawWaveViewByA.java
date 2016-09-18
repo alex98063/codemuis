@@ -42,7 +42,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
                             canvas.drawColor(Color.rgb(255, 236, 139));
 
                           // drawAViewAxs(canvas, XLength, YLength, YLength, "512");
-
+                            drawAView(canvas,Data,XLength,YLength,YLength,"512");
 
                         } else {
                             canvas.drawColor(Color.WHITE);
@@ -91,7 +91,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     private static TreeMap<String, int[]> Datalist;
 
     // 最大帧数 (1000 / 30)
-    private static final int DRAW_INTERVAL = 1000;
+    private static final int DRAW_INTERVAL = 130;
 
     // 通道号
     private static String drawkey;

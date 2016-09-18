@@ -299,6 +299,7 @@ public class MetalActivity extends FragmentActivity {
     int PA_slot;
     char[] Package_Data = new char[MAX_PKT_LEN];
     int PCorTR = 1;
+    int choosedkey=0;
 
     double sendgainminus = 0;
 
@@ -324,8 +325,14 @@ public class MetalActivity extends FragmentActivity {
           //  onDrawAWave(treeMapAWaveData);
 
 
-                  onDrawAllWaveAxs();
-                  onDrawBWaveAxs();
+           //       onDrawAllWaveAxs();
+
+            strDefineChannelKey = "512";
+
+                  onDrawAWave(treeMapAWaveData);
+
+
+            onDrawBWaveAxs();
 
 
 
@@ -451,6 +458,7 @@ public class MetalActivity extends FragmentActivity {
 
             try {
                 if (aTreeMap != null) {
+
                     switch (strDefineChannelKey) {
                         case "512":
                             mATypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{100, 212, 200, 423, 300, 634}, 624 / 295.5, new String[]{"0", "50", "100"}, // Y轴刻度
@@ -993,11 +1001,11 @@ public class MetalActivity extends FragmentActivity {
 
             transaction.commit();
 
-//            aFragmentRight = new DrawAWaveView();
-//            FragmentManager fma = getSupportFragmentManager();
-//            FragmentTransaction txa = fma.beginTransaction();
-//            txa.add(R.id.main_common_right_up, aFragmentRight, "AFragmentRight");
-//            txa.commit();
+            aFragmentRight = new DrawAWaveView();
+            FragmentManager fma = getSupportFragmentManager();
+            FragmentTransaction txa = fma.beginTransaction();
+            txa.add(R.id.main_common_right_up, aFragmentRight, "AFragmentRight");
+            txa.commit();
 
             bFragmentRight  = new DrawBWaveView();
             FragmentManager fmb = getSupportFragmentManager();
@@ -1006,11 +1014,11 @@ public class MetalActivity extends FragmentActivity {
             txb.commit();
 
 
-            allFragmentRight = new DrawAllWaveView();
-            FragmentManager fmall = getSupportFragmentManager();
-            FragmentTransaction txall = fmall.beginTransaction();
-            txall.add(R.id.main_common_right_up, allFragmentRight, "AllFragmentRight");
-            txall.commit();
+//            allFragmentRight = new DrawAllWaveView();
+//            FragmentManager fmall = getSupportFragmentManager();
+//            FragmentTransaction txall = fmall.beginTransaction();
+//            txall.add(R.id.main_common_right_up, allFragmentRight, "AllFragmentRight");
+//            txall.commit();
 
             MetalUTParameter utpFragment = new MetalUTParameter();
 
@@ -1076,8 +1084,8 @@ public class MetalActivity extends FragmentActivity {
          Device_Modle = 1;
          slot_number = 3;
          new StartMetalThread().start();
-         timer.schedule(taskMetal,500, 1000);
-         timer.schedule(taskDraw, 1700, 1000);
+         timer.schedule(taskMetal,430, 500);
+         timer.schedule(taskDraw, 710, 900);
 
         Log.d("testsys", "system start successful!");
     }
