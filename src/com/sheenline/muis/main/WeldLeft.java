@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -29,12 +32,39 @@ public class WeldLeft extends Fragment {
 
 
 	int sp_th_abaojing,sp_th_bbaojing,sp_th_cbaojing,sp_th_dbaojing;
-
+	int weld_rg_nr;
+	int weldrgnr;
 String etweldnr;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.weldleft, container, false);
 
+		RadioButton rbweldleft= (RadioButton) view.findViewById(R.id.weld_rb_0);
+		weldrgnr= rbweldleft.getId();
+
+		SharedPreferences share = getActivity().getSharedPreferences("weldperference", 0);
+		weld_rg_nr = share.getInt("weld_rg_nr",weldrgnr);
+		RadioGroup rgweld_rg = (RadioGroup) view.findViewById(R.id.weld_rg);
+		rgweld_rg.check(weld_rg_nr);
+		Log.d("testsys",String.valueOf(weld_rg_nr));
+
+		rgweld_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+				Log.d("testsys",String.valueOf(checkedId));
+				weldrgnr =  group.getCheckedRadioButtonId();
+
+				SharedPreferences share = getActivity().getSharedPreferences("weldperference", 0);
+				SharedPreferences.Editor editor = share.edit();
+
+				editor.putInt("weld_rg_nr",weldrgnr);
+				editor.commit();
+
+
+			}
+
+		});
 
 		Button btnweld_bt_weld= (Button) view.findViewById(R.id.weld_bt_weld);
 

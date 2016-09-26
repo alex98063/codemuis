@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="0°"
-            android:checked="true"/>
+            />
 
         <RadioButton
             android:id="@+id/metal_rb_all"

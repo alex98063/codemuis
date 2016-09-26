@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.TreeMap;
+import java.util.Vector;
 
 import com.sheenline.muis.R;
 import com.sheenline.muis.common.Constant;
@@ -34,8 +35,11 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabWidget;
@@ -45,7 +49,9 @@ import android.widget.Toast;
 // 主界面
 public class MetalActivity extends FragmentActivity {
 
-
+    int trgger = 0;
+    int divmode = 2;
+    int sampletime = 470;
 
     public class StartMetalThread extends Thread {
 
@@ -77,23 +83,18 @@ public class MetalActivity extends FragmentActivity {
 
                     switch (i) {
                         case 0:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[0]);// 设置增益
+                            testJNI.SetGain(Device_Modle, channel[i],16);// 设置增益
+                           // testJNI.SetGain(Device_Modle, channel[i], definegainarr[0]);// 设置增益
                             break;
                         case 1:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[2]);// 设置增益
+                            testJNI.SetGain(Device_Modle, channel[i],16);// 设置增益
+                           // testJNI.SetGain(Device_Modle, channel[i], definegainarr[2]);// 设置增益
                             break;
                         case 2:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[4]);// 设置增益
+                            testJNI.SetGain(Device_Modle, channel[i],16);// 设置增益
+                            //testJNI.SetGain(Device_Modle, channel[i], definegainarr[4]);// 设置增益
                             break;
-                        case 3:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[5]);// 设置增益
-                            break;
-                        case 4:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[6]);// 设置增益
-                            break;
-                        case 5:
-                            testJNI.SetGain(Device_Modle, channel[i], definegainarr[7]);// 设置增益
-                            break;
+
                         default:
                             break;
                     }
@@ -122,7 +123,12 @@ public class MetalActivity extends FragmentActivity {
                 Log.d("testsys", String.valueOf(ret));
                 sleep(100);
 
+                trgger =utpFragment.triggmode;
+                Log.d("testsys",  String.valueOf(trgger));
+
+
                 PA_channel = 16;
+                int trigg =testJNI.SetTriggerMode(trgger,divmode);
                 testJNI.StartWork(Device_Modle, 3);
 
                 isbootfirst = true;
@@ -186,6 +192,8 @@ public class MetalActivity extends FragmentActivity {
             }
 
             reader.close();
+
+            Log.d("testsys", "focuslaw success");
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -268,6 +276,7 @@ public class MetalActivity extends FragmentActivity {
     private Button btnZeroMoveRight;
 
     int[] channel_data = new int[626];
+    int Threashod = 20;
 
     int channelnrgainminus = 0;
 
@@ -314,77 +323,160 @@ public class MetalActivity extends FragmentActivity {
     private Spinner spnspinnerpaDigtalFiter, spnspinnerpaswitcher;
 
 
-
-
-    TimerTask taskDraw = new TimerTask() {
-        @Override
-        public void run() {
-
-
-                  //  onDrawAWaveAxs();
-          //  onDrawAWave(treeMapAWaveData);
-
-
-           //       onDrawAllWaveAxs();
-
-            strDefineChannelKey = "512";
-
-                  onDrawAWave(treeMapAWaveData);
-
-
-            onDrawBWaveAxs();
-
-
-
-
-        }
-    };
-
     TimerTask taskMetal = new TimerTask() {
         @Override
         public void run() {
 
-            int testi = -1;
+            switch (leftMetalFragment.itemprobe) {
+                case 6:
+                    strDefineChannelKey = "0";
+                    break;
+                case 7:
+                    strDefineChannelKey = "256";
+                    break;
+                case 8:
+                    strDefineChannelKey = "512";
+                    break;
+                case 9:
+                    strDefineChannelKey = "999";
+                    break;
+                default:
+                    break;
+            }
 
-            testi = testJNI.OpenDataStream(Package_Data);
+            if (strDefineChannelKey != "999") {
 
-            if (testi <= 10) {
 
-                return;
-            } else {
+                Log.d("testsys", strDefineChannelKey);
 
-                int slot = 0;
 
-                switch (strDefineChannelKey) {
-                    case "0":
-                        PA_channel = 0;
-                        break;
-                    case "256":
-                        PA_channel = 1;
-                        break;
-                    case "512":
-                        PA_channel = 2;
-                        break;
+                int testi = -1;
 
-                    default:
-                        PA_channel = 0;
-                        break;
-                }
+                testi = testJNI.OpenDataStream(Package_Data);
 
-                if (PA_channel < 16) // todo:PA通道号
-                {
-                    slot = 0;
+                if (testi <= 10) {
+
+                    return;
                 } else {
-                    slot = PA_slot;
+
+                    int slot = 0;
+
+                    switch (strDefineChannelKey) {
+                        case "0":
+                            PA_channel = 0;
+                            break;
+                        case "256":
+                            PA_channel = 1;
+                            break;
+                        case "512":
+                            PA_channel = 2;
+                            break;
+
+                        default:
+                            PA_channel = 0;
+                            break;
+                    }
+
+                    if (PA_channel < 16) // todo:PA通道号
+                    {
+                        slot = 0;
+                    } else {
+                        slot = PA_slot;
+                    }
+
+                    String key = strDefineChannelKey;
+
+                    channel_data = testJNI.getData(Device_Modle, Package_Data, PA_channel, slot, MAX_PKT_LEN, 0, 1);
+
+                    try {
+                        Thread.sleep(100);
+                    } catch (Exception e) {
+
+                    }
+
+                    treeMapAWaveData.put(key, channel_data);
+
+
+
+                    Log.d("testsys", "Melta Mode data recieving...");
+
                 }
 
-                String key = "512";
 
-                channel_data = testJNI.getData(Device_Modle, Package_Data, PA_channel, slot, MAX_PKT_LEN, 0, 1);
+                onDrawAWave(treeMapAWaveData);
 
-                treeMapAWaveData.put(key, channel_data);
+                onDrawBWaveAxs();
+            }
+            else
+            {
+                Log.d("testsys", strDefineChannelKey);
 
-            //    Log.d("testsys", "Melta Mode data recieving...");
+                int testi = -1;
+
+                testi = testJNI.OpenDataStream(Package_Data);
+
+                if (testi <= 10) {
+
+                    return;
+                } else {
+
+                    int slot = 0;
+
+                    switch (strDefineChannelKey) {
+                        case "0":
+                            PA_channel = 0;
+                            break;
+                        case "256":
+                            PA_channel = 1;
+                            break;
+                        case "512":
+                            PA_channel = 2;
+                            break;
+
+                        default:
+                            PA_channel = 0;
+                            break;
+                    }
+
+                    if (PA_channel < 16) // todo:PA通道号
+                    {
+                        slot = 0;
+                    } else {
+                        slot = PA_slot;
+                    }
+
+                    String key = strDefineChannelKey;
+
+                    for (int i=0;i<3;i++) {
+
+                        channel_data = testJNI.getData(Device_Modle, Package_Data, PA_channel, slot, MAX_PKT_LEN, 0, 1);
+
+                        try {
+                            Thread.sleep(100);
+                        } catch (Exception e) {
+
+                        }
+
+                        switch (i) {
+                            case 0:
+                                key = "0";
+                                break;
+                            case 1:
+                                key = "256";
+                                break;
+                            case 2:
+                                key="512";
+                                break;
+                            default:
+                                break;
+                        }
+                        treeMapAWaveData.put(key, channel_data);
+                    }
+                    Log.d("testsys", "Melta Mode data recieving...");
+
+                }
+
+                onDrawAWave(treeMapAWaveData);
 
             }
 
@@ -422,7 +514,7 @@ public class MetalActivity extends FragmentActivity {
 
         DrawWaveViewByAll mTypeView = (DrawWaveViewByAll) tabview.findViewById(R.id.area_alltype_view);
 
-        mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"},treeMapAWaveData);
+        mTypeView.setinfoaxs(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, new int[]{0, 100, 200, 300, 400, 500, 600, 700}, 1, new String[]{"0", "50", "100"},treeMapAWaveData,strDefineChannelKey);
 
     }
 
@@ -924,7 +1016,7 @@ public class MetalActivity extends FragmentActivity {
     DrawBWaveView bFragmentRight;
     DrawAllWaveView allFragmentRight;
     DrawAWaveView aFragmentRight;
-
+    MetalUTParameter utpFragment;
 
 
     @Override
@@ -945,7 +1037,7 @@ public class MetalActivity extends FragmentActivity {
 
                 File dir = Environment.getExternalStorageDirectory();
                 String path = dir.toString() + "/31AnglesSeclaw.csv";
-
+               Log.d("testsys",path);
                 onReadfocuslawfile(path);
 
 
@@ -965,6 +1057,7 @@ public class MetalActivity extends FragmentActivity {
             transaction = manager.beginTransaction();
             transaction.replace(R.id.main_left, leftMetalFragment, "leftMetalFragment");
             transaction.commit();
+
         }
 
         if (savedInstanceState == null) {
@@ -986,8 +1079,6 @@ public class MetalActivity extends FragmentActivity {
                 tv.setTextSize(20);
 
             }
-
-
 
         }
 
@@ -1013,14 +1104,13 @@ public class MetalActivity extends FragmentActivity {
             txb.add(R.id.main_common_right_down, bFragmentRight, "BFragmentRight");
             txb.commit();
 
-
 //            allFragmentRight = new DrawAllWaveView();
 //            FragmentManager fmall = getSupportFragmentManager();
 //            FragmentTransaction txall = fmall.beginTransaction();
 //            txall.add(R.id.main_common_right_up, allFragmentRight, "AllFragmentRight");
 //            txall.commit();
 
-            MetalUTParameter utpFragment = new MetalUTParameter();
+            utpFragment = new MetalUTParameter();
 
             manager = getSupportFragmentManager();
 
@@ -1053,11 +1143,6 @@ public class MetalActivity extends FragmentActivity {
 
 
 
-
-
-
-
-
          String ip = "192.168.1.10";
          int port = 6869;
 
@@ -1084,15 +1169,21 @@ public class MetalActivity extends FragmentActivity {
          Device_Modle = 1;
          slot_number = 3;
          new StartMetalThread().start();
-         timer.schedule(taskMetal,430, 500);
-         timer.schedule(taskDraw, 710, 900);
+         timer.schedule(taskMetal,sampletime, 310);
+  //       timer.schedule(taskDraw, 710, 900);
 
+
+
+        Toast.makeText(getApplicationContext(), "连接成功", Toast.LENGTH_SHORT).show();
         Log.d("testsys", "system start successful!");
     }
 
     // 退出
     @Override
     protected void onDestroy() {
+
+
+
 
         super.onDestroy();
 
@@ -1227,12 +1318,18 @@ public class MetalActivity extends FragmentActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
 
             try {
-//                testJNI.StopWork();
-//                testJNI.CloseDevice();
+//                int sw = testJNI.StopWork();
+//                int cd = testJNI.CloseDevice();
+//                Log.d("testsys", usetype + " Mode exit!" + String.valueOf(sw) +" " + String.valueOf(cd));
+
 
             } catch (Exception e) {
             } finally {
-                Log.d("testsys", usetype + " Mode exit!");
+
+
+
+
+                Log.d("testsys",  "system exit!");
                 System.exit(0);
 
                 return true;

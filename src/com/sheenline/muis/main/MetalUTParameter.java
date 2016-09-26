@@ -34,6 +34,7 @@ public class MetalUTParameter extends Fragment
 		String[] metal_ut_et_zero = new String[9];
 		String[] metal_ut_et_zengyi = new String[9];
 		int[] rgnr=new int[9];
+		int triggmode = 0;
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -209,9 +210,15 @@ public class MetalUTParameter extends Fragment
 				spnchufa.setAdapter(adpchufa);
 				spnchufa.setSelection(metal_ut_sp_chufa);
 
+		    	triggmode=metal_ut_sp_chufa;
+
+
 				spnchufa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 					@Override
 					public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+							triggmode=position;
+
 
 
 					}

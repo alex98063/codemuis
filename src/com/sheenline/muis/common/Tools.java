@@ -223,7 +223,7 @@ public class Tools {
 				case "512":
 
 				case "256":
-					aWaveStringarry[i] = Integer.toString((int) Math.round(v / 512.00 * 512));
+					aWaveStringarry[i] = Integer.toString((int) Math.round(v / 512.00 * 100));
 
 					// Log.d("testjni", aWaveStringarry[i]);
 					// aWaveStringarry[i] = Integer.toString((int)

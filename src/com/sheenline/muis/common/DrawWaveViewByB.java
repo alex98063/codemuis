@@ -43,7 +43,7 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
                             canvas.drawColor(Color.WHITE);
 
                             //drawBView(canvas, Data, XLength, YLength, YLength, drawkey);
-                            drawBViewAxs(canvas, XLength, YLength, YLength, "512");
+                            drawBViewAxs(canvas, XLength, YLength, YLength);
                         } else {
 
                             canvas.drawColor(Color.WHITE);
@@ -461,7 +461,7 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
     // }
 
 
-    private final void drawBViewAxs(Canvas canvas, float xlenx, float ylen, int scalex, String title) {
+    private final void drawBViewAxs(Canvas canvas, float xlenx, float ylen, int scalex) {
 
 
         float xlen = getWidth();

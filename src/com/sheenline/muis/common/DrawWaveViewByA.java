@@ -41,8 +41,8 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
 //                            canvas.drawColor(Color.WHITE);
                             canvas.drawColor(Color.rgb(255, 236, 139));
 
-                          // drawAViewAxs(canvas, XLength, YLength, YLength, "512");
-                            drawAView(canvas,Data,XLength,YLength,YLength,"512");
+                           // drawAViewAxs(canvas, XLength, YLength, YLength, "512");
+                            drawAView(canvas,Data,XLength,YLength,YLength,drawkey);
 
                         } else {
                             canvas.drawColor(Color.WHITE);
@@ -51,7 +51,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
                             // Datalist, XLength,
                             // YLength);
 
-                            //drawAllAView2(canvas, Datalist, XLength, YLength);
+                            drawAllAView2(canvas, Datalist, XLength, YLength);
 
                         }
 
@@ -91,7 +91,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     private static TreeMap<String, int[]> Datalist;
 
     // 最大帧数 (1000 / 30)
-    private static final int DRAW_INTERVAL = 130;
+    private static final int DRAW_INTERVAL = 50;
 
     // 通道号
     private static String drawkey;
@@ -563,19 +563,19 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
 
     private final void drawAView(Canvas canvas, String[] datastr, float a, float b, int scale, String title) {
         // canvas.drawColor(Color.WHITE);// 设置背景颜色
-        String[] datastrarray = exactpoint2(datastr, intThreshold);
+       // String[] datastrarray = exactpoint2(datastr, 20);
         // XLength = a;
         // YLength = b;
 
-        XPoint = 0;
+        XPoint = 20;
 
-        if (datastrarray == null) {
-            return;
-        }
+//        if (datastrarray == null) {
+//            return;
+//        }
 
         String titletext = titlemaker(title);
 
-        float yYPoint = b;
+        float yYPoint = b+10;
         // 刻度
 
         float XScale = (a) / (XLabel.length - 1);
@@ -645,26 +645,28 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
 
         // paintLine.setStrokeWidth(8);
 
-        Paint paint1 = new Paint();
-        paint1.setStyle(Paint.Style.STROKE);
-        paint1.setAntiAlias(true);// 去锯齿
-        paint1.setColor(Color.BLACK);
+        Paint paintaxs = new Paint();
+        paintaxs.setStyle(Paint.Style.STROKE);
+        paintaxs.setAntiAlias(true);// 去锯齿
+        paintaxs.setColor(Color.BLUE);
+
+
+
         paint.setTextSize(8); // 设置轴文字大小
 
         // 设置Y轴
-        canvas.drawLine(XPoint, yYPoint - (YLabel.length - 1) * YScale, XPoint, yYPoint, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint - (YLabel.length - 1) * YScale, XPoint, yYPoint, paintaxs); // 轴线
 
         for (int i = 0; i < YLabel.length; i++) {
-            canvas.drawLine(XPoint, yYPoint - i * YScale, XPoint - 5, yYPoint - i * YScale, paint); // 刻度
+            canvas.drawLine(XPoint, yYPoint - i * YScale, XPoint - 5, yYPoint - i * YScale, paintaxs); // 刻度
 
-            try {
+
                 if (i == 1) {
-                    // canvas.drawText(YLabel[i], XPoint -
-                    // 18, yYPoint - i *
-                    // YScale + 10, paint); // 文字
+                     canvas.drawText(YLabel[i], XPoint -
+                     18, yYPoint - i *
+                     YScale + 10, paintaxs); // 文字
                 }
-            } catch (Exception e) {
-            }
+
 
         }
 
@@ -674,36 +676,36 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
 
                 canvas.drawLine(XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]),
                         yYPoint, XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]),
-                        yYPoint + 5, paint); // 刻度
+                        yYPoint + 5, paintaxs); // 刻度
                 canvas.drawText(Integer.toString(NewxLable[i]),
-                        XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]) - 20,
-                        yYPoint + 10, paint); // 文字
+                        XPoint + NewxLable[i + 1] * XScale / Integer.valueOf(XLabel[1]) - 30,
+                        yYPoint + 15, paintaxs); // 文字
 
             }
         }
 
         // 设置X轴
-        canvas.drawLine(XPoint, yYPoint, XPoint + (XLabel.length - 1) * XScale, yYPoint, paint); // 轴线
+        canvas.drawLine(XPoint, yYPoint, XPoint + (XLabel.length - 1) * XScale, yYPoint, paintaxs); // 轴线
 
         // 绘制点
-        for (int i = 0; i < datastrarray.length - 1; i = i + 1) {
+        for (int i = 0; i < datastr.length - 1; i = i + 1) {
 
             if (XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale
                     / Integer.valueOf(XLabel[1]) >= 0) {
                 canvas.drawLine(
                         XPoint + (i + (int) Math.round(intzero * NewScale)) * XScale
                                 / Integer.valueOf(XLabel[1]),
-                        YCoord(datastrarray[i], yYPoint, YScale),
+                        YCoord(datastr[i], yYPoint, YScale),
                         XPoint + (i + (int) Math.round(intzero * NewScale) + 1) * XScale
                                 / Integer.valueOf(XLabel[1]),
-                        YCoord(datastrarray[i + 1], yYPoint, YScale), paintLine);
+                        YCoord(datastr[i + 1], yYPoint, YScale), paintLine);
             }
 
         }
 
-        paint.setTextSize(16);
 
-        canvas.drawText(titletext, XLength - 60, yYPoint - 2, paint);
+
+        canvas.drawText(titletext, XLength - 50, yYPoint - 5, paintaxs);
 
         if (drawkey != "999") {
             Paint paintLine1 = new Paint();
@@ -720,7 +722,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
                     yYPoint - 40 * YScale / Integer.valueOf(YLabel[1]), paintLine1); // 刻度
 
             String[] tempdata1 = new String[(int) Math.round(intthlength * NewScale)];
-            System.arraycopy(datastrarray, (int) Math.round((intthstart - intzero) * NewScale), tempdata1,
+            System.arraycopy(datastr, (int) Math.round((intthstart - intzero) * NewScale), tempdata1,
                     0, tempdata1.length);
             int[] maxvalue = Tools.getMax(tempdata1);
             Paint paint2 = new Paint();

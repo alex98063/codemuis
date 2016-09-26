@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -30,31 +31,87 @@ public class MetalLeft extends Fragment {
 	String et_th_cqidian,et_th_ckuandu,et_th_cgaodu;
 	String et_th_dqidian,et_th_dkuandu,et_th_dgaodu;
 	String etmetalturnout;
-
+    int probe;
 	int sp_th_abaojing,sp_th_bbaojing,sp_th_cbaojing,sp_th_dbaojing;
-//    int metal_rg_nr;
-//	int metalrgnr;
+
+	int metal_rg_nr;
+	int[] metalrgnr =new int[10];
+	int itemprobe;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.metalleft, container, false);
 
+		RadioButton rbleft0= (RadioButton) view.findViewById(R.id.metal_rb_70pluswai);
+		metalrgnr[0]= rbleft0.getId();
 
-//		SharedPreferences share = getActivity().getSharedPreferences("metalperference", 0);
-//		metal_rg_nr = share.getInt("metal_rg_nr",metalrgnr);
-//		RadioGroup rgmetal_rg = (RadioGroup) view.findViewById(R.id.metal_rg);
-//		rgmetal_rg.check(metal_rg_nr);
+		RadioButton rbleft1= (RadioButton) view.findViewById(R.id.metal_rb_70pluszheng);
+		metalrgnr[1]= rbleft1.getId();
+
+		RadioButton rbleft2= (RadioButton) view.findViewById(R.id.metal_rb_70plusnei);
+		metalrgnr[2]= rbleft2.getId();
+
+		RadioButton rbleft3= (RadioButton) view.findViewById(R.id.metal_rb_70minuswai);
+		metalrgnr[3]= rbleft3.getId();
+
+		RadioButton rbleft4= (RadioButton) view.findViewById(R.id.metal_rb_70minuszheng);
+		metalrgnr[4]= rbleft4.getId();
+
+		RadioButton rbleft5= (RadioButton) view.findViewById(R.id.metal_rb_70minusnei);
+		metalrgnr[5]= rbleft5.getId();
+
+		RadioButton rbleft6= (RadioButton) view.findViewById(R.id.metal_rb_37plus);
+		metalrgnr[6]= rbleft6.getId();
+
+		RadioButton rbleft7= (RadioButton) view.findViewById(R.id.metal_rb_37minus);
+		metalrgnr[7]= rbleft7.getId();
+
+		RadioButton rbleft8= (RadioButton) view.findViewById(R.id.metal_rb_0);
+		metalrgnr[8]= rbleft8.getId();
+
+		RadioButton rbleft9= (RadioButton) view.findViewById(R.id.metal_rb_all);
+		metalrgnr[9]= rbleft9.getId();
+
+
+		SharedPreferences share = getActivity().getSharedPreferences("metalperference", 0);
+		metal_rg_nr = share.getInt("metal_rg_nr",metalrgnr[8]);
+		RadioGroup rgmetal_rg = (RadioGroup) view.findViewById(R.id.metal_rg);
+		rgmetal_rg.check(metal_rg_nr);
+
+		probe = metal_rg_nr;
+		Log.d("testsys",String.valueOf(metal_rg_nr));
+
+		rgmetal_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+
+				metal_rg_nr =  group.getCheckedRadioButtonId();
+
+                SharedPreferences share = getActivity().getSharedPreferences("metalperference", 0);
+                SharedPreferences.Editor editor = share.edit();
+
+                editor.putInt("metal_rg_nr",metal_rg_nr);
+                editor.commit();
+
+				probe = metal_rg_nr;
+
+               for (int i=0;i<10;i++)
+			   {
+				  if (probe == metalrgnr[i])
+				  {
+					  itemprobe=i;
+					  break;
+				  }
+			   }
+
+
+
+
+			}
+
+		});
 //
-//		rgmetal_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//												  @Override
-//												  public void onCheckedChanged(RadioGroup group, int checkedId) {
-//
-//
-//
-//
-//												  }
-//
-//											  });
 
 		Button btnmetal_bt_turnout= (Button) view.findViewById(R.id.metal_bt_turnout);
 		btnmetal_bt_turnout.setOnClickListener(new View.OnClickListener() {

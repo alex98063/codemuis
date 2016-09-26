@@ -40,8 +40,9 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
                         if (drawkey != "999") {
 //                            canvas.drawColor(Color.WHITE);
                             canvas.drawColor(Color.rgb(255, 236, 139));
-
+Log.d("testsys","drawall");
                            drawAllViewAxs1(canvas, XLength, YLength, YLength, "512");
+
 
                         } else {
                             canvas.drawColor(Color.WHITE);
@@ -784,7 +785,7 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
     }
 
 
-    public void setinfoaxs(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels, TreeMap<String, int[]> AllData) {
+    public void setinfoaxs(String[] XLabels, int[] newxlabels, double newscales, String[] YLabels, TreeMap<String, int[]> AllData,String key) {
 
         XLabel = XLabels;
         NewxLable = newxlabels;
@@ -794,7 +795,10 @@ public class DrawWaveViewByAll extends SurfaceView implements SurfaceHolder.Call
         XLength = getWidth();
         YLength = getHeight() - bottommargin;
 
-        Data = Tools.intStringArrayPercent(AllData.get("512"), "512");
+        drawkey = key;
+
+        Data = Tools.intStringArrayPercent(AllData.get(key), key);
+
 
     }
 
