@@ -45,7 +45,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
                             drawAView(canvas,Data,XLength,YLength,YLength,drawkey);
 
                         } else {
-                            canvas.drawColor(Color.WHITE);
+                            canvas.drawColor(Color.rgb(255, 236, 139));
 
                             // drawAllAView(canvas,
                             // Datalist, XLength,
@@ -91,7 +91,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     private static TreeMap<String, int[]> Datalist;
 
     // 最大帧数 (1000 / 30)
-    private static final int DRAW_INTERVAL = 50;
+    private static final int DRAW_INTERVAL = 30;
 
     // 通道号
     private static String drawkey;
@@ -110,7 +110,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     int intthstart;
     int intthsteplength;
     int intzero;
-    int leftmargin = 30;                        // 左空间
+    int leftmargin = 0;                        // 左空间
     private DrawThread mDrawThread;
     private ArrayList<Integer> mGridColorLevel = new ArrayList<Integer>();
     private ArrayList<String> mGridLevelText = new ArrayList<String>();
@@ -145,32 +145,7 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
 
     public String[] XLabel;                                            // X的刻度
 
-    // private void drawAllAView(Canvas canvas, TreeMap<String, byte[]>
-    // datalist1, int a, int b)
-    // {
-    // if (datalist1 == null)
-    // {
-    // return;
-    // }
-    //
-    // // canvas.drawColor(Color.WHITE);// 设置背景颜色
-    //
-    // Set<String> keyset = datalist1.keySet();
-    // Object[] keystring = keyset.toArray();
-    // int yyb = b;
-    // int keycount = keyset.size();
-    //
-    // int index = 0;
-    // long timer1 = System.currentTimeMillis();
-    // for (index = 0; index < keycount; index++)
-    // {
-    // drawAView(canvas,
-    // DataConvertTools.bytesToStringArrayPercent(datalist1.get(keystring[index]),(String)keystring[index]),
-    // a, yyb / keycount * (index + 1), yyb / keycount, (String)
-    // keystring[index]);
-    // }
-    // Log.d("debug2", String.valueOf(System.currentTimeMillis() - timer1));
-    // }
+
 
     public int XLength;                                        // X轴的长度
 
@@ -198,9 +173,12 @@ public class DrawWaveViewByA extends SurfaceView implements SurfaceHolder.Callba
     }
 
     private void drawAllAView2(Canvas canvas, TreeMap<String, int[]> datalist1, float a, float b) {
+
         if (datalist1 == null) {
             return;
         }
+
+
 
         // canvas.drawColor(Color.WHITE);// 设置背景颜色
 

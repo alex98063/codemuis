@@ -79,7 +79,17 @@ public class MetalLeft extends Fragment {
 		rgmetal_rg.check(metal_rg_nr);
 
 		probe = metal_rg_nr;
-		Log.d("testsys",String.valueOf(metal_rg_nr));
+
+		for (int i=0;i<10;i++)
+		{
+			if (probe == metalrgnr[i])
+			{
+				itemprobe=i;
+				break;
+			}
+		}
+
+		Log.d("testsys",String.valueOf(itemprobe));
 
 		rgmetal_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			@Override

@@ -21,7 +21,6 @@ public class DrawBWaveView extends Fragment {
 
         mBTypeView.setinfo(new String[]{"0", "100", "200", "300", "400", "500", "600", "700"}, null, 1, new String[]{"0", "50", "100"}, null, "", "999", 0, 100, 0, 20);
 
-
         return view;
     }
 

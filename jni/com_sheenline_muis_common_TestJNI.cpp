@@ -10,15 +10,19 @@ int focuslen = 16;
 
 int16_t ** channel_data;
 
-int16_t Data[50][626];
+int16_t Data[20][624];
+
+
 
 JNIEXPORT jboolean JNICALL Java_com_sheenline_muis_common_TestJNI_InitXLTLib(
 		JNIEnv * env, jobject obj) {
 	cpw = Package_Data;
-	channel_data = new (int16_t*[150]);
+	channel_data = new (int16_t*[20]);
 
-	for (int i = 0; i < 150; i++) {
+	for (int i = 0; i < 20; i++) {
+
 		channel_data[i] = Data[i];
+
 	}
 
 	if (pCAdd == NULL) {
@@ -189,20 +193,24 @@ JNIEXPORT jintArray JNICALL Java_com_sheenline_muis_common_TestJNI_getData(
 		JNIEnv *env, jobject obj, jint wm, jcharArray aa, jint chnr,
 		jint slotnr, jint pklen, jint datalen, jint acannum) {
 
-	int i = -1;
-	memset(Data, 0, 50 * 626 * sizeof(char));
 
-	jintArray arr = env->NewIntArray(624);
+	int index = -1;
+	memset(Data, 0, 12480 * sizeof(char));
 
-	jint arrdata[624];
+	index = pCAdd->getData(wm, cpw, chnr, slotnr, pklen, channel_data, acannum);
 
-	i = pCAdd->getData(wm, cpw, chnr, slotnr, pklen, channel_data, acannum);
+	jintArray arr = env->NewIntArray(12480);
+    jint arrdata[12480];
 
-	for (int i = 0; i < 624; i++) {
-		arrdata[i] = (jint) channel_data[0][i];
-	}
+    for (int j=0;j<20;j++)
+    {
+        for (int i = 0; i < 624; i++) {
+            arrdata[i+j*624] = (jint) channel_data[j][i];
+        }
+    }
 
-	env->SetIntArrayRegion(arr, (jsize) 0, (jsize) 624, arrdata);
+
+	env->SetIntArrayRegion(arr, (jsize) 0, (jsize) 12480, arrdata);
 
 	return arr;
 }

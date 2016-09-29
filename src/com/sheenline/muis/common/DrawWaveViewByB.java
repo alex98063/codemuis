@@ -39,22 +39,9 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
                     synchronized (mHolder) {
                         canvas = mHolder.lockCanvas();
                         canvas.drawColor(Color.WHITE);
-                        if (drawkey != "999") {
-                            canvas.drawColor(Color.WHITE);
 
-                            //drawBView(canvas, Data, XLength, YLength, YLength, drawkey);
-                            drawBViewAxs(canvas, XLength, YLength, YLength);
-                        } else {
+                        drawBViewAxs(canvas, Datalist, XLength, YLength, YLength,drawkey);
 
-                            canvas.drawColor(Color.WHITE);
-
-                            // drawAllAView(canvas,
-                            // Datalist, XLength,
-                            // YLength);
-
-                            //	drawAllAView2(canvas, Datalist, XLength, YLength);
-
-                        }
 
                     }
                 } catch (Exception e) {
@@ -68,23 +55,23 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
                     }
                 }
 
-//								deltaTime = System.currentTimeMillis() - tickTime;
-//
-//								if (deltaTime < DRAW_INTERVAL)
-//									{
-//										try
-//											{
-//
-//												Thread.sleep(DRAW_INTERVAL - deltaTime);
-//											}
-//										catch (InterruptedException e)
-//											{
-//												e.printStackTrace();
-//											}
-//									}
-//								else
-//									{
-//									}
+								deltaTime = System.currentTimeMillis() - tickTime;
+
+								if (deltaTime < DRAW_INTERVAL)
+									{
+										try
+											{
+
+												Thread.sleep(DRAW_INTERVAL - deltaTime);
+											}
+										catch (InterruptedException e)
+											{
+												e.printStackTrace();
+											}
+									}
+								else
+									{
+									}
             }
 
             tickTime = System.currentTimeMillis();
@@ -461,10 +448,101 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
     // }
 
 
-    private final void drawBViewAxs(Canvas canvas, float xlenx, float ylen, int scalex) {
+    private final void drawBViewAxs(Canvas canvas,TreeMap<String, int[]> datalist1,float xlenx, float ylen, int scalex,String title) {
+
+        if (datalist1 == null) {
+            return;
+        }
+
+        Set<String> keyset = datalist1.keySet();
+        Object[] keystring = keyset.toArray();
+        int keycount = keyset.size();
 
 
         float xlen = getWidth();
+
+
+        Paint paintLine = new Paint();
+        paintLine.setStyle(Paint.Style.STROKE);
+        paintLine.setAntiAlias(true);// 去锯齿
+        paintLine.setStrokeWidth(4);
+
+
+        for (int index = 0; index < keycount; index++) {
+
+
+
+                switch ((String) keystring[index]) {
+
+                    case "0":
+
+                        paintLine.setColor(Color.CYAN);// 颜色
+
+                      
+
+                        break;
+                    case "256":
+
+                        paintLine.setColor(Color.BLUE);// 颜色
+
+                        break;
+                    case "512":
+
+                        paintLine.setColor(Color.BLACK);// 颜色
+
+                        break;
+
+                    case "4097":
+
+                        paintLine.setColor(Color.RED);// 颜色
+                        break;
+                    case "4098":
+
+                        paintLine.setColor(Color.MAGENTA);// 颜色
+                        break;
+                    case "4099":
+
+                        paintLine.setColor(Color.LTGRAY);// 颜色
+                        break;
+
+                    case "4353":
+
+                        paintLine.setColor(Color.GREEN);// 颜色
+                        break;
+
+                    case "4354":
+
+                        paintLine.setColor(Color.YELLOW);// 颜色
+                        break;
+                    case "4355":
+
+                        paintLine.setColor(Color.DKGRAY);// 颜色
+                        break;
+                    default:
+                        paintLine.setColor(Color.BLACK);// 颜色
+                        break;
+
+
+                }
+                
+                int[] countone =  datalist1.get(keystring[index]);
+
+                for (int j=0;j<countone.length;j++) {
+
+                    if ((int) Math.round(countone[j]/ 512.00 * 100)>50)
+                    canvas.drawCircle(j*xlen/countone.length, (int) Math.round(countone[j]/ 512.00 * 100), 2, paintLine);
+
+
+                }
+
+
+        }
+
+
+
+
+
+       // float xlen = getWidth();
         float yYPoint = ylen; //下边界
         float scale = ylen / 176 / 3;
 
@@ -536,6 +614,9 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
         String[] datastrarray = exactpoint2(datastr, intThreshold);
         // XLength = a;
         // YLength = b;
+
+
+
 
         XPoint = 0;
 
@@ -692,6 +773,8 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
         }
 
     }
+
+
 
     private String[] exactpoint2(String[] datastr, int thres)// 抽稀
     {

@@ -168,6 +168,28 @@ public class Tools {
 		return intmax;
 	}
 
+
+	public static int getMax(int[] arr,int start) {
+		int intmax;
+		int max = Integer.MIN_VALUE;
+		int index = 0;
+
+
+		for (int i = start; i < arr.length; i++) {
+			if (arr[i]>512) arr[i] = 0;
+			if (arr[i] > max) {
+
+				max = arr[i];
+				index = i;
+			}
+		}
+
+		intmax = max;
+
+
+		return intmax;
+	}
+
 	/**
 	 * Convert hex string to byte[]
 	 *
@@ -217,12 +239,14 @@ public class Tools {
 
 		for (int i = 0; i < awavetemp.length; i++) {
 			int v = awavetemp[i];
+			if (v>512) v=0;
 			switch (key) {
 				case "0":
 
 				case "512":
 
 				case "256":
+
 					aWaveStringarry[i] = Integer.toString((int) Math.round(v / 512.00 * 100));
 
 					// Log.d("testjni", aWaveStringarry[i]);
