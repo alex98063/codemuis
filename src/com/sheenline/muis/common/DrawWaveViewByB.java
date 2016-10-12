@@ -460,7 +460,8 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
 
 
         float xlen = getWidth();
-
+        float yYPoint = ylen; //下边界
+        float scale = ylen / 176 / 3;
 
         Paint paintLine = new Paint();
         paintLine.setStyle(Paint.Style.STROKE);
@@ -527,14 +528,17 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
                 
                 int[] countone =  datalist1.get(keystring[index]);
 
-                for (int j=0;j<countone.length;j++) {
+                if ((String) keystring[index] == "512")
+                {
+                	
+                for (int j=0;j<countone.length/2;j++) {
 
-                    if ((int) Math.round(countone[j]/ 512.00 * 100)>50)
-                    canvas.drawCircle(j*xlen/countone.length, (int) Math.round(countone[j]/ 512.00 * 100), 2, paintLine);
-
+                    if ((int) Math.round(countone[2*j]/ 512.00 * 100)>50)
+                    canvas.drawCircle(j*2*xlen/countone.length, yYPoint - (176-countone[2*j+1]) * scale , 2, paintLine);
+                
 
                 }
-
+                }
 
         }
 
@@ -543,8 +547,7 @@ public class DrawWaveViewByB extends SurfaceView implements SurfaceHolder.Callba
 
 
        // float xlen = getWidth();
-        float yYPoint = ylen; //下边界
-        float scale = ylen / 176 / 3;
+    
 
         // 画笔1
         Paint paint = new Paint();

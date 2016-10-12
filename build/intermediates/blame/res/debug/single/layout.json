@@ -44,12 +44,12 @@
         "source": "F:\\codework\\MUIS\\res\\layout\\weldsysconfig.xml"
     },
     {
-        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawbtype.xml",
-        "source": "F:\\codework\\MUIS\\res\\layout\\drawbtype.xml"
-    },
-    {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainconfig.xml",
         "source": "F:\\codework\\MUIS\\res\\layout\\mainconfig.xml"
+    },
+    {
+        "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\drawbtype.xml",
+        "source": "F:\\codework\\MUIS\\res\\layout\\drawbtype.xml"
     },
     {
         "merged": "F:\\codework\\MUIS\\build\\intermediates\\res\\merged\\debug\\layout\\mainturnout.xml",

@@ -169,8 +169,8 @@ public class Tools {
 	}
 
 
-	public static int getMax(int[] arr,int start) {
-		int intmax;
+	public static int[] getMax(int[] arr,int start) {
+		int[] intmax = new int[2];
 		int max = Integer.MIN_VALUE;
 		int index = 0;
 
@@ -184,7 +184,8 @@ public class Tools {
 			}
 		}
 
-		intmax = max;
+		intmax[0] = max;
+		intmax[1] = index;
 
 
 		return intmax;

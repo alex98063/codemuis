@@ -332,7 +332,7 @@ public class MetalActivity extends FragmentActivity {
 	private Spinner spnspinnerpaDigtalFiter, spnspinnerpaswitcher;
 
 	Vector<Integer> tempmapB = new Vector<Integer>();
-	int tempmapBindex = 1000;
+	int tempmapBindex = 2000;
 
 	TimerTask taskMetal = new TimerTask() {
 		@Override
@@ -511,14 +511,18 @@ public class MetalActivity extends FragmentActivity {
 
 							treeMapAWaveData.put(key, channel_datatemp);
 
-							int tempmax = Tools.getMax(channel_datatemp, 100);
+							int[] tempmax = Tools.getMax(channel_datatemp, 100);
 
 							
 							
-							tempmapB.add(tempmax);
-						
+							tempmapB.add(tempmax[0]);
+							tempmapB.add((int) Math.round((tempmax[1])*295.5 / 624));
+						//Log.d("testsys", String.valueOf(tempmax[1]*295.5 / 624));
+							
+							
 							if (tempmapB.size() >= tempmapBindex) {
 								tempmapB.remove(0);
+								tempmapB.remove(1);
 							}
 							
 							
@@ -1242,7 +1246,7 @@ public class MetalActivity extends FragmentActivity {
 		PCorTR = 1;
 		Device_Modle = 1;
 		slot_number = 3;
-		for (int i=0;i<1000;i++)
+		for (int i=0;i<2000;i++)
 		{
 			tempmapB.add(0);
 		}
